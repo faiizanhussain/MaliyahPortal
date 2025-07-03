@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48"
+                id="DisplayDocumentTF_DisplayDocumentTF_setDocumentDetailsDataPageDef" Package="taskflow"
+                SkipValidation="true">
+  <parameters/>
+  <executables/>
+  <bindings>
+    <methodAction id="setDocumentDetailsData" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="setDocumentDetailsData" IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="bindings.setDocumentDetailsData.dataControl.dataProvider">
+      <NamedData NDName="documentLists" NDValue="#{pageFlowScope.documentList}" NDType="java.util.List"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

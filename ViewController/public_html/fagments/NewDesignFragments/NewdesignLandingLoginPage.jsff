@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+          <af:panelGroupLayout id="pgl1" styleClass="main_page" layout="vertical" valign="middle"
+                halign="center">
+                <!-- LAYOUT LEVEL 2: Login box container
+                     - White panel containing all login elements
+                     - Uses vertical layout to stack elements from top to bottom
+                     - Centers content horizontally, aligns to top vertically
+                     - Styled with login_container class for padding, background, width -->
+                <af:panelGroupLayout id="login_container" styleClass="login_container"
+                    layout="vertical" valign="top"
+                    halign="center">
+                    <!-- Logo image at top of login box -->
+                    <af:image styleClass="logo" source="/images/mof_logo.png" id="i1" />
+                    <!-- LAYOUT LEVEL 3: Login header section
+                         - Container for title and subtitle text
+                         - Vertically stacked with center alignment -->
+                    <af:panelGroupLayout id="login_header" styleClass="login_header"
+                        layout="vertical" valign="top"
+                        halign="center">
+                        <af:outputText styleClass="login_header_text text-9xl" value="Welcome Back"
+                            id="login_header_text" />
+                        <af:outputText styleClass="login_subheader_text"
+                            value="Please enter your username and password to continue."
+                            id="login_subheader_text" />
+                    </af:panelGroupLayout>
+                    <!-- Vertical spacer - creates gap between sections -->
+                    <af:spacer width="32px" id="s1" />
+                    <!-- LAYOUT LEVEL 3: Username field section
+                         - Contains label and input field for username
+                         - Vertically stacked with left alignment for form-like appearance -->
+                    <af:panelGroupLayout id="uname" layout="vertical" valign="top" halign="start">
+                        <af:outputText styleClass="input_label" value="Username" id="username_label" />
+                        <af:inputText styleClass="input_field" label=" "
+                            placeholder="Kamla_suleiman"
+                            id="username_input" />
+                    </af:panelGroupLayout>
+                    <!-- Vertical spacer - creates gap between username and password fields -->
+                    <af:spacer width="32px" id="s2" />
+                    <!-- LAYOUT LEVEL 3: Password field section
+                         - Contains label and input field for password
+                         - Vertically stacked with left alignment -->
+                    <af:panelGroupLayout id="pswd" layout="vertical" valign="middle" halign="start">
+                        <af:outputText styleClass="input_label" value="Password" id="password_label" />
+                        <af:inputText styleClass="input_field" placeholder="•••••••" label=" "
+                            id="password_input"
+                            secret="true" />
+                    </af:panelGroupLayout>
+                    <!-- Vertical spacer - creates gap between password field and login button -->
+                    <af:spacer width="32px" id="s3" />
+                    <!-- LAYOUT LEVEL 3: Primary login button section
+                         - Contains verify button and password reset link
+                         - Vertically stacked with center alignment -->
+                    <af:panelGroupLayout id="login_btn" layout="vertical" valign="middle"
+                        halign="center">
+                        <af:button styleClass="verifyMe_btn" text="Verify Me" id="verifyMe_btn" destination="/portal/Maliyah_Portal/pages_home"/>
+                        <p class="my-2"> Forget password? <a href="#" class="contact-administrator">Contact
+                            Administrator</a>
+                        </p>
+                        <!--<af:link
+                        text="forget password? Contact Administrator" id="l1" />-->
+                    </af:panelGroupLayout>
+                    <!-- Vertical spacer - creates gap between primary and secondary buttons -->
+                    <af:spacer width="32px" id="s4" />
+                    <!-- LAYOUT LEVEL 3: Secondary buttons section
+                         - Contains additional authentication options
+                         - Vertically stacked with center alignment -->
+                    <af:panelGroupLayout styleClass="other_btn" id="other_btn" layout="vertical"
+                        valign="middle"
+                        halign="center">
+                        <af:button icon="/images/perm_phone_msg.png" styleClass="smartVerify_btn" text="Login with Smart Phone"
+                            id="verifyMebtn" destination="/portal/Maliyah_Portal/pages_home"/>
+                        <af:button icon="/images/SmartID-USB.png" styleClass="smartVerify_btn" text="Login with SmartID/USB"
+                            id="verifyMebtn1" destination="/portal/Maliyah_Portal/pages_home"/>
+                    </af:panelGroupLayout>
+                </af:panelGroupLayout>
+            </af:panelGroupLayout>
+        <!--<af:panelGroupLayout id="pgl1" styleClass="bg order-1 order-md-2"
+                                 inlineStyle="background: url('../images/bg_1.jpg');" layout="vertical">
+                <af:link icon="../images/LoginScreenImage.jpg" id="l1"/>
+            </af:panelGroupLayout>-->
+        <!--<div class="contents order-2 order-md-1">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-8">
+                        <af:panelGroupLayout id="pgl8" layout="vertical" valign="top">
+                            <af:panelGroupLayout id="pgl2" valign="top" layout="vertical" halign="center">
+                                <af:image source="/images/1683179539068Logo.svg" shortDesc="" styleClass="mt-3" id="dd"/>
+                            </af:panelGroupLayout>
+                            <af:spacer id="s2" height="40px;"/>
+                            <af:panelGroupLayout id="pgl3" layout="vertical" styleClass="my-3 AFStretchWidth" valign="top" halign="center">
+                                <af:panelGroupLayout id="pgl1" layout="vertical" valign="top" halign="center" styleClass="">
+                                    <af:outputText value="Welcome Back" styleClass="Login_heading" id="ot1"/>
+                                </af:panelGroupLayout>
+                                <af:panelGroupLayout id="pgl7" layout="vertical" valign="top" halign="center" styleClass="">
+                                    <af:outputText value="Enter your email and password to login into Financial System "
+                                                   styleClass="Login_SummaryText" id="ot5"/>
+                                </af:panelGroupLayout>
+                            </af:panelGroupLayout>
+                            <af:panelFormLayout id="pfl1" labelAlignment="top" rows="2" fieldWidth="100%">
+                                <af:inputText label="Username" id="it1" placeholder="user name"/>
+                                <af:inputText label="Password" id="it2" secret="true" placeholder="************"/>
+                            </af:panelFormLayout>
+                        <af:spacer id="s4" height="30"/>
+                        <af:panelFormLayout id="pfl2" labelAlignment="top" rows="2" fieldWidth="100%">
+                                <af:button text="Verify Me" styleClass="submitBT" id="b1" destination="/portal/Maliyah_Portal/pages_home"/>
+                     </af:panelFormLayout>
+                            <af:panelGroupLayout id="pgl4" layout="horizontal" halign="center" styleClass="my-3">
+                                <af:outputText value="Forget Password?" styleClass="forgetText" id="ot2"/>
+                                <h:outputLink id="ol1">
+                                    <h:outputText value="Contact Administrator" styleClass="forgetLink"  id="ot3"/>
+                                </h:outputLink>
+                            </af:panelGroupLayout>
+                            <af:panelGroupLayout id="pgl6" layout="vertical" styleClass="my-3" valign="top" halign="center">
+                                <af:outputText value="or" id="ot4" styleClass="Login_SummaryText" />
+                            <af:panelGroupLayout id="pgl5" styleClass="spaceline" layout="vertical">
+                                <af:spacer id="s3" height="1px;" />
+                            </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+                            <af:panelGroupLayout id="pgl9" layout="vertical">
+                                <af:button icon="../images/phone_icon.JPG" text="Login with Smart Phone" id="b2" styleClass="backBT"
+                                           destination="/portal/Maliyah_Portal/pages_home"/>
+                                <af:spacer id="s1" height="20px;"/>
+                                <af:button icon="/images/smartPhone_ico.JPG" text="Login with SmartID/USB" id="b3" styleClass="backBT"
+                                           destination="/portal/Maliyah_Portal/pages_home"/>
+                            </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+                    </div>
+                    <div class="col-lg-2"></div>
+                </div>
+            </div>
+        </div>-->
+        
+</jsp:root>

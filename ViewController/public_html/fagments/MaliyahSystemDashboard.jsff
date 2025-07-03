@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+
+            <div class="container-fluid">
+                <div class="row banner-cards maliyah-dashboard">
+                    <div class="col-md-4">
+                        <div class="tiles_Box">
+                            <af:link icon="/content/conn/wccConnection/path/Enterprise%20Libraries/NewMOFPortalSecondDraft/portalAsset/Financials%201.png" styleClass="link_icon" id="l1"
+                                     destination="http://oelatq01303.maliyah.gov.om:8007/OA_HTML/AppsLogin" targetFrame="_blank"/>    
+                       <af:outputText value="#{res.MALIYAH_FINANCIAL}" id="ot1" styleClass="box_heading"
+                                      inlineStyle="font-size:18px;"/>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="tiles_Box">
+                            <af:link icon="/content/conn/wccConnection/path/Enterprise%20Libraries/NewMOFPortalSecondDraft/portalAsset/Budgeting%201.png" styleClass="link_icon" id="l3"
+                             destination="http://oatportal.maliyah.gov.om:7777/workspace"
+                             targetFrame="_blank"/> 
+                             <af:outputText value="#{res.MALIYAH_BUDGETING}" id="ot2" styleClass="box_heading" inlineStyle="font-size:18px;"/>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="tiles_Box">
+                            <af:link icon="/content/conn/wccConnection/path/Enterprise%20Libraries/NewMOFPortalSecondDraft/portalAsset/Analytics%201.png" styleClass="link_icon" id="l2"
+                             destination="http://oatportal.maliyah.gov.om:7777/analytics" targetFrame="_blank"/>    
+                       <af:outputText value="#{res.MALIYAH_ANALYTICS}" id="ot3" styleClass="box_heading" inlineStyle="font-size:18px;"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+</jsp:root>

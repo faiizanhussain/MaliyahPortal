@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <c:set var="viewcontrollerBundle" value="#{adfBundle['view.ViewControllerBundle_en']}"/>
+    <div class="container-fluid">
+        <div class="row banner-cards maliyah-dashboard">
+            <div class="col-md-6">
+                <div class="tiles_Box">
+                    <!--<af:button icon="/content/conn/wccConnection/path/Enterprise%20Libraries/NewMOFPortalSecondDraft/portalAsset/pos.svg" styleClass="link_icon" id="l1"
+                    destination="http://10.161.24.47:7788/webcenter/portal/NewMOFPortalSecondDraft/pages_maliyahsystemhome"/>-->
+                    <af:panelGroupLayout id="pgl1" layout="vertical" valign="middle" styleClass="LoginLinks">                    
+                     <af:button icon="/content/conn/wccConnection/path/Enterprise%20Libraries/NewMOFPortalSecondDraft/portalAsset/pos.svg"
+                                   styleClass="link_icon" id="l1"
+                                   destination="/portal/NewMOFPortalSecondDraft/pages_home"/>
+                        <af:outputText value="#{res.SMART_ID_CARD}" id="ot1" styleClass="box_heading"
+                                       inlineStyle="font-size:18px;"/>             
+                    </af:panelGroupLayout>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="tiles_Box">
+                    <af:panelGroupLayout id="pgl2" layout="vertical" valign="middle" styleClass="LoginLinks">
+                                 <af:button icon="/content/conn/wccConnection/path/Enterprise%20Libraries/NewMOFPortalSecondDraft/portalAsset/mobile-otp.png"
+                                   destination="/portal/NewMOFPortalSecondDraft/pages_home" styleClass="link_icon"
+                                   id="l3"/>
+                        <af:outputText value="#{res.SMART_PHONE}" id="ot4" styleClass="box_heading"
+                                       inlineStyle="font-size:18px;"/>
+                    </af:panelGroupLayout>
+                </div>
+            </div>
+        </div>
+    </div>
+</jsp:root>

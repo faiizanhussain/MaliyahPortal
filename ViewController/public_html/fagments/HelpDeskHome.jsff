@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+      <div class="tiles_Box">
+            <af:link icon="/content/conn/wccConnection/path/Enterprise%20Libraries/NewMOFPortalSecondDraft/portalAsset/help%20line.png"
+                     styleClass="link_icon" id="l3" >
+                      <af:outputText value="#{res.HELP_DESK_LABLE}" id="ot1" styleClass="box_heading"/>
+                      </af:link>
+    </div>
+</jsp:root>

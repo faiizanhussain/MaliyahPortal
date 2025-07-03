@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <MethodCall
+      id="MethodCall2">
+      <property
+         name="activityId">methodCall1</property>
+      <property
+         name="x">318.0</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>methodCall1&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="y">333.44238</property>
+      <property
+         name="exceptionHandler">false</property>
+   </MethodCall>
+   <View
+      id="View3">
+      <property
+         name="activityId">UpdateAndDeleteNews</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">630.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>UpdateAndDeleteNews&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">349.89648</property>
+      <property
+         name="page">/fagments/NewDesign_NewsFragments/UpdateAndDeleteNews.jsff</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="MethodCall2"
+      to="View3">
+      <property
+         name="fromOutcome">goToUpdatePage</property>
+      <property
+         name="sdm:polyPoints">R50,359.0,333.0918,589.0,349.5459,L50</property>
+   </ControlFlowCase>
+</SDM>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!---->
+<BC4JConfig xmlns="http://xmlns.oracle.com/bc4j/configuration" version="11.1">
+  <AppModuleConfigBag ApplicationName="model.EO.AppModule">
+    <AppModuleConfig name="AppModuleLocal" jbo.project="model.Model" ApplicationName="model.EO.AppModule"
+                     DeployPlatform="LOCAL">
+      <Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="jdbc/MaliyahDS"/>
+      <Security AppModuleJndiName="model.EO.AppModule"/>
+    </AppModuleConfig>
+    <AppModuleConfig name="AppModuleShared" jbo.project="model.Model" ApplicationName="model.EO.AppModule"
+                     DeployPlatform="LOCAL">
+      <AM-Pooling jbo.ampool.isuseexclusive="false"/>
+      <Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="jdbc/MaliyahDS"/>
+      <Security AppModuleJndiName="model.EO.AppModule"/>
+    </AppModuleConfig>
+  </AppModuleConfigBag>
+</BC4JConfig>

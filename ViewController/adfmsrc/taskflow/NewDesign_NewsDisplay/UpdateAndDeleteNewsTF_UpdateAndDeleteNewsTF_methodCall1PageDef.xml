@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48"
+                id="UpdateAndDeleteNewsTF_UpdateAndDeleteNewsTF_methodCall1PageDef"
+                Package="taskflow.NewDesign_NewsDisplay" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+  </executables>
+  <bindings>
+    <methodAction id="getNewsFromDB" RequiresUpdateModel="true" Action="invokeMethod" MethodName="getNewsFromDB"
+                  IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="bindings.getNewsFromDB.dataControl.dataProvider"
+                  ReturnName="data.AppModuleDataControl.methodResults.getNewsFromDB_getNewsFromDB_dataControl_dataProvider_getNewsFromDB_result"/>
+    <methodAction id="getLatestNewsSerialNumber" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="getLatestNewsSerialNumber" IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="bindings.getLatestNewsSerialNumber.dataControl.dataProvider"
+                  ReturnName="data.AppModuleDataControl.methodResults.getLatestNewsSerialNumber_getLatestNewsSerialNumber_dataControl_dataProvider_getLatestNewsSerialNumber_result"/>
+  </bindings>
+</pageDefinition>

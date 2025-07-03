@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">ManageDocument</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">498.0</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ManageDocument&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">357.89648</property>
+      <property
+         name="page">/fagments/NewDesignFragments/ManageDocument.jsff</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <TaskFlowReturn
+      id="TaskFlowReturn3">
+      <property
+         name="activityId">taskFlowReturn1</property>
+      <property
+         name="x">876.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>taskFlowReturn1&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  taskFlowReturn1&lt;/p></property>
+      <property
+         name="y">440.89648</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="exceptionHandler">false</property>
+   </TaskFlowReturn>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View2"
+      to="TaskFlowReturn3">
+      <property
+         name="fromOutcome">returnToHome</property>
+      <property
+         name="sdm:polyPoints">R50,539.0,357.5459,835.0,440.5459,L50</property>
+   </ControlFlowCase>
+</SDM>

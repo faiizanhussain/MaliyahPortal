@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelGroupLayout id="pgl0">
+<af:panelGroupLayout id="pgl2">
+                <div class="upload-fields-wrapper">
+                    <div class="field">
+                            <af:selectOneChoice id="soc2" label="#{res.DOCUMENT_TYPE_LABEL}"
+                                            binding="#{pageFlowScope.LibraryBean.bindMainDocumentType}"
+                                            value="#{pageFlowScope.mainDocumentList}" autoSubmit="true"
+                                            unselectedLabel="#{res.DOCUMENT_PLACEHOLDER_DOC_TYPE}"
+                                            valueChangeListener="#{pageFlowScope.LibraryBean.mainDocumentListener}" styleClass="listofDocs">
+                            <!--<f:selectItems id="si23" value="#{pageFlowScope.mainDocumentList}"/>-->
+                           <f:selectItem itemLabel="Maliyah Advisories" itemValue="Maliyah Advisories" id="si7"/>
+                            <f:selectItem itemLabel="Maliyah Guides Manuals and Tutorials" itemValue="Maliyah Guides Manuals and Tutorials" id="si9"/>
+                        </af:selectOneChoice>
+                    </div>
+                    <div class="field">
+                        <af:selectOneChoice id="soc1" label="#{res.DOCUMENT_SUB_TYPE}"
+                                            binding="#{pageFlowScope.LibraryBean.bindSubDocumentType}"
+                                            value="#{pageFlowScope.SubDocumentType}" autoSubmit="true"
+                                            unselectedLabel="#{res.DOCUMENT_PLACEHOLDER_DOC_SUB_TYPE}" 
+                                            valueChangeListener="#{pageFlowScope.LibraryBean.SubDocumentTypeListener}" styleClass="listofDocs"
+                                            partialTriggers="soc2">
+                            <f:selectItems id="si1" value="#{pageFlowScope.LibraryBean.documentSubType}"/>
+                        </af:selectOneChoice>
+                    </div>
+                    <div class="field">
+                        <af:selectOneChoice id="soc3" label="#{res.DOCUMENT_LIST}"
+                                        binding="#{pageFlowScope.LibraryBean.bindDocumentList}"
+                                        value="#{pageFlowScope.DocumentList}" autoSubmit="true"
+                                        unselectedLabel="#{res.DOCUMENT_PLACEHOLDER_DOC_LIST}"
+                                        valueChangeListener="#{pageFlowScope.LibraryBean.DocumentListListener}"
+                                         partialTriggers="soc1" styleClass="listofDocs">
+                            <f:selectItems id="si2" value="#{pageFlowScope.LibraryBean.listDocuments}"/>
+                        </af:selectOneChoice>
+                    </div>
+                    <div class="field required">
+                        <af:inputText label="#{res.DOCUMENT_NAME}" id="it1" binding="#{pageFlowScope.LibraryBean.bindBookName}" autoSubmit="true" required="true" placeholder="#{res.DOCUMENT_PLACEHOLDER_DOC_NAME}"/>
+                    </div>
+                    <div class="field required">
+                        <af:inputText label="#{res.DISPLAY_DOCUMENT_NAME}" id="it2" binding="#{pageFlowScope.LibraryBean.bindAuthorName}" autoSubmit="true" required="true" placeholder="#{res.DOCUMENT_PLACEHOLDER_DOC_DISLY_NAME}"/>
+                    </div>
+                    <div class="field required">
+                        <af:inputFile label="#{res.SELECT_DOCUMENT}" id="if1"
+                              valueChangeListener="#{pageFlowScope.LibraryBean.bookChangeListener}"
+                              binding="#{pageFlowScope.LibraryBean.bindbookDocs}" autoSubmit="true" required="true"/>
+                    </div>
+                </div>
+                <!--<af:selectOneChoice id="soc1" label="Select Document Type" autoSubmit="true" 
+                                        unselectedLabel="Select Document Type"
+                                        value="#{pageFlowScope.userSelectedDocuments}" required="true" styleClass="listofDocs">
+                        <f:selectItem itemLabel="Legislations" itemValue="Legislations" id="si7"/>
+                        <f:selectItem itemLabel="Policies" itemValue="Policies" id="si9"/>
+                        <f:selectItem itemLabel="Chart of Accounts" itemValue="Chart of Accounts" id="si12"/>
+                         <f:selectItem itemLabel="State Final Accounts" itemValue="State Final Accounts" id="si3"/>
+                         <f:selectItem itemLabel="State General Budget" itemValue="State General Budget" id="si4"/>
+                        <f:selectItem itemLabel="Guides and Manuals" itemValue="Guides and Manuals" id="si5"/>
+                        <f:selectItem itemLabel="Presentations" itemValue="Presentations" id="si6"/>
+                         <f:selectItem itemLabel="Test Scripts" itemValue="Test Scripts" id="si8"/>
+                          <f:selectItem itemLabel="Deliverables" itemValue="Deliverables" id="si10"/>
+                         <f:selectItem itemLabel="Reports" itemValue="Reports" id="si11"/>
+                    </af:selectOneChoice>-->
+            <af:panelGroupLayout id="pgl36" layout="horizontal" halign="center" styleClass="ButtonPG">
+                <af:button text="#{res.UPLOAD_DOCUMENT_BUTTON}" id="b13" styleClass="searchBT"
+                           action="#{pageFlowScope.LibraryBean.uploadDocumentToContent}"/>
+                <!--<af:button text="SuccessPopup" id="b3">
+                    <af:showPopupBehavior popupId="p4"/>
+                </af:button>-->
+                 <!--<af:button text="ErrorPopup" id="b4">
+                    <af:showPopupBehavior popupId="p1"/>
+                </af:button>-->
+                 <!--<af:button text="docTypePopup" id="b5">
+                    <af:showPopupBehavior popupId="p2"/>
+                </af:button>-->
+            </af:panelGroupLayout>
+            <af:popup childCreation="deferred" autoCancel="disabled" id="p4" 
+                      binding="#{pageFlowScope.LibraryBean.documentUploadedConfirmationPopup}">
+                <?audit suppress oracle.adf.faces.bindingWithoutRequestOrBackingBeanScope?>
+                <af:dialog id="d4" title="#{res.SUBMIT_POPUP_HEADER}" closeIconVisible="false" okVisible="false"
+                           cancelVisible="false" styleClass="popup-upload-doc">
+                    <af:spacer id="s1" height="15px"/>
+                    <af:icon name="Check" id="i2" styleClass="fa-4x fa-solid fa-circle-check icon_success"></af:icon>
+                    <af:spacer id="s2" height="15px"/>
+                    <af:panelLabelAndMessage styleClass="success-popup-text" label="#{res.DOCUMENT_UPLOADED_MESSAGE}" id="plam3"/>
+                    <af:panelGroupLayout id="pgl16" layout="horizontal" halign="center" styleClass="ButtonPG">
+                        <af:button text="#{res.CLOSE_BUTTON}" id="b15" styleClass="RegistrationSubmit"
+                                   actionListener="#{pageFlowScope.LibraryBean.closeDocumentuploadPopup}"/>
+                    </af:panelGroupLayout>
+                </af:dialog>
+            </af:popup>
+             <af:popup childCreation="deferred" autoCancel="disabled" id="p1"
+                      binding="#{pageFlowScope.LibraryBean.bindErrorsPopup}">
+                <af:dialog id="d1" title="#{res.SUBMIT_POPUP_HEADER}" closeIconVisible="false" okVisible="false"
+                           cancelVisible="false" styleClass="popup-upload-doc">
+                    <af:spacer id="s3" height="15px"/>
+                    <af:icon name="Check" id="i1" styleClass="fa-4x fa-solid fa-circle-check icon_success"></af:icon>
+                    <af:spacer id="s4" height="15px"/>
+                    <af:panelLabelAndMessage label="#{res.DOCUMENT_ERROR_MESSAGE}" id="plam1"/>
+                    <af:panelGroupLayout id="pgl1" layout="horizontal" halign="center" styleClass="ButtonPG">
+                        <af:button text="#{res.CLOSE_BUTTON}" id="b1" styleClass="RegistrationSubmit"
+                                   actionListener="#{pageFlowScope.LibraryBean.closeErrorPopup}"/>
+                    </af:panelGroupLayout>
+                </af:dialog>
+            </af:popup>
+            <af:popup childCreation="deferred" autoCancel="disabled" id="p2"
+                      binding="#{pageFlowScope.LibraryBean.bindDocTypePopup}">
+                <af:dialog id="d2" title="#{res.DOCUMENT_FORMAT}" closeIconVisible="false" okVisible="false"
+                           cancelVisible="false" styleClass="popup-upload-doc">
+                    <af:spacer id="s5" height="15px"/>
+                    <af:icon name="Check" id="i3" styleClass="fa-4x fa-solid fa-circle-check icon_success"></af:icon>
+                    <af:spacer id="s6" height="15px"/>
+                    <af:panelLabelAndMessage label="#{res.VALID_DOCUMENT_TYPE}"
+                                             id="plam2"/>
+                    <af:panelFormLayout id="pfl2" rows="4">
+                        <af:outputText value="#{res.PDF}" id="ot1"/>
+                        <af:outputText value="#{res.WORD}" id="ot2"/>
+                        <af:outputText value="#{res.EXCEL}" id="ot3"/>
+                        <af:outputText value="#{res.POWER_POINT}" id="ot4"/>
+                    </af:panelFormLayout>
+                    <af:panelGroupLayout id="pgl3" layout="horizontal" halign="center" styleClass="ButtonPG">
+                        <af:button text="#{res.CLOSE_BUTTON}" id="b2" styleClass="RegistrationSubmit"
+                                   actionListener="#{pageFlowScope.LibraryBean.closeDocTypePopup}"/>
+                    </af:panelGroupLayout>
+                </af:dialog>
+            </af:popup>
+    </af:panelGroupLayout>
+    </af:panelGroupLayout>
+</jsp:root>

@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">NewsManagement</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">536.0</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>NewsManagement&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">332.1953</property>
+      <property
+         name="page">/fagments/NewDesignFragments/NewsManagement.jsff</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <TaskFlowReturn
+      id="TaskFlowReturn3">
+      <property
+         name="activityId">taskFlowReturn1</property>
+      <property
+         name="x">783.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>taskFlowReturn1&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  taskFlowReturn1&lt;/p></property>
+      <property
+         name="y">267.5459</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="exceptionHandler">false</property>
+   </TaskFlowReturn>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View2"
+      to="TaskFlowReturn3">
+      <property
+         name="fromOutcome">backToMain</property>
+      <property
+         name="sdm:polyPoints">R50,577.0,331.84473,742.0,267.1953,L50</property>
+   </ControlFlowCase>
+</SDM>

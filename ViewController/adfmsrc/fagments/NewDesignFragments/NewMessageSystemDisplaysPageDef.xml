@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48"
+                id="NewMessageSystemDisplaysPageDef" Package="fagments.NewDesignFragments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <taskFlow id="DateAndTimeTF1" taskFlowId="/taskflow/DateAndTimeTF.xml#DateAndTimeTF" activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+  </executables>
+  <bindings>
+    <methodAction id="callGetFeedbackFlag" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="callGetFeedbackFlag" IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="bindings.callGetFeedbackFlag.dataControl.dataProvider"
+                  ReturnName="data.AppModuleDataControl.methodResults.callGetFeedbackFlag_callGetFeedbackFlag_dataControl_dataProvider_callGetFeedbackFlag_result">
+      <NamedData NDName="userId" NDType="java.lang.String"/>
+    </methodAction>
+    <methodAction id="addUserfeedback" RequiresUpdateModel="true" Action="invokeMethod" MethodName="addUserfeedback"
+                  IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="bindings.addUserfeedback.dataControl.dataProvider"
+                  ReturnName="data.AppModuleDataControl.methodResults.addUserfeedback_addUserfeedback_dataControl_dataProvider_addUserfeedback_result">
+      <NamedData NDName="user_id" NDType="java.lang.String"/>
+      <NamedData NDName="user_name" NDType="java.lang.String"/>
+      <NamedData NDName="Glad" NDType="java.lang.String"/>
+      <NamedData NDName="happy" NDType="java.lang.String"/>
+      <NamedData NDName="Neutral" NDType="java.lang.String"/>
+      <NamedData NDName="Dissatisfied" NDType="java.lang.String"/>
+      <NamedData NDName="ExtremelyDissatisfied" NDType="java.lang.String"/>
+      <NamedData NDName="user_comment" NDType="java.lang.String"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

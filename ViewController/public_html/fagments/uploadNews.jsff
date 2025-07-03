@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+    <af:panelGroupLayout id="pgl8" layout="vertical" halign="left" styleClass="mt-2">
+        <!--<af:panelGroupLayout id="pgl1" layout="horizontal" halign="left" styleClass="mt-2">
+            <af:outputText value="News Upload" id="plam1" styleClass="projecttimelineMainheading"/>
+        </af:panelGroupLayout>-->
+        <af:spacer id="s7"/>
+        <af:panelFormLayout id="pfl4" labelAlignment="top" fieldWidth="100%">
+            <af:inputFile id="if1" valueChangeListener="#{pageFlowScope.NewsBean.fileUploadListener}"
+                          styleClass="NewsImageUpload" autoSubmit="true" required="true" label="#{res.UPLOAD_IMAGE}"
+                          binding="#{pageFlowScope.NewsBean.bindInputFile}"/>
+        </af:panelFormLayout>
+         <af:panelGroupLayout id="pgl2" layout="horizontal" styleClass="AFStretchWidth">
+            <af:panelGroupLayout id="pgl1" layout="vertical">
+            
+                <af:panelFormLayout id="pfl5" labelAlignment="top" rows="1" fieldWidth="100%">
+                    <af:inputText  label="Headline"
+                          required="true"  id="it9" binding="#{pageFlowScope.NewsBean.bindEngHeadline}">
+            </af:inputText>
+            <af:selectOneChoice id="Soc3" label="Tag" autoSubmit="true" value="#{pageFlowScope.englishtag}"
+                 unselectedLabel="Select" binding="#{pageFlowScope.NewsBean.bindTagEng}" required="true">
+             <f:selectItem itemLabel="News" itemValue="News" id="si3"/>
+              <f:selectItem itemLabel="Annoucement" itemValue="Annoucement" id="si1"/>
+              </af:selectOneChoice>
+                </af:panelFormLayout>
+                <af:panelFormLayout id="pfl6" rows="1" labelAlignment="top" fieldWidth="100%">
+                    <af:inputText  label="News Details"
+                          required="true" rows="10" id="it2" binding="#{pageFlowScope.NewsBean.bindSummaryEng}">
+            </af:inputText>
+                </af:panelFormLayout>
+            </af:panelGroupLayout>
+            <af:panelGroupLayout id="pgl6" layout="vertical">
+                <af:panelFormLayout id="pfl7" rows="1" labelAlignment="top" fieldWidth="100%">
+                   <af:inputText label="عنوان الأخبار"
+                          required="true" id="it10" binding="#{pageFlowScope.NewsBean.bindHeadlineArabic}">
+            </af:inputText>
+             <af:selectOneChoice id="soc1" label="علامة" autoSubmit="true" value="#{pageFlowScope.arabictag}"
+                 unselectedLabel="يختار" binding="#{pageFlowScope.NewsBean.bindTagArabic}" required="true">
+             <f:selectItem itemLabel="اخبار" itemValue="اخبار" id="si2"/>
+              <f:selectItem itemLabel="إعلان" itemValue="إعلان" id="si4"/>
+              </af:selectOneChoice>
+                    <!--<af:selectOneChoice  label="علامة" value="#{bindings.TagAr.inputValue}"
+                                        required="true" autoSubmit="true" id="soc2" binding="#{pageFlowScope.NewsBean.bindTagArabic}">
+                        <f:selectItems value="#{bindings.TagAr.items}" id="si2"/>
+                          <f:validator binding="#{bindings.TagAr.validator}"/>
+                    </af:selectOneChoice>-->
+                </af:panelFormLayout>
+                <af:panelFormLayout id="pfl8" rows="1" labelAlignment="top"  fieldWidth="100%">
+                    <af:inputText label="نص الأخبار"
+                          required="true" rows="10" id="it1" binding="#{pageFlowScope.NewsBean.bindSummaryArabic}">
+                <f:validator binding="#{bindings.SummaryAr1.validator}"/>
+            </af:inputText>
+                </af:panelFormLayout>
+            </af:panelGroupLayout>
+        </af:panelGroupLayout>
+        <af:panelGroupLayout id="pgl4" layout="vertical" valign="top" halign="center" styleClass="AFStretchWidth my-3">
+            <af:button text="#{res.ADD_NEWS}" id="b2" actionListener="#{pageFlowScope.NewsBean.addNewsToTable}"
+                       styleClass="AddNewsBT AFStretchWidth mr-2"/>
+        </af:panelGroupLayout>
+        <af:popup childCreation="deferred" autoCancel="disabled" id="p4"
+                  binding="#{pageFlowScope.NewsBean.successPopup}">
+            <?audit suppress oracle.adf.faces.bindingWithoutRequestOrBackingBeanScope?>
+            <af:dialog id="d4" title="#{res.NEWS}" closeIconVisible="false" okVisible="false"
+                       cancelVisible="false" styleClass="popup-upload-doc">
+                <af:spacer id="s1" height="15px"/>
+                <af:icon name="Check" id="i2" styleClass="fa-4x fa-solid fa-circle-check icon_success"></af:icon>
+                <af:spacer id="s2" height="15px"/>
+                <af:panelLabelAndMessage styleClass="success-popup-text" label="#{res.NEWS_ADD}" id="plam3"/>
+                <af:panelGroupLayout id="pgl16" layout="horizontal" halign="center" styleClass="ButtonPG">
+                    <af:button text="#{res.CLOSE_BUTTON}" id="b15" styleClass="RegistrationSubmit"
+                               actionListener="#{pageFlowScope.NewsBean.closeSuccessPopup}"/>
+                </af:panelGroupLayout>
+            </af:dialog>
+        </af:popup>
+        <af:popup childCreation="deferred" autoCancel="disabled" id="p2"
+                  binding="#{pageFlowScope.NewsBean.bindErrorsPopup}">
+            <af:dialog id="d2" title="#{res.ERROR_POPUP}" closeIconVisible="false" okVisible="false"
+                       cancelVisible="false" styleClass="popup-upload-doc">
+                <af:spacer id="s3" height="15px"/>
+                <af:icon name="Check" id="i1" styleClass="fa-4x fa-solid fa-circle-check icon_success"></af:icon>
+                <af:spacer id="s4" height="15px"/>
+                <af:panelLabelAndMessage label="#{res.ERROR_MESSAGE}" id="plam2"/>
+                <af:panelGroupLayout id="pgl5" layout="horizontal" halign="center" styleClass="ButtonPG">
+                    <af:button text="#{res.CLOSE_BUTTON}" id="b4" styleClass="RegistrationSubmit"
+                               actionListener="#{pageFlowScope.NewsBean.closeErrorPopup}"/>
+                </af:panelGroupLayout>
+            </af:dialog>
+        </af:popup>
+        <af:popup childCreation="deferred" autoCancel="disabled" id="p1"
+                  binding="#{pageFlowScope.NewsBean.bindDocTypePopup}">
+            <af:dialog id="d1" title="#{res.DOCUMENT_FORMAT}" closeIconVisible="false" okVisible="false"
+                       cancelVisible="false" styleClass="popup-upload-doc">
+                <af:spacer id="s5" height="15px"/>
+                <af:icon name="Check" id="i3" styleClass="fa-4x fa-solid fa-circle-check icon_success"></af:icon>
+                <af:spacer id="s6" height="15px"/>
+                <af:panelLabelAndMessage label="#{res.VALID_DOCUMENT_TYPE}" id="plam4"/>
+                <af:panelFormLayout id="pfl2" rows="4">
+                    <af:outputText value=".PNG" id="ot1"/>
+                    <af:outputText value=".JPG" id="ot2"/>
+                </af:panelFormLayout>
+                <af:panelGroupLayout id="pgl3" layout="horizontal" halign="center" styleClass="ButtonPG">
+                    <af:button text="#{res.CLOSE_BUTTON}" id="b1" styleClass="RegistrationSubmit"
+                               actionListener="#{pageFlowScope.NewsBean.closeDocTypePopup}"/>
+                </af:panelGroupLayout>
+            </af:dialog>
+        </af:popup>
+    </af:panelGroupLayout>
+</jsp:root>

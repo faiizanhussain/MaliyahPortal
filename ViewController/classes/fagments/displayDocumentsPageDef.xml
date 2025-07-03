@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="displayDocumentsPageDef"
+                Package="fagments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Type="java.lang.String" Name="searchbook_bookname" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="searchbook_bookTitle" IsQueriable="false"/>
+    </variableIterator>
+    <iterator Binds="DocumentDetailsView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="DocumentDetailsView1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="DocumentDetailsView1Iterator" id="DocumentDetailsView1">
+      <nodeDefinition DefName="model.VO.DocumentDetailsView" Name="DocumentDetailsView10">
+        <AttrNames>
+          <Item Value="Doccontentid"/>
+          <Item Value="Doccreatedby"/>
+          <Item Value="Doccreateddate"/>
+          <Item Value="Docdid"/>
+          <Item Value="Docoriginalname"/>
+          <Item Value="Docsize"/>
+          <Item Value="Docformat"/>
+          <Item Value="Doctitle"/>
+          <Item Value="Doccontenttype"/>
+          <Item Value="Docmodifiedby"/>
+          <Item Value="Docmodifieddate"/>
+          <Item Value="Docsecuritygroup"/>
+          <Item Value="Docsourceaccount"/>
+          <Item Value="Documenturl"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="searchbook" RequiresUpdateModel="true" Action="invokeMethod" MethodName="searchbook"
+                  IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="bindings.searchbook.dataControl.dataProvider">
+      <NamedData NDName="bookname" NDType="java.lang.String" NDValue="${bindings.searchbook_bookname}"/>
+      <NamedData NDName="bookTitle" NDType="java.lang.String" NDValue="${bindings.searchbook_bookTitle}"/>
+    </methodAction>
+    <attributeValues IterBinding="variables" id="bookname">
+      <AttrNames>
+        <Item Value="searchbook_bookname"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="bookTitle">
+      <AttrNames>
+        <Item Value="searchbook_bookTitle"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="resetSearchbook" RequiresUpdateModel="true" Action="invokeMethod" MethodName="resetSearchbook"
+                  IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="bindings.resetSearchbook.dataControl.dataProvider"/>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:panelGroupLayout id="pgl1" >
+   <af:panelGroupLayout id="pgl3" styleClass="cate-title" layout="vertical">
+          <af:outputText value="#{res.PROJECT_TIMELINE}" id="ot1" styleClass="cate-title_heading"/>
+         </af:panelGroupLayout>
+    <af:panelGroupLayout id="pgl2" styleClass="cate-tab1 cate-tab-content" layout="vertical">
+    <!--<af:outputFormatted value="#{res.PROJECT_TIMELINE_STATUS}" id="of1" styleClass="ProjectTimeLineStatus"/>-->
+     <af:panelGroupLayout id="pgl4" styleClass="ct-content-wrap h-auto" layout="vertical">
+      <af:image source="/content/conn/wccConnection/path/Enterprise%20Libraries/NewMOFPortalSecondDraft/portalAsset/timeline.png" altSource="a" shortDesc="Project TimeLine" styleClass="resposive-img"  id="i1"/>
+   </af:panelGroupLayout>
+    </af:panelGroupLayout>
+  </af:panelGroupLayout>
+</jsp:root>

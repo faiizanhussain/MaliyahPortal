@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelGroupLayout id="pgl1" layout="vertical" halign="left" valign="top">
+    <af:panelFormLayout id="pfl1" labelAlignment="top" fieldWidth="100%">
+      <af:inputFile id="if2" styleClass="NewsImageUpload" autoSubmit="true" required="true"
+                    binding="#{pageFlowScope.UploadDocumentsBean.bindUploadDocuments}"
+                    valueChangeListener="#{pageFlowScope.UploadDocumentsBean.documentChangeListener}"/>
+    </af:panelFormLayout>
+    <af:panelFormLayout id="pfl2" labelAlignment="top" fieldWidth="100%">
+      <af:inputText label="#{res.DOCUMENT_TITLE}" id="it1" binding="#{pageFlowScope.UploadDocumentsBean.bindDocumentTitle}" required="true"/>
+    </af:panelFormLayout>
+    <af:panelFormLayout id="pfl3" labelAlignment="top" fieldWidth="100%">
+      <af:inputText label="#{res.DOCUMENT_DESCRIPTION}" id="it2" rows="5"
+                    binding="#{pageFlowScope.UploadDocumentsBean.bindDocumentDescription}"/>
+    </af:panelFormLayout>
+     <af:panelGroupLayout id="pgl4" layout="vertical" valign="top" halign="center" styleClass="AFStretchWidth my-3">
+            <af:button text="#{res.UPLOAD_DOCUMENTS}" id="b2"
+                       actionListener="#{pageFlowScope.UploadDocumentsBean.uploadDocumentListener}"
+                       styleClass="AddNewsBT AFStretchWidth mr-2"/>
+        </af:panelGroupLayout>  
+ <af:popup childCreation="deferred" autoCancel="disabled" id="p4"
+                  binding="#{pageFlowScope.UploadDocumentsBean.successPopup}">
+            <?audit suppress oracle.adf.faces.bindingWithoutRequestOrBackingBeanScope?>
+            <af:dialog id="d4" title="#{res.DOCUMENT_UPLAOD_CONFIRMATION}" closeIconVisible="false" okVisible="false"
+                       cancelVisible="false" styleClass="popup-upload-doc">
+                <af:spacer id="s1" height="15px"/>
+                <af:icon name="Check" id="i2" styleClass="fa-4x fa-solid fa-circle-check icon_success"></af:icon>
+                <af:spacer id="s2" height="15px"/>
+                <af:panelLabelAndMessage styleClass="success-popup-text" label="#{res.DOCUMENT_ADDED_SUCCESSFUL}" id="plam3"/>
+                <af:panelGroupLayout id="pgl16" layout="horizontal" halign="center" styleClass="ButtonPG">
+                    <af:button text="#{res.CLOSE_BUTTON}" id="b15" styleClass="RegistrationSubmit"
+                               actionListener="#{pageFlowScope.UploadDocumentsBean.closeSuccessPopup}"/>
+                </af:panelGroupLayout>
+            </af:dialog>
+        </af:popup>
+        <af:popup childCreation="deferred" autoCancel="disabled" id="p2"
+                  binding="#{pageFlowScope.UploadDocumentsBean.bindErrorsPopup}">
+            <af:dialog id="d2" title="#{res.ERROR_POPUP}" closeIconVisible="false" okVisible="false"
+                       cancelVisible="false" styleClass="popup-upload-doc">
+                <af:spacer id="s3" height="15px"/>
+                <af:icon name="Check" id="i1" styleClass="fa-4x fa-solid fa-circle-check icon_success"></af:icon>
+                <af:spacer id="s4" height="15px"/>
+                <af:panelLabelAndMessage label="#{res.ERROR_MESSAGE}" id="plam2"/>
+                <af:panelGroupLayout id="pgl5" layout="horizontal" halign="center" styleClass="ButtonPG">
+                    <af:button text="#{res.CLOSE_BUTTON}" id="b4" styleClass="RegistrationSubmit"
+                               actionListener="#{pageFlowScope.UploadDocumentsBean.closeErrorPopup}"/>
+                </af:panelGroupLayout>
+            </af:dialog>
+        </af:popup>
+        <af:popup childCreation="deferred" autoCancel="disabled" id="p1"
+                  binding="#{pageFlowScope.UploadDocumentsBean.bindDocTypePopup}">
+            <af:dialog id="d1" title="#{res.DOCUMENT_FORMAT}" closeIconVisible="false" okVisible="false"
+                       cancelVisible="false" styleClass="popup-upload-doc">
+                <af:spacer id="s5" height="15px"/>
+                <af:icon name="Check" id="i3" styleClass="fa-4x fa-solid fa-circle-check icon_success"></af:icon>
+                <af:spacer id="s6" height="15px"/>
+                <af:panelLabelAndMessage label="#{res.VALID_DOCUMENT_TYPE}" id="plam4"/>
+                <af:panelFormLayout id="pfl4" rows="4">
+                    <af:outputText value=".PDF" id="ot1"/>
+                    <af:outputText value=".DOC" id="ot2"/>
+                    <af:outputText value=".EXCEL" id="ot3"/>
+                </af:panelFormLayout>
+                <af:panelGroupLayout id="pgl3" layout="horizontal" halign="center" styleClass="ButtonPG">
+                    <af:button text="#{res.CLOSE_BUTTON}" id="b1" styleClass="RegistrationSubmit"
+                               actionListener="#{pageFlowScope.UploadDocumentsBean.closeDocTypePopup}"/>
+                </af:panelGroupLayout>
+            </af:dialog>
+        </af:popup>
+  </af:panelGroupLayout>
+
+
+
+</jsp:root>

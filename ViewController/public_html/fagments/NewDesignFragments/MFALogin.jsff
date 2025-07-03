@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <af:panelGroupLayout id="pgl14" layout="vertical" valign="top" halign="center" styleClass="mb-3">
+                <af:image id="gtbpi1" inlineStyle="width:auto;background-image:none"
+                          shortDesc="#{uib_o_w_w_r_WebCenter.GLOBAL_LINK_LOGO_DESC}"
+                          source="#{WCAppContext.spacesResourcesPath}#{WCAppContext.application.applicationConfig.logo}"
+                          styleClass="Maliyah_logo"/>
+            </af:panelGroupLayout>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-md-12">
+            <af:panelGroupLayout id="pgl8" layout="vertical" valign="top" halign="start">
+                <af:panelGroupLayout id="pgl6" layout="vertical" valign="top" halign="start">
+                    <af:image source="/images/smartCard.png" altSource="" shortDesc="" id="i3" styleClass="smartcardResposiveImage"/>
+                </af:panelGroupLayout>
+                <af:panelGroupLayout id="pgl7" layout="vertical" halign="start" styleClass="my-3">
+                    <af:button text="#{res.LOGIN_SMARTCARD_BUTTON}" id="b4" styleClass="AddNewsBT AFStretchWidth mr-2" destination="/portal/Maliyah_Portal/pages_home"/>
+                </af:panelGroupLayout>
+                <af:panelGroupLayout id="pgl1" layout="vertical" valign="top" halign="center">
+                    <af:panelGroupLayout id="pgl5" layout="default" valign="top" halign="center" styleClass="my-2">
+                        <af:outputText value="#{res.CONTACT_ADMINISTRATOR_MSG}" id="ot1" styleClass="loginNormalText"/>
+                        <af:link text="#{res.CONTACT_ADMINISTRATOR_LINK}" id="l1" styleClass="loginNormalLink"/>
+                    </af:panelGroupLayout>
+                </af:panelGroupLayout>
+            </af:panelGroupLayout>
+        </div>
+        <div class="col-lg-6 col-md-12">
+            <af:panelGroupLayout id="pgl9" layout="vertical" valign="top" halign="start">
+                <af:panelGroupLayout id="pgl10" layout="vertical" valign="top" halign="start">
+                    <af:image source="/images/smartPhone.png" id="i4" styleClass="smartphoneResposiveImage"/>
+                </af:panelGroupLayout>
+                <af:panelGroupLayout id="pgl11" layout="vertical" valign="top" halign="start">
+                    <af:panelFormLayout id="pfl2" labelAlignment="top" fieldWidth="100%">
+                        <af:inputText label="#{res.MOBILE_NO}" id="it2" placeholder="+0123456789"/>
+                    </af:panelFormLayout>
+                    <af:panelGroupLayout id="pgl12" layout="vertical" valign="top" halign="start" styleClass="my-3">
+                        <af:button text="#{res.LOGIN_SMARTPHONE_BUTTON}" id="b3"
+                                   styleClass="AddNewsBT AFStretchWidth mr-2" destination="/portal/Maliyah_Portal/pages_home"/>
+                    </af:panelGroupLayout>
+                    <af:panelGroupLayout id="pgl0" layout="vertical" valign="top" halign="center">
+                        <af:panelGroupLayout id="pgl13" halign="center" styleClass="my-2">
+                            <af:outputText value="#{res.CONTACT_ADMINISTRATOR_MSG}" id="ot3"
+                                           styleClass="loginNormalText"/>
+                            <af:link text="#{res.CONTACT_ADMINISTRATOR_LINK}" id="l3" styleClass="loginNormalLink"/>
+                        </af:panelGroupLayout>
+                    </af:panelGroupLayout>
+                </af:panelGroupLayout>
+            </af:panelGroupLayout>
+        </div>
+    </div>
+</jsp:root>

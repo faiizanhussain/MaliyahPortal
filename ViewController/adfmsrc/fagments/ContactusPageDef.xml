@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="ContactusPageDef"
+                Package="fagments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ContactusView1" RangeSize="25" DataControl="AppModuleDataControl" id="ContactusView1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="ContactusView1Iterator" id="Firstname">
+      <AttrNames>
+        <Item Value="Firstname"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ContactusView1Iterator" id="Lastname">
+      <AttrNames>
+        <Item Value="Lastname"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ContactusView1Iterator" id="Emailid">
+      <AttrNames>
+        <Item Value="Emailid"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ContactusView1Iterator" id="Phonenumber">
+      <AttrNames>
+        <Item Value="Phonenumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ContactusView1Iterator" id="Query">
+      <AttrNames>
+        <Item Value="Query"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <attributeValues IterBinding="ContactusView1Iterator" id="NameOfMinistry">
+      <AttrNames>
+        <Item Value="NameOfMinistry"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="NewsPublicPageDef"
+                Package="fagments.NewDesign_NewsFragments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="NewsTableView1" RangeSize="25" DataControl="AppModuleDataControl" id="NewsTableView1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="NewsTableView1Iterator" id="NewsTableView12">
+      <nodeDefinition DefName="model.VO.NewsTableView" Name="NewsTableView120">
+        <AttrNames>
+          <Item Value="HeadlineAr"/>
+          <Item Value="HeadlineEng"/>
+          <Item Value="Serialnumber"/>
+          <Item Value="SummaryAr"/>
+          <Item Value="SummaryEng"/>
+          <Item Value="TagAr"/>
+          <Item Value="TagEng"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

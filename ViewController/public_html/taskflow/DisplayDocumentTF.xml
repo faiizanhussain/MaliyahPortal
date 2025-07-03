@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="DisplayDocumentTF">
+    <default-activity>methodCall1</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <managed-bean id="__1">
+      <managed-bean-name>DocumentBean</managed-bean-name>
+      <managed-bean-class>view.managedBean.Document</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <view id="displayDocuments">
+      <page>/fagments/displayDocuments.jsff</page>
+    </view>
+    <method-call id="methodCall1">
+      <method>#{pageFlowScope.DocumentBean.onLoad}</method>
+      <outcome>
+        <fixed-outcome>gotToNext</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="setDocumentDetailsData">
+      <method>#{bindings.setDocumentDetailsData.execute}</method>
+      <outcome>
+        <fixed-outcome>setDocumentDetailsData</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__2">
+      <from-activity-id>methodCall1</from-activity-id>
+      <control-flow-case id="__3">
+        <from-outcome>gotToNext</from-outcome>
+        <to-activity-id>setDocumentDetailsData</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__4">
+      <from-activity-id>setDocumentDetailsData</from-activity-id>
+      <control-flow-case id="__5">
+        <from-outcome>setDocumentDetailsData</from-outcome>
+        <to-activity-id>displayDocuments</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

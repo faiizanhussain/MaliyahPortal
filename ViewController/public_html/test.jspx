@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="test.jspx" id="d1">
+            <af:messages id="m1"/>
+            <af:form id="f1">
+                <af:region value="#{bindings.TimeLine_AdminTF1.regionModel}" id="r1"/>
+                <!--<af:region value="#{bindings.uploadNewsTF1.regionModel}" id="r2"/>-->
+                <!--<af:region value="#{bindings.News_12.regionModel}" id="r1"/>-->
+                <!--<af:region value="#{bindings.News_11.regionModel}" id="r1"/>-->
+                <!--<af:table value="#{bindings.NewsView1.collectionModel}" var="row" rows="#{bindings.NewsView1.rangeSize}"
+                          emptyText="#{bindings.NewsView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0" fetchSize="#{bindings.NewsView1.rangeSize}" id="t1">
+                    <af:column headerText="#{bindings.NewsView1.hints.Serialnumber.label}" id="c1">
+                        <af:inputText value="#{row.bindings.Serialnumber.inputValue}"
+                                      label="#{bindings.NewsView1.hints.Serialnumber.label}"
+                                      required="#{bindings.NewsView1.hints.Serialnumber.mandatory}"
+                                      columns="#{bindings.NewsView1.hints.Serialnumber.displayWidth}"
+                                      maximumLength="#{bindings.NewsView1.hints.Serialnumber.precision}"
+                                      shortDesc="#{bindings.NewsView1.hints.Serialnumber.tooltip}" id="it1">
+                            <f:validator binding="#{row.bindings.Serialnumber.validator}"/>
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.NewsView1.hints.Serialnumber.format}"/>
+                        </af:inputText>
+                    </af:column>
+                    <af:column headerText="#{bindings.NewsView1.hints.HeadlineEng.label}" id="c2">
+                        <af:inputText value="#{row.bindings.HeadlineEng.inputValue}"
+                                      label="#{bindings.NewsView1.hints.HeadlineEng.label}"
+                                      required="#{bindings.NewsView1.hints.HeadlineEng.mandatory}"
+                                      columns="#{bindings.NewsView1.hints.HeadlineEng.displayWidth}"
+                                      maximumLength="#{bindings.NewsView1.hints.HeadlineEng.precision}"
+                                      shortDesc="#{bindings.NewsView1.hints.HeadlineEng.tooltip}" id="it2">
+                            <f:validator binding="#{row.bindings.HeadlineEng.validator}"/>
+                        </af:inputText>
+                    </af:column>
+                    <af:column headerText="#{bindings.NewsView1.hints.TagEng.label}" id="c3">
+                        <af:inputText value="#{row.bindings.TagEng.inputValue}"
+                                      label="#{bindings.NewsView1.hints.TagEng.label}"
+                                      required="#{bindings.NewsView1.hints.TagEng.mandatory}"
+                                      columns="#{bindings.NewsView1.hints.TagEng.displayWidth}"
+                                      maximumLength="#{bindings.NewsView1.hints.TagEng.precision}"
+                                      shortDesc="#{bindings.NewsView1.hints.TagEng.tooltip}" id="it3">
+                            <f:validator binding="#{row.bindings.TagEng.validator}"/>
+                        </af:inputText>
+                    </af:column>
+                    <af:column headerText="#{bindings.NewsView1.hints.SummaryEng.label}" id="c4">
+                        <af:inputText value="#{row.bindings.SummaryEng.inputValue}"
+                                      label="#{bindings.NewsView1.hints.SummaryEng.label}"
+                                      required="#{bindings.NewsView1.hints.SummaryEng.mandatory}"
+                                      columns="#{bindings.NewsView1.hints.SummaryEng.displayWidth}"
+                                      maximumLength="#{bindings.NewsView1.hints.SummaryEng.precision}"
+                                      shortDesc="#{bindings.NewsView1.hints.SummaryEng.tooltip}" id="it4">
+                            <f:validator binding="#{row.bindings.SummaryEng.validator}"/>
+                        </af:inputText>
+                    </af:column>
+                    <af:column headerText="#{bindings.NewsView1.hints.HeadlineAr.label}" id="c5">
+                        <af:inputText value="#{row.bindings.HeadlineAr.inputValue}"
+                                      label="#{bindings.NewsView1.hints.HeadlineAr.label}"
+                                      required="#{bindings.NewsView1.hints.HeadlineAr.mandatory}"
+                                      columns="#{bindings.NewsView1.hints.HeadlineAr.displayWidth}"
+                                      maximumLength="#{bindings.NewsView1.hints.HeadlineAr.precision}"
+                                      shortDesc="#{bindings.NewsView1.hints.HeadlineAr.tooltip}" id="it5">
+                            <f:validator binding="#{row.bindings.HeadlineAr.validator}"/>
+                        </af:inputText>
+                    </af:column>
+                    <af:column headerText="#{bindings.NewsView1.hints.TagAr.label}" id="c6">
+                        <af:inputText value="#{row.bindings.TagAr.inputValue}"
+                                      label="#{bindings.NewsView1.hints.TagAr.label}"
+                                      required="#{bindings.NewsView1.hints.TagAr.mandatory}"
+                                      columns="#{bindings.NewsView1.hints.TagAr.displayWidth}"
+                                      maximumLength="#{bindings.NewsView1.hints.TagAr.precision}"
+                                      shortDesc="#{bindings.NewsView1.hints.TagAr.tooltip}" id="it6">
+                            <f:validator binding="#{row.bindings.TagAr.validator}"/>
+                        </af:inputText>
+                    </af:column>
+                    <af:column headerText="#{bindings.NewsView1.hints.SummaryAr.label}" id="c7">
+                        <af:inputText value="#{row.bindings.SummaryAr.inputValue}"
+                                      label="#{bindings.NewsView1.hints.SummaryAr.label}"
+                                      required="#{bindings.NewsView1.hints.SummaryAr.mandatory}"
+                                      columns="#{bindings.NewsView1.hints.SummaryAr.displayWidth}"
+                                      maximumLength="#{bindings.NewsView1.hints.SummaryAr.precision}"
+                                      shortDesc="#{bindings.NewsView1.hints.SummaryAr.tooltip}" id="it7">
+                            <f:validator binding="#{row.bindings.SummaryAr.validator}"/>
+                        </af:inputText>
+                    </af:column>
+                </af:table>-->
+                <!--<af:region value="#{bindings.LanguageTF1.regionModel}" id="r1"/>-->
+                <!--<af:region value="#{bindings.LibraryBookUpload2.regionModel}" id="r1"/>-->
+                <!--<af:region value="#{bindings.MaliyahSystemHome1.regionModel}" id="r1"/>-->
+                <!--<af:region value="#{bindings.MaliyahSystemLoginTF1.regionModel}" id="r1"/>-->
+                <!--<af:region value="#{bindings.HelpDesk1.regionModel}" id="r1"/>-->
+                <!--<af:region value="#{bindings.ImageSlideTF1.regionModel}" id="r1"/>-->
+                <!--<af:region value="#{bindings.LibraryBookUpload1.regionModel}" id="r2"/>-->
+                <!--<af:region value="#{bindings.DisplayDocumentTF1.regionModel}" id="r1"/>-->
+               
+            </af:form>
+        </af:document>
+    </f:view>
+</jsp:root>

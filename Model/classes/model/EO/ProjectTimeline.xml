@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ProjectTimeline"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="PROJECT_TIMELINE"
+  AliasName="ProjectTimeline"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="ProjectId"
+    ColumnName="PROJECT_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="PROJECT_TIMELINE"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="ProjectPhase"
+    Precision="100"
+    ColumnName="PROJECT_PHASE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECT_TIMELINE"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Status"
+    Precision="50"
+    ColumnName="STATUS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECT_TIMELINE"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Percentage"
+    ColumnName="PERCENTAGE"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="PROJECT_TIMELINE"
+    PrimaryKey="true"/>
+  <Key
+    Name="ProjecttimelinePrimaryKey"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PROJECTTIMELINE_PRIMARY_KEY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.ProjectTimeline.ProjectId"/>
+      <Item Value="model.EO.ProjectTimeline.ProjectPhase"/>
+      <Item Value="model.EO.ProjectTimeline.Status"/>
+      <Item Value="model.EO.ProjectTimeline.Percentage"/>
+    </AttrArray>
+  </Key>
+</Entity>

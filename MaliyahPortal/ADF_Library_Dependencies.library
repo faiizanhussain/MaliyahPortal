@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<library name="ADF Library Dependencies" id="oracle..adf-library-dependencies" deployed="true" locked="true" xmlns="http://xmlns.oracle.com/jdeveloper/1013/manifest-libraries">
+  <description/>
+  <classpath>../../../Jar files/Jar files/oracle.ucm.ridc-11.1.1-javadoc.jar</classpath>
+  <classpath>../../../Jar files/Jar files/oracle.ucm.ridc-11.1.1.jar</classpath>
+  <classpath>../../../Jar files/Jar files/oracle.ucm.ridc.was-lib-11.1.1.jar</classpath>
+</library>

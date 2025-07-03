@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <main class="main section hero_container">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                
+                    <af:panelGroupLayout id="pgl2" layout="vertical" styleClass="ImageSlidePg" halign="center">
+                    
+                       <af:link text="" id="l3" destination="http://10.161.9.17:8888/webcenter/portal/NewMOFPortalSecondDraft/pages_events" 
+                        icon="/content/conn/wccConnection/path/Enterprise%20Libraries/NewMOFPortalSecondDraft/MaliyahaPortalImages/Slider/Image_1.jpg"
+                        styleClass="Hero-img" binding="#{pageFlowScope.ImageSlideBean.bindImageSlideLink}"/>
+                        
+                        <af:panelGroupLayout id="pgl1" layout="vertical" halign="right" styleClass="maxwidth-1680 slider-controls">
+                            <af:button icon="/content/conn/wccConnection/path/Enterprise%20Libraries/NewMOFPortalSecondDraft/portalAsset/left.svg"
+                                     id="l2" actionListener="#{pageFlowScope.ImageSlideBean.changePreviousImage}"
+                                     styleClass="ImagesArrowLink">
+                                     </af:button>
+                            <af:button icon="/content/conn/wccConnection/path/Enterprise%20Libraries/NewMOFPortalSecondDraft/portalAsset/right.svg"
+                                     id="l1" actionListener="#{pageFlowScope.ImageSlideBean.changeNextImage}"
+                                     styleClass="ImagesArrowLink">
+                                   </af:button>  
+                        </af:panelGroupLayout>
+                    </af:panelGroupLayout>
+                </div>
+            </div>
+        </div>
+        <div class="nav-block-section">
+            <div class="container-fluid maxwidth-1440">
+                <div class="row banner-cards">
+                    <div class="col-md-4">
+                        <af:region value="#{bindings.MaliyahSystemLoginTF1.regionModel}" id="r2"/>
+                    </div>
+                    <div class="col-md-4">
+                        <af:region value="#{bindings.loginTF1.regionModel}" id="r5"/>
+                     
+                    </div>
+                    <div class="col-md-4 ">
+                        <af:region value="#{bindings.HelpDesk1.regionModel}" id="r3"/>
+                    </div>
+                </div>
+                <div class="row timeline-table">
+                    <div class="col-md-12">
+                        <af:region value="#{bindings.MaliyahProjectTimeLine1.regionModel}" id="r1"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</jsp:root>

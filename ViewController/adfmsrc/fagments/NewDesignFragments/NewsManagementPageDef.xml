@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="NewsManagementPageDef"
+                Package="fagments.NewDesignFragments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <taskFlow id="uploadNewsTF1" taskFlowId="/taskflow/uploadNewsTF.xml#uploadNewsTF" activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="NewTrandingNewsTF1" taskFlowId="/taskflow/NewDesignTaskflow/NewTrandingNewsTF.xml#NewTrandingNewsTF"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="UpdateAndDeleteNewsTF1"
+              taskFlowId="/taskflow/NewDesign_NewsDisplay/UpdateAndDeleteNewsTF.xml#UpdateAndDeleteNewsTF"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="News_11" taskFlowId="/taskflow/NewDesign_NewsDisplay/NewsDisplay.xml#News_1" activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="uploadNewsTF2" taskFlowId="/taskflow/uploadNewsTF.xml#uploadNewsTF" activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+  </executables>
+  <bindings/>
+</pageDefinition>

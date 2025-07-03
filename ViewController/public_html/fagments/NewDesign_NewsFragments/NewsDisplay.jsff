@@ -1,0 +1,284 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <div class="news-section-header">
+        <div class="news-section-title">
+            <af:link icon="/images/trending_up.JPG" id="l1" styleClass="newProgress_icon" disabled="true"/>
+            <af:outputText value="#{res.TRENDING_NEWS_LABEL}" id="ot4" styleClass="projecttimelineMainheading"/>
+        </div>
+         <af:spacer id="s1" width="30px"/>
+        <af:button text="EN" id="b3" action="#{pageFlowScope.DisplayNewsBean.updateEnglish}"
+                   binding="#{pageFlowScope.DisplayNewsBean.bindEnglishLangBtn}" styleClass="link-underline-primary"/>
+        <af:button text="AR" id="b4" action="#{pageFlowScope.DisplayNewsBean.updateArabic}" visible="false"
+                   binding="#{pageFlowScope.DisplayNewsBean.bindArabicLangBtn}" styleClass="link-underline-primary"/>
+        <div style="flex: 1; height: 1px; background-color: #E2E8F0; margin: 0 24px;"></div>
+        <div class="news-carousel-controls">
+            <af:panelGroupLayout id="pgl25" valign="top" halign="end" styleClass="buttonSection">
+                <af:button text="" icon="/images/arrow_backward.svg" id="b1"
+                           actionListener="#{pageFlowScope.DisplayNewsBean.displayPreviousNews}"
+                           styleClass="backarrowBT" binding="#{pageFlowScope.DisplayNewsBean.bindPreviousButton}"
+                           disabled="true"/>
+                <af:button text="" icon="/images/arrow_forward.svg" id="b2"
+                           actionListener="#{pageFlowScope.DisplayNewsBean.displayNextNews}" styleClass="backarrowBT"
+                           binding="#{pageFlowScope.DisplayNewsBean.bindNextButton}"/>
+            </af:panelGroupLayout>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-12 mt-4 pt-2">
+            <af:panelGroupLayout id="pgl1" layout="vertical" valign="top" styleClass="NewsBG">
+                <af:panelGroupLayout id="pgl2" layout="vertical" valign="top">
+                    <af:panelGroupLayout id="pgl43" layout="vertical" valign="top"
+                                         binding="#{pageFlowScope.DisplayNewsBean.bindNews1PG}">
+                        <af:image altSource="a" shortDesc="" source="#{pageFlowScope.imageURl_1}" id="i2"
+                                  styleClass="img-fluid w-100" binding="#{pageFlowScope.DisplayNewsBean.bindNewsImage1}"
+                                  partialTriggers="b2 b1"/>
+                    </af:panelGroupLayout>
+                    
+                    <af:panelGroupLayout id="pgl6" layout="vertical" valign="top"
+                                         styleClass="py-3 mx-3 NewsSummrySection">
+                        <af:panelGroupLayout id="pgl19" layout="horizontal" styleClass="AFStretchWidth">
+                            <af:panelGroupLayout id="pgl53" layout="vertical" halign="start" valign="top" styleClass="my-2">
+                                <af:button text="#{pageFlowScope.DisplayNewsBean.languageFlag eq 'ar' ? pageFlowScope.tagAr1 : pageFlowScope.tagEng1}"
+                                           id="b11" styleClass="btn btn-info"
+                                           binding="#{pageFlowScope.DisplayNewsBean.bindCategory1}" disabled="true"></af:button>
+                            </af:panelGroupLayout>
+                            <af:panelGroupLayout id="pgl54" layout="vertical" halign="end">
+                                <af:button text="#{pageFlowScope.DisplayNewsBean.languageFlag eq 'ar' ? 'اخبار' : 'View More'}" id="b7" styleClass="link-underline-primary"
+                                           binding="#{pageFlowScope.DisplayNewsBean.bindViewMore1}">
+                                    <af:showPopupBehavior popupId="p1"/>
+                                </af:button>
+                            </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+                        <af:panelGroupLayout id="pgl15" layout="vertical" valign="top" styleClass="my-2">
+                            <af:outputText value="#{pageFlowScope.DisplayNewsBean.languageFlag eq 'ar' ? pageFlowScope.headerAr1 : pageFlowScope.headerEng1}" id="ot2" styleClass="Newsheading"
+                                           binding="#{pageFlowScope.DisplayNewsBean.bindNewsTitle1}"
+                                           partialTriggers="b2 b1"/>
+                        </af:panelGroupLayout>
+                        <af:panelGroupLayout id="pgl51" layout="vertical" valign="top">
+                            <af:outputText value="#{pageFlowScope.DisplayNewsBean.languageFlag eq 'ar' ? pageFlowScope.summaryAr1 : pageFlowScope.summaryEng1}" id="ot1" styleClass="NewSummary"
+                                           binding="#{pageFlowScope.DisplayNewsBean.bindNewsSummary1}"
+                                           partialTriggers="b2 b1"/>
+                        </af:panelGroupLayout>
+                    </af:panelGroupLayout>
+                    
+                </af:panelGroupLayout>
+            </af:panelGroupLayout>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 mt-4 pt-2">
+            <af:panelGroupLayout id="pgl44" layout="vertical" valign="top" styleClass="NewsBG">
+                <af:panelGroupLayout id="pgl3" layout="vertical" valign="top">
+                    <af:panelGroupLayout id="pgl7" layout="vertical" valign="top">
+                        <af:image altSource="a" shortDesc="" source="#{pageFlowScope.imageURl_2}" id="i4"
+                                  styleClass="img-fluid w-100" binding="#{pageFlowScope.DisplayNewsBean.bindNewsImage2}"
+                                  partialTriggers="b2 b1"/>
+                    </af:panelGroupLayout>
+                    <af:panelGroupLayout id="pgl20" layout="vertical" valign="top"
+                                         styleClass="py-3 mx-3 NewsSummrySection">
+                        <af:panelGroupLayout id="pgl16" layout="horizontal" styleClass="AFStretchWidth">
+                            <af:panelGroupLayout id="pgl55" layout="vertical" halign="start" valign="top" styleClass="my-2">
+                                <af:button text="#{pageFlowScope.DisplayNewsBean.languageFlag eq 'ar' ? pageFlowScope.tagAr2 : pageFlowScope.tagEng2}"
+                                           id="b5" styleClass="btn btn-info"
+                                           binding="#{pageFlowScope.DisplayNewsBean.bindCategory2}" disabled="true"></af:button>
+                            </af:panelGroupLayout>
+                            <af:panelGroupLayout id="pgl8" layout="vertical" halign="end">
+                                <af:button text="#{pageFlowScope.DisplayNewsBean.languageFlag eq 'ar' ? 'اخبار' : 'View More'}" id="b6" styleClass="link-underline-primary"
+                                           binding="#{pageFlowScope.DisplayNewsBean.bindViewMore2}">
+                                    <af:showPopupBehavior popupId="p1"/>
+                                </af:button>
+                            </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+                        <af:panelGroupLayout id="pgl10" layout="vertical" valign="top" styleClass="my-2">
+                            <af:outputText value="#{pageFlowScope.DisplayNewsBean.languageFlag eq 'ar' ? pageFlowScope.headerAr2 : pageFlowScope.headerEng2}"
+                                           id="ot3" styleClass="Newsheading"
+                                           binding="#{pageFlowScope.DisplayNewsBean.bindNewsTitle2}"
+                                           partialTriggers="b2 b1"/>
+                        </af:panelGroupLayout>
+                        <af:panelGroupLayout id="pgl12" layout="vertical" valign="top">
+                            <af:outputText value="#{pageFlowScope.DisplayNewsBean.languageFlag eq 'ar' ? pageFlowScope.summaryAr2 : pageFlowScope.summaryEng2}"
+                                           id="ot5" styleClass="NewSummary"
+                                           binding="#{pageFlowScope.DisplayNewsBean.bindNewsSummary2}"
+                                           partialTriggers="b2 b1"/>
+                        </af:panelGroupLayout>
+                    </af:panelGroupLayout>
+                </af:panelGroupLayout>
+            </af:panelGroupLayout>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 mt-4 pt-2">
+            <af:panelGroupLayout id="pgl45" layout="vertical" valign="top" styleClass="NewsBG">
+                <af:panelGroupLayout id="pgl4" layout="vertical" valign="top">
+                    <af:panelGroupLayout id="pgl9" layout="vertical" valign="top">
+                        <af:image altSource="a" shortDesc="" source="#{pageFlowScope.imageURl_3}" id="i7"
+                                  styleClass="img-fluid w-100 "
+                                  binding="#{pageFlowScope.DisplayNewsBean.bindNewsImage3}" partialTriggers="b2 b1"/>
+                    </af:panelGroupLayout>
+                    <af:panelGroupLayout id="pgl21" layout="vertical" valign="top"
+                                         styleClass="py-3 mx-3 NewsSummrySection">
+                        <af:panelGroupLayout id="pgl17" layout="horizontal" styleClass="AFStretchWidth">
+                            <af:panelGroupLayout id="pgl58" layout="vertical" valign="top" styleClass="my-2" halign="start">
+                                <af:button text="#{pageFlowScope.DisplayNewsBean.languageFlag eq 'ar' ? pageFlowScope.tagAr3 : pageFlowScope.tagEng3}"
+                                           id="b8" styleClass="btn btn-info"
+                                           binding="#{pageFlowScope.DisplayNewsBean.bindCategory3}" disabled="true"></af:button>
+                            </af:panelGroupLayout>
+                            <af:panelGroupLayout id="pgl13" layout="vertical" halign="end">
+                                <af:button text="#{pageFlowScope.DisplayNewsBean.languageFlag eq 'ar' ? 'اخبار' : 'View More'}" id="b9" styleClass="link-underline-primary"
+                                           binding="#{pageFlowScope.DisplayNewsBean.bindViewMore3}">
+                                    <af:showPopupBehavior popupId="p1"/>
+                                </af:button>
+                            </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+                        <af:panelGroupLayout id="pgl52" layout="vertical" valign="top" styleClass="my-2">
+                            <af:outputText value="#{pageFlowScope.DisplayNewsBean.languageFlag eq 'ar' ? pageFlowScope.headerAr3 : pageFlowScope.headerEng3}"
+                                           id="ot6" styleClass="Newsheading"
+                                           binding="#{pageFlowScope.DisplayNewsBean.bindNewsTitle3}"
+                                           partialTriggers="b2 b1"/>
+                        </af:panelGroupLayout>
+                        <af:panelGroupLayout id="pgl56" layout="vertical" valign="top">
+                            <af:outputText value="#{pageFlowScope.DisplayNewsBean.languageFlag eq 'ar' ? pageFlowScope.summaryAr3 : pageFlowScope.summaryEng3}"
+                                           id="ot7" styleClass="NewSummary"
+                                           binding="#{pageFlowScope.DisplayNewsBean.bindNewsSummary3}"
+                                           partialTriggers="b2 b1"/>
+                        </af:panelGroupLayout>
+                    </af:panelGroupLayout>
+                </af:panelGroupLayout>
+            </af:panelGroupLayout>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 mt-4 pt-2">
+            <af:panelGroupLayout id="pgl46" layout="vertical" valign="top" styleClass="NewsBG">
+                <af:panelGroupLayout id="pgl5" layout="vertical" valign="top">
+                    <af:panelGroupLayout id="pgl11" layout="vertical" valign="top">
+                        <af:image altSource="a" shortDesc="" source="#{pageFlowScope.imageURl_4}" id="i6"
+                                  styleClass="img-fluid w-100 "
+                                  binding="#{pageFlowScope.DisplayNewsBean.bindNewsImage4}" partialTriggers="b2 b1"/>
+                    </af:panelGroupLayout>
+                    <af:panelGroupLayout id="pgl22" layout="vertical" valign="top"
+                                         styleClass="py-3 mx-3 NewsSummrySection">
+                        <af:panelGroupLayout id="pgl18" layout="horizontal" styleClass="AFStretchWidth">
+                            <af:panelGroupLayout id="pgl59" layout="vertical" valign="top" styleClass="my-2" halign="start">
+                                <af:button text="#{pageFlowScope.DisplayNewsBean.languageFlag eq 'ar' ? pageFlowScope.tagAr4 : pageFlowScope.tagEng4}"
+                                           id="b10" styleClass="btn btn-info"
+                                           binding="#{pageFlowScope.DisplayNewsBean.bindCategory4}" disabled="true"></af:button>
+                            </af:panelGroupLayout>
+                            <af:panelGroupLayout id="pgl57" layout="vertical" halign="end">
+                                <af:button text="#{pageFlowScope.DisplayNewsBean.languageFlag eq 'ar' ? 'اخبار' : 'View More'}" id="b12" styleClass="link-underline-primary"
+                                           binding="#{pageFlowScope.DisplayNewsBean.bindViewMore4}">
+                                    <af:showPopupBehavior popupId="p1"/>
+                                </af:button>
+                            </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+                        <af:panelGroupLayout id="pgl60" layout="vertical" valign="top" styleClass="my-2">
+                            <af:outputText value="#{pageFlowScope.DisplayNewsBean.languageFlag eq 'ar' ? pageFlowScope.headerAr4 : pageFlowScope.headerEng4}"
+                                           id="ot8" styleClass="Newsheading"
+                                           binding="#{pageFlowScope.DisplayNewsBean.bindNewsTitle4}"
+                                           partialTriggers="b2 b1"/>
+                        </af:panelGroupLayout>
+                        <af:panelGroupLayout id="pgl61" layout="vertical" valign="top">
+                            <af:outputText value="#{pageFlowScope.DisplayNewsBean.languageFlag eq 'ar' ? pageFlowScope.summaryAr4 : pageFlowScope.summaryEng4}"
+                                           id="ot17" styleClass="NewSummary"
+                                           binding="#{pageFlowScope.DisplayNewsBean.bindNewsSummary4}"
+                                           partialTriggers="b2 b1"/>
+                        </af:panelGroupLayout>
+                    </af:panelGroupLayout>
+                </af:panelGroupLayout>
+            </af:panelGroupLayout>
+        </div>
+        <af:popup childCreation="deferred" autoCancel="disabled" id="p1">
+            <af:dialog id="d1" styleClass="dialogBoxSize" cancelVisible="false" okVisible="false">
+                <af:panelGroupLayout id="pgl23" layout="vertical" valign="top" styleClass="NewsBG">
+                    <af:panelGroupLayout id="pgl24" layout="vertical" valign="top">
+                        <af:image altSource="a" shortDesc="" source="#{pageFlowScope.imageURl_1}" id="i1"
+                                  styleClass="img-fluid w-100" partialTriggers="b2 b1"/>
+                    </af:panelGroupLayout>
+                    <af:panelGroupLayout id="pgl14" layout="vertical" valign="top" styleClass="py-3 mx-3">
+                        <af:panelGroupLayout id="pgl26" layout="vertical" valign="top" styleClass="my-2">
+                            <af:panelGroupLayout id="pgl27" layout="vertical" valign="top" styleClass="my-2">
+                                <af:outputText value="#{pageFlowScope.title1}" id="ot10" styleClass="Newsheading"
+                                               partialTriggers="b2 b1"/>
+                            </af:panelGroupLayout>
+                            <af:panelGroupLayout id="pgl47" styleClass="table-responsive" layout="vertical"
+                                                 valign="top">
+                                <af:outputText value="#{pageFlowScope.DisplayNewsBean.languageFlag eq 'ar' ? pageFlowScope.summaryAr1 : pageFlowScope.summaryEng1}" id="ot11"
+                                               styleClass="NewSummaryDetails" partialTriggers="b2 b1"/>
+                            </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+                    </af:panelGroupLayout>
+                </af:panelGroupLayout>
+                <!--<f:facet name="buttonBar"/>-->
+            </af:dialog>
+        </af:popup>
+         
+        <af:popup childCreation="deferred" autoCancel="disabled" id="p2">
+            <af:dialog id="d2" styleClass="dialogBoxSize" cancelVisible="false" okVisible="false">
+                <af:panelGroupLayout id="pgl28" layout="vertical" valign="top" styleClass="NewsBG">
+                    <af:panelGroupLayout id="pgl29" layout="vertical" valign="top">
+                        <af:image altSource="a" shortDesc="" source="#{pageFlowScope.imageURl_2}" id="i3"
+                                  styleClass="img-fluid w-100" partialTriggers="b2 b1"/>
+                    </af:panelGroupLayout>
+                    <af:panelGroupLayout id="pgl30" layout="vertical" valign="top" styleClass="py-3 mx-3">
+                        <af:panelGroupLayout id="pgl31" layout="vertical" valign="top" styleClass="my-2">
+                            <af:panelGroupLayout id="pgl32" layout="vertical" valign="top" styleClass="my-2">
+                                <af:outputText value="#{pageFlowScope.title2}" id="ot9" styleClass="Newsheading"
+                                               partialTriggers="b2 b1"/>
+                            </af:panelGroupLayout>
+                            <af:panelGroupLayout id="pgl48" styleClass="table-responsive" layout="vertical"
+                                                 valign="top">
+                                <af:outputText value="#{pageFlowScope.DisplayNewsBean.languageFlag eq 'ar' ? pageFlowScope.summaryAr2 : pageFlowScope.summaryEng2}" id="ot12"
+                                               styleClass="NewSummaryDetails" partialTriggers="b2 b1"/>
+                            </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+                    </af:panelGroupLayout>
+                </af:panelGroupLayout>
+                <!--<f:facet name="buttonBar"/>-->
+            </af:dialog>
+        </af:popup>
+         
+        <af:popup childCreation="deferred" autoCancel="disabled" id="p3">
+            <af:dialog id="d3" styleClass="dialogBoxSize" cancelVisible="false" okVisible="false">
+                <af:panelGroupLayout id="pgl33" layout="vertical" valign="top" styleClass="NewsBG">
+                    <af:panelGroupLayout id="pgl34" layout="vertical" valign="top">
+                        <af:image altSource="a" shortDesc="" source="#{pageFlowScope.imageURl_3}" id="i5"
+                                  styleClass="img-fluid w-100" partialTriggers="b2 b1"/>
+                    </af:panelGroupLayout>
+                    <af:panelGroupLayout id="pgl35" layout="vertical" valign="top" styleClass="py-3 mx-3">
+                        <af:panelGroupLayout id="pgl36" layout="vertical" valign="top" styleClass="my-2">
+                            <af:panelGroupLayout id="pgl37" layout="vertical" valign="top" styleClass="my-2">
+                                <af:outputText value="#{pageFlowScope.title2}" id="ot13" styleClass="Newsheading"
+                                               partialTriggers="b2 b1"/>
+                            </af:panelGroupLayout>
+                            <af:panelGroupLayout id="pgl49" styleClass="table-responsive" layout="vertical"
+                                                 valign="top">
+                                <af:outputText value="#{pageFlowScope.DisplayNewsBean.languageFlag eq 'ar' ? pageFlowScope.summaryAr3 : pageFlowScope.summaryEng3}" id="ot14"
+                                               styleClass="NewSummaryDetails" partialTriggers="b2 b1"/>
+                            </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+                    </af:panelGroupLayout>
+                </af:panelGroupLayout>
+               <!--<f:facet name="buttonBar"/>-->
+            </af:dialog>
+        </af:popup>
+         
+        <af:popup childCreation="deferred" autoCancel="disabled" id="p4">
+            <af:dialog id="d4" styleClass="dialogBoxSize" cancelVisible="false" okVisible="false">
+                <af:panelGroupLayout id="pgl38" layout="vertical" valign="top" styleClass="NewsBG">
+                    <af:panelGroupLayout id="pgl39" layout="vertical" valign="top">
+                        <af:image altSource="a" shortDesc="" source="#{pageFlowScope.imageURl_4}" id="i8"
+                                  styleClass="img-fluid w-100" partialTriggers="b2 b1"/>
+                    </af:panelGroupLayout>
+                    <af:panelGroupLayout id="pgl40" layout="vertical" valign="top" styleClass="py-3 mx-3">
+                        <af:panelGroupLayout id="pgl41" layout="vertical" valign="top" styleClass="my-2">
+                            <af:panelGroupLayout id="pgl42" layout="vertical" valign="top" styleClass="my-2">
+                                <af:outputText value="#{pageFlowScope.title4}" id="ot15" styleClass="Newsheading"
+                                               partialTriggers="b2 b1"/>
+                            </af:panelGroupLayout>
+                            <af:panelGroupLayout id="pgl50" styleClass="table-responsive" layout="vertical"
+                                                 valign="top">
+                                <af:outputText value="#{pageFlowScope.DisplayNewsBean.languageFlag eq 'ar' ? pageFlowScope.summaryAr4 : pageFlowScope.summaryEng4}" id="ot16"
+                                               styleClass="NewSummaryDetails" partialTriggers="b2 b1"/>
+                            </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+                    </af:panelGroupLayout>
+                </af:panelGroupLayout>
+                <!--<f:facet name="buttonBar"/>-->
+            </af:dialog>
+        </af:popup>
+    </div>
+</jsp:root>

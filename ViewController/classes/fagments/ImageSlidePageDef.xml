@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="ImageSlidePageDef"
+                Package="fagments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <taskFlow id="MaliyahProjectTimeLine1" taskFlowId="/taskflow/MaliyahProjectTimeLine.xml#MaliyahProjectTimeLine"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="MaliyahSystemLoginTF1" taskFlowId="/taskflow/MaliyahSystemLoginTF.xml#MaliyahSystemLoginTF"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="MaliyahSystemLoginTF2" taskFlowId="/taskflow/MaliyahSystemLoginTF.xml#MaliyahSystemLoginTF"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="MaliyahSystemLoginTF3" taskFlowId="/taskflow/MaliyahSystemLoginTF.xml#MaliyahSystemLoginTF"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="HelpDesk1" taskFlowId="/taskflow/HelpDesk.xml#HelpDesk" activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+  </executables>
+  <bindings/>
+</pageDefinition>

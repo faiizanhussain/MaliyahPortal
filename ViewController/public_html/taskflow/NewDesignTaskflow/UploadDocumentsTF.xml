@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="UploadDocumentsTF">
+    <default-activity>UploadDocuments</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <managed-bean id="__1">
+      <managed-bean-name>UploadDocumentsBean</managed-bean-name>
+      <managed-bean-class>view.managedBean.UploadDocuments</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <view id="UploadDocuments">
+      <page>/fagments/NewDesignFragments/UploadDocuments.jsff</page>
+    </view>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

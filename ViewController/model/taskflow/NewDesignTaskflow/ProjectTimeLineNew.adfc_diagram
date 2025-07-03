@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">ProjectTimeLineNewPage</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">525.0</property>
+      <property
+         name="start">false</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ProjectTimeLineNewPage&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">376.89648</property>
+      <property
+         name="page">/fagments/NewDesignFragments/ProjectTimeLineNewPage.jsff</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <MethodCall
+      id="MethodCall3">
+      <property
+         name="activityId">methodCall1</property>
+      <property
+         name="x">201.0</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>methodCall1&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="y">365.49414</property>
+      <property
+         name="exceptionHandler">false</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="MethodCall3"
+      to="View2">
+      <property
+         name="fromOutcome">goToDisplay</property>
+      <property
+         name="sdm:polyPoints">R50,242.0,365.14355,484.0,376.5459,L50</property>
+   </ControlFlowCase>
+</SDM>

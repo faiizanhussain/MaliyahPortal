@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+    <af:table value="#{bindings.NewsTableView12.collectionModel}" var="row" rows="#{bindings.NewsTableView12.rangeSize}"
+              emptyText="#{bindings.NewsTableView12.viewable ? 'No data to display.' : 'Access Denied.'}"
+              rowBandingInterval="0" selectedRowKeys="#{bindings.NewsTableView12.collectionModel.selectedRow}"
+              selectionListener="#{bindings.NewsTableView12.collectionModel.makeCurrent}" rowSelection="single"
+              fetchSize="#{bindings.NewsTableView12.rangeSize}" id="t2" styleClass="AFStretchWidth newsManagementBG"
+              binding="#{pageFlowScope.UpdateAndDeleteNewsBean.bindNewsTable}" partialTriggers="::b3"
+              columnStretching="column:c2" scrollPolicy="scroll" autoHeightRows="5">
+        <af:column headerText="#{bindings.NewsTableView12.hints.Serialnumber.label}" id="c7" visible="false">
+            <af:inputText value="#{row.bindings.Serialnumber.inputValue}"
+                          label="#{bindings.NewsTableView12.hints.Serialnumber.label}"
+                          required="#{bindings.NewsTableView12.hints.Serialnumber.mandatory}"
+                          maximumLength="#{bindings.NewsTableView12.hints.Serialnumber.precision}"
+                          shortDesc="#{bindings.NewsTableView12.hints.Serialnumber.tooltip}" id="it8">
+                <f:validator binding="#{row.bindings.Serialnumber.validator}"/>
+                <af:convertNumber groupingUsed="false" pattern="#{bindings.NewsTableView12.hints.Serialnumber.format}"/>
+            </af:inputText>
+        </af:column>
+        <af:column id="c5">
+             <af:panelGroupLayout id="pgl0"  halign="start" styleClass="NewsSectionArea">
+                    <af:spacer id="s2" height="1" width="1"/>
+                  <af:panelGroupLayout id="pgl6" layout="vertical" halign="left" valign="top" styleClass="newsImageContainer">
+                <af:image source="#{pageFlowScope.imageURl}#{row.bindings.Serialnumber.inputValue}.png" altSource=""
+                          shortDesc="" id="i9" inlineStyle="width:120px;"/>
+            </af:panelGroupLayout>
+              <af:spacer id="s21" height="1" width="15"/>
+                 <af:panelGroupLayout id="pgl2" layout="vertical" valign="top" halign="start">
+                      <af:spacer id="s1"/>   
+                             <af:panelGroupLayout id="pgl18" layout="vertical" styleClass="newsTextContainer">
+                                 <af:panelGroupLayout id="pgl8" layout="horizontal">
+                                     <af:spacer id="s9"/>
+                                     <af:outputFormatted value="#{row.bindings.TagAr.inputValue}" id="of1" styleClass="badge bg-info"/>
+                                     <af:panelGroupLayout id="pgl19" layout="horizontal" styleClass="AFStretchWidth" valign="top"
+                                                          halign="right">
+                                         <af:spacer id="s7"/>
+                                         <af:button icon="/images/delete_forever.svg" id="b7" styleClass="backarrowBT mr-2"
+                                                    actionListener="#{pageFlowScope.UpdateAndDeleteNewsBean.deleteCurrentNews}"/>
+                                         <af:button icon="/images/edit_document.svg" id="b8" styleClass="backarrowBT"
+                                                    actionListener="#{pageFlowScope.UpdateAndDeleteNewsBean.editNewsListener}"/>
+                                     </af:panelGroupLayout>
+                                 </af:panelGroupLayout>
+                             </af:panelGroupLayout>
+                             <af:panelGroupLayout id="pgl7" layout="vertical" styleClass="AFStretchWidth">
+                                 <!--<af:inputText value="#{row.bindings.NewsTitle.inputValue}"  readOnly="true" styleClass="Newsheading"
+                                                           required="#{bindings.NewsTableView11.hints.NewsTitle.mandatory}"
+                                                           columns="#{bindings.NewsTableView11.hints.NewsTitle.displayWidth}"
+                                                           maximumLength="#{bindings.NewsTableView11.hints.NewsTitle.precision}"
+                                                           shortDesc="#{bindings.NewsTableView11.hints.NewsTitle.tooltip}" id="it2" visible="false">
+                                                 <f:validator binding="#{row.bindings.NewsTitle.validator}"/>
+                                             </af:inputText>-->
+                                 <af:spacer id="s8"/>
+                                 <af:outputFormatted value="#{row.bindings.HeadlineAr.inputValue}" id="of2" styleClass="NewsTitle"/>
+                                 <!--<af:inputText value="#{row.bindings.NewsSummary.inputValue}" readOnly="true" styleClass="NewSummary"
+                                                          required="#{bindings.NewsTableView11.hints.NewsSummary.mandatory}"
+                                                           columns="#{bindings.NewsTableView11.hints.NewsSummary.displayWidth}"
+                                                           maximumLength="#{bindings.NewsTableView11.hints.NewsSummary.precision}"
+                                                           shortDesc="#{bindings.NewsTableView11.hints.NewsSummary.tooltip}" id="it3" visible="false">
+                                                 <f:validator binding="#{row.bindings.NewsSummary.validator}"/>
+                                             </af:inputText>-->
+                                 <af:outputFormatted value="#{row.bindings.SummaryAr.inputValue}" id="of3" styleClass="NewsSummary"/>
+                             </af:panelGroupLayout>
+                             
+                 </af:panelGroupLayout>
+            </af:panelGroupLayout>
+        </af:column>
+    </af:table>
+    <af:popup childCreation="deferred" autoCancel="disabled" id="p3"
+              binding="#{pageFlowScope.UpdateAndDeleteNewsBean.bindEditNewsPopup}" contentDelivery="lazyUncached">
+        <af:dialog id="d3" cancelVisible="false" okVisible="false">
+            <af:spacer id="s20"/>
+            <af:panelFormLayout id="pfl4" labelAlignment="top" fieldWidth="100%">
+                <af:inputFile id="if1" valueChangeListener="#{pageFlowScope.UpdateAndDeleteNewsBean.updateImage}"
+                              styleClass="NewsImageUpload" autoSubmit="true"
+                              binding="#{pageFlowScope.UpdateAndDeleteNewsBean.bindUploadImage}"/>
+            </af:panelFormLayout>
+            <af:panelGroupLayout id="pgl15" layout="horizontal" styleClass="AFStretchWidth">
+                <af:spacer id="s22"/>
+                <af:panelGroupLayout id="pgl1" layout="vertical">
+                    <af:spacer id="s24"/>
+                    <af:panelFormLayout id="pfl5" labelAlignment="top" rows="1" fieldWidth="100%">
+                        <af:inputText value="#{bindings.HeadlineEng.inputValue}"
+                                      label="#{bindings.HeadlineEng.hints.label}"
+                                      required="#{bindings.HeadlineEng.hints.mandatory}"
+                                      maximumLength="#{bindings.HeadlineEng.hints.precision}"
+                                      shortDesc="#{bindings.HeadlineEng.hints.tooltip}" id="it2">
+                            <f:validator binding="#{bindings.HeadlineEng.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.TagEng.inputValue}" label="#{bindings.TagEng.hints.label}"
+                                      required="#{bindings.TagEng.hints.mandatory}"
+                                      maximumLength="#{bindings.TagEng.hints.precision}"
+                                      shortDesc="#{bindings.TagEng.hints.tooltip}" id="it12">
+                            <f:validator binding="#{bindings.TagEng.validator}"/>
+                        </af:inputText>
+                    </af:panelFormLayout>
+                    <af:panelFormLayout id="pfl6" rows="1" labelAlignment="top" fieldWidth="100%">
+                        <af:inputText value="#{bindings.SummaryEng.inputValue}" rows="5"
+                                      label="English Summary"
+                                      required="#{bindings.SummaryEng.hints.mandatory}"
+                                      maximumLength="#{bindings.SummaryEng.hints.precision}"
+                                      shortDesc="#{bindings.SummaryEng.hints.tooltip}" id="it10">
+                            <f:validator binding="#{bindings.SummaryEng.validator}"/>
+                        </af:inputText>
+                    </af:panelFormLayout>
+                </af:panelGroupLayout>
+                <af:panelGroupLayout id="pgl16" layout="vertical">
+                    <af:spacer id="s23"/>
+                    <af:panelFormLayout id="pfl7" rows="1" labelAlignment="top" fieldWidth="100%">
+                        <af:inputText value="#{bindings.HeadlineAr.inputValue}"
+                                      label="#{bindings.HeadlineAr.hints.label}"
+                                      required="#{bindings.HeadlineAr.hints.mandatory}"
+                                      maximumLength="#{bindings.HeadlineAr.hints.precision}"
+                                      shortDesc="#{bindings.HeadlineAr.hints.tooltip}" id="it1">
+                            <f:validator binding="#{bindings.HeadlineAr.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.TagAr.inputValue}" label="#{bindings.TagAr.hints.label}"
+                                      required="#{bindings.TagAr.hints.mandatory}" 
+                                      maximumLength="#{bindings.TagAr.hints.precision}"
+                                      shortDesc="#{bindings.TagAr.hints.tooltip}" id="it11">
+                            <f:validator binding="#{bindings.TagAr.validator}"/>
+                        </af:inputText>
+                    </af:panelFormLayout>
+                    <af:panelFormLayout id="pfl8" rows="1" labelAlignment="top" fieldWidth="100%">
+                        <af:inputText value="#{bindings.SummaryAr.inputValue}" label="Arabic Summary"
+                                      required="#{bindings.SummaryAr.hints.mandatory}" rows="5"
+                                      maximumLength="#{bindings.SummaryAr.hints.precision}"
+                                      shortDesc="#{bindings.SummaryAr.hints.tooltip}" id="it9">
+                            <f:validator binding="#{bindings.SummaryAr.validator}"/>
+                        </af:inputText>
+                    </af:panelFormLayout>
+                </af:panelGroupLayout>
+            </af:panelGroupLayout>
+            <af:panelGroupLayout id="pgl4" layout="horizontal" valign="top" halign="center"
+                                 styleClass="my-3 AFStretchWidth">
+                <af:button text="#{res.UPDATE_NEW}" id="b3" styleClass="AddNewsBT AFStretchWidth"
+                           actionListener="#{pageFlowScope.UpdateAndDeleteNewsBean.updateNewsListener}"/>
+            </af:panelGroupLayout>
+        </af:dialog>
+    </af:popup>
+    <af:popup childCreation="deferred" autoCancel="disabled" id="p1"
+              binding="#{pageFlowScope.UpdateAndDeleteNewsBean.bindNewsDeleteConfirmationPopup}">
+        <af:dialog id="d1" cancelVisible="false" okVisible="false" styleClass="dialogbox-md"
+                   title="#{res.REMOVE_NEWS_POPUP_HEADER}">
+            <af:spacer id="s12"/>
+            <af:panelGroupLayout id="pgl10" halign="center" layout="vertical">
+                <af:spacer id="s3" height="15px"/>
+                <af:icon name="Check" id="i1" styleClass="fa-4x fa-solid fa-circle-cross danger"/>
+                <af:spacer id="s4" height="15px"/>
+            </af:panelGroupLayout>
+            <af:panelGroupLayout id="pgl9" halign="center" layout="vertical">
+                <af:outputText value="#{res.REMOVE_NEWS_TEXT}" id="ot1" styleClass="NormalText"/>
+            </af:panelGroupLayout>
+            <af:panelGroupLayout id="pgl3" layout="horizontal" halign="center" valign="bottom" styleClass="my-3">
+                <af:button text="#{res.DELETE_NEWS_BUTTON_}" id="b1" styleClass="SubmitBT  mr-2"
+                           actionListener="#{pageFlowScope.UpdateAndDeleteNewsBean.deleteNews}"/>
+                <af:button text="#{res.KEEP_THIS_NEWS_BUTTON}" id="b2" styleClass="cencledBT"
+                           actionListener="#{pageFlowScope.UpdateAndDeleteNewsBean.closeNewsDeleteConfirmationPopup}"/>
+            </af:panelGroupLayout>
+        </af:dialog>
+    </af:popup>
+    <af:popup childCreation="deferred" autoCancel="disabled" id="p2"
+              binding="#{pageFlowScope.UpdateAndDeleteNewsBean.bindDeletedNewsSuccessPopup}">
+        <af:dialog id="d2" cancelVisible="false" okVisible="false" styleClass="dialogbox-md">
+            <af:spacer id="s15"/>
+            <af:panelGroupLayout id="pgl11" halign="center" layout="vertical">
+                <af:spacer id="s13" height="15px"/>
+                <af:icon name="Check" id="i4" styleClass="fa-4x fa-solid fa-circle-check icon_success"/>
+                <af:spacer id="s14" height="15px"/>
+                <af:outputText value="#{res.NEWS_DELETE}" id="ot2" styleClass="NormalText"/>
+            </af:panelGroupLayout>
+        </af:dialog>
+    </af:popup>
+    <af:popup childCreation="deferred" autoCancel="disabled" id="p4"
+              binding="#{pageFlowScope.UpdateAndDeleteNewsBean.bindNewsUpdatePopup}">
+        <af:spacer id="s19"/>
+        <af:dialog id="d4" cancelVisible="false" okVisible="false" styleClass="dialogbox-md">
+            <af:panelGroupLayout id="pgl14" halign="center" layout="vertical">
+                <af:spacer id="s17" height="15px"/>
+                <af:icon name="Check" id="i5" styleClass="fa-4x fa-solid fa-circle-check icon_success"/>
+                <af:spacer id="s18" height="15px"/>
+            </af:panelGroupLayout>
+            <af:outputText value="#{res.NEWS_UPDATE}" id="ot3" styleClass="NormalText"/>
+        </af:dialog>
+    </af:popup>
+    <af:popup childCreation="deferred" autoCancel="disabled" id="p5"
+              binding="#{pageFlowScope.UpdateAndDeleteNewsBean.bindDocTypePopup}">
+        <af:dialog id="d5" title="#{res.DOCUMENT_FORMAT}" closeIconVisible="false" okVisible="false"
+                   cancelVisible="false" styleClass="popup-upload-doc">
+            <af:spacer id="s5" height="15px"/>
+            <af:icon name="Check" id="i3" styleClass="fa-4x fa-solid fa-circle-check icon_success"></af:icon>
+            <af:spacer id="s6" height="15px"/>
+            <af:panelLabelAndMessage label="#{res.VALID_DOCUMENT_TYPE}" id="plam4"/>
+            <af:panelFormLayout id="pfl2" rows="4">
+                <af:outputText value=".png" id="ot4"/>
+                <af:outputText value=".JPG" id="ot5"/>
+            </af:panelFormLayout>
+            <af:panelGroupLayout id="pgl17" layout="vertical" halign="center" styleClass="my-3">
+                <af:button text="#{res.CLOSE_BUTTON}" id="b4" styleClass="cencledBT mr-2"
+                           actionListener="#{pageFlowScope.NewsBean.closeDocTypePopup}"/>
+            </af:panelGroupLayout>
+        </af:dialog>
+    </af:popup>
+    <af:popup childCreation="deferred" autoCancel="disabled" id="p6"
+              binding="#{pageFlowScope.UpdateAndDeleteNewsBean.bindErrorsPopup}">
+        <af:dialog id="d6" title="#{res.ERROR_POPUP}" closeIconVisible="false" okVisible="false" cancelVisible="false"
+                   styleClass="popup-upload-doc">
+            <af:spacer id="s16"/>
+            <af:panelGroupLayout id="pgl12" halign="center" layout="vertical">
+                <af:spacer id="s10" height="15px"/>
+                <af:icon name="Check" id="i2" styleClass="fa-4x fa-solid fa-circle-check icon_success"/>
+                <af:spacer id="s11" height="15px"/>
+            </af:panelGroupLayout>
+            <af:panelGroupLayout id="pgl13" halign="center" layout="vertical">
+                <af:panelLabelAndMessage label="#{res.ERROR_MESSAGE}" id="plam2"/>
+            </af:panelGroupLayout>
+            <af:panelGroupLayout id="pgl5" layout="vertical" halign="center" styleClass="my-3">
+                <af:button text="#{res.CLOSE_BUTTON}" id="b5" styleClass="AddNewsBT AFStretchWidth mr-2"
+                           actionListener="#{pageFlowScope.NewsBean.closeErrorPopup}"/>
+            </af:panelGroupLayout>
+        </af:dialog>
+    </af:popup>
+</jsp:root>

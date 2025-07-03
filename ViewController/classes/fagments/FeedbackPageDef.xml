@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="FeedbackPageDef"
+                Package="fagments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="FeedbackView1" RangeSize="25" DataControl="AppModuleDataControl" id="FeedbackView1Iterator"/>
+    <iterator Binds="FeedbackCalculationVO1" RangeSize="1" DataControl="AppModuleDataControl"
+              id="FeedbackCalculationVO1Iterator"/>
+  </executables>
+  <bindings>
+    <list IterBinding="FeedbackView1Iterator" ListOperMode="multiSelect" ListIter="FeedbackView1Iterator"
+          id="FeedbackView1" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="Serialno"/>
+      </AttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="Neutral"/>
+        <Item Value="Satisfied"/>
+        <Item Value="Unsatisfied"/>
+        <Item Value="VerySatisfied"/>
+      </ListDisplayAttrNames>
+    </list>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <methodAction id="insertFeedbackValues" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="insertFeedbackValues" IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="bindings.insertFeedbackValues.dataControl.dataProvider">
+      <NamedData NDName="selectValuesList" NDType="java.util.Set"/>
+    </methodAction>
+    <attributeValues IterBinding="FeedbackCalculationVO1Iterator" id="Percentage">
+      <AttrNames>
+        <Item Value="Percentage"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues id="ValueCount" IterBinding="FeedbackCalculationVO1Iterator">
+      <AttrNames>
+        <Item Value="ValueCount"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="FeedbackCalculationVO1Iterator" id="FeedbackCalculationVO1">
+      <nodeDefinition DefName="model.VO.FeedbackCalculationVO" Name="FeedbackCalculationVO10">
+        <AttrNames>
+          <Item Value="Value"/>
+          <Item Value="ValueCount"/>
+          <Item Value="Percentage"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

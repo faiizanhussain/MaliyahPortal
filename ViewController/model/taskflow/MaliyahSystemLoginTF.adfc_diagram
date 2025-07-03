@@ -1,0 +1,51 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">MaliyahSysLogin</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">384.0</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>MaliyahSysLogin&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">264.04004</property>
+      <property
+         name="page">/fagments/MaliyahSysLogin.jsff</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <TaskFlowCall
+      id="TaskFlowCall3">
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>MaliyahSystemDashboardTF&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p></property>
+      <property
+         name="activityId">MaliyahSystemDashboardTF</property>
+      <property
+         name="x">712.3613</property>
+      <property
+         name="y">327.1494</property>
+      <property
+         name="documentReference">/taskflow/MaliyahSystemDashboardTF.xml</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="taskFlowId">MaliyahSystemDashboardTF</property>
+   </TaskFlowCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View2"
+      to="TaskFlowCall3">
+      <property
+         name="fromOutcome">goToDashboard</property>
+      <property
+         name="sdm:polyPoints">R50,425.0,263.68945,671.3613,326.79883,L50</property>
+   </ControlFlowCase>
+</SDM>

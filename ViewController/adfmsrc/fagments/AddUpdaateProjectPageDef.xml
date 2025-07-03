@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="AddUpdaateProjectPageDef"
+                Package="fagments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ProjectTimelineView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="ProjectTimelineView1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="ProjectTimelineView1Iterator" id="ProjectTimelineView1">
+      <nodeDefinition DefName="model.VO.ProjectTimelineView" Name="ProjectTimelineView10">
+        <AttrNames>
+          <Item Value="ProjectId"/>
+          <Item Value="ProjectPhase"/>
+          <Item Value="Status"/>
+          <Item Value="Percentage"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="ProjectTimelineView1Iterator" id="ProjectId">
+      <AttrNames>
+        <Item Value="ProjectId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProjectTimelineView1Iterator" id="ProjectPhase">
+      <AttrNames>
+        <Item Value="ProjectPhase"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProjectTimelineView1Iterator" id="Status">
+      <AttrNames>
+        <Item Value="Status"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProjectTimelineView1Iterator" id="Percentage">
+      <AttrNames>
+        <Item Value="Percentage"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="ProjectTimelineView1Iterator" id="CreateInsert"
+            InstanceName="AppModuleDataControl.ProjectTimelineView1" DataControl="AppModuleDataControl"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action id="Commit" DataControl="AppModuleDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
+    <action id="Rollback" DataControl="AppModuleDataControl" RequiresUpdateModel="false" Action="rollbackTransaction"/>
+  </bindings>
+</pageDefinition>

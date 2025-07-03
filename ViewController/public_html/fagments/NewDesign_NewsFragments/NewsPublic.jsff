@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelGroupLayout id="pgl1">
+        <!--<af:table value="#{bindings.NewsTableView12.collectionModel}" var="row"
+                  rows="#{bindings.NewsTableView12.rangeSize}"
+                  emptyText="#{bindings.NewsTableView12.viewable ? 'No data to display.' : 'Access Denied.'}"
+                  rowBandingInterval="0" selectedRowKeys="#{bindings.NewsTableView12.collectionModel.selectedRow}"
+                  selectionListener="#{bindings.NewsTableView12.collectionModel.makeCurrent}" rowSelection="single"
+                  fetchSize="#{bindings.NewsTableView12.rangeSize}" id="t2">
+            <af:column headerText="#{bindings.NewsTableView12.hints.HeadlineAr.label}" id="c3">
+                <af:inputText value="#{row.bindings.HeadlineAr.inputValue}"
+                              label="#{bindings.NewsTableView12.hints.HeadlineAr.label}"
+                              required="#{bindings.NewsTableView12.hints.HeadlineAr.mandatory}"
+                              columns="#{bindings.NewsTableView12.hints.HeadlineAr.displayWidth}"
+                              maximumLength="#{bindings.NewsTableView12.hints.HeadlineAr.precision}"
+                              shortDesc="#{bindings.NewsTableView12.hints.HeadlineAr.tooltip}" id="it4">
+                    <f:validator binding="#{row.bindings.HeadlineAr.validator}"/>
+                </af:inputText>
+            </af:column>
+            <af:column headerText="#{bindings.NewsTableView12.hints.HeadlineEng.label}" id="c5">
+                <af:inputText value="#{row.bindings.HeadlineEng.inputValue}"
+                              label="#{bindings.NewsTableView12.hints.HeadlineEng.label}"
+                              required="#{bindings.NewsTableView12.hints.HeadlineEng.mandatory}"
+                              columns="#{bindings.NewsTableView12.hints.HeadlineEng.displayWidth}"
+                              maximumLength="#{bindings.NewsTableView12.hints.HeadlineEng.precision}"
+                              shortDesc="#{bindings.NewsTableView12.hints.HeadlineEng.tooltip}" id="it5">
+                    <f:validator binding="#{row.bindings.HeadlineEng.validator}"/>
+                </af:inputText>
+            </af:column>
+            <af:column headerText="#{bindings.NewsTableView12.hints.Serialnumber.label}" id="c6">
+                <af:inputText value="#{row.bindings.Serialnumber.inputValue}"
+                              label="#{bindings.NewsTableView12.hints.Serialnumber.label}"
+                              required="#{bindings.NewsTableView12.hints.Serialnumber.mandatory}"
+                              columns="#{bindings.NewsTableView12.hints.Serialnumber.displayWidth}"
+                              maximumLength="#{bindings.NewsTableView12.hints.Serialnumber.precision}"
+                              shortDesc="#{bindings.NewsTableView12.hints.Serialnumber.tooltip}" id="it6">
+                    <f:validator binding="#{row.bindings.Serialnumber.validator}"/>
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.NewsTableView12.hints.Serialnumber.format}"/>
+                </af:inputText>
+            </af:column>
+            <af:column headerText="#{bindings.NewsTableView12.hints.SummaryAr.label}" id="c7">
+                <af:inputText value="#{row.bindings.SummaryAr.inputValue}"
+                              label="#{bindings.NewsTableView12.hints.SummaryAr.label}"
+                              required="#{bindings.NewsTableView12.hints.SummaryAr.mandatory}"
+                              columns="#{bindings.NewsTableView12.hints.SummaryAr.displayWidth}"
+                              maximumLength="#{bindings.NewsTableView12.hints.SummaryAr.precision}"
+                              shortDesc="#{bindings.NewsTableView12.hints.SummaryAr.tooltip}" id="it7">
+                    <f:validator binding="#{row.bindings.SummaryAr.validator}"/>
+                </af:inputText>
+            </af:column>
+            <af:column headerText="#{bindings.NewsTableView12.hints.SummaryEng.label}" id="c8">
+                <af:inputText value="#{row.bindings.SummaryEng.inputValue}"
+                              label="#{bindings.NewsTableView12.hints.SummaryEng.label}"
+                              required="#{bindings.NewsTableView12.hints.SummaryEng.mandatory}"
+                              columns="#{bindings.NewsTableView12.hints.SummaryEng.displayWidth}"
+                              maximumLength="#{bindings.NewsTableView12.hints.SummaryEng.precision}"
+                              shortDesc="#{bindings.NewsTableView12.hints.SummaryEng.tooltip}" id="it8">
+                    <f:validator binding="#{row.bindings.SummaryEng.validator}"/>
+                </af:inputText>
+            </af:column>
+            <af:column headerText="#{bindings.NewsTableView12.hints.TagAr.label}" id="c9">
+                <af:inputText value="#{row.bindings.TagAr.inputValue}"
+                              label="#{bindings.NewsTableView12.hints.TagAr.label}"
+                              required="#{bindings.NewsTableView12.hints.TagAr.mandatory}"
+                              columns="#{bindings.NewsTableView12.hints.TagAr.displayWidth}"
+                              maximumLength="#{bindings.NewsTableView12.hints.TagAr.precision}"
+                              shortDesc="#{bindings.NewsTableView12.hints.TagAr.tooltip}" id="it9">
+                    <f:validator binding="#{row.bindings.TagAr.validator}"/>
+                </af:inputText>
+            </af:column>
+            <af:column headerText="#{bindings.NewsTableView12.hints.TagEng.label}" id="c10">
+                <af:inputText value="#{row.bindings.TagEng.inputValue}"
+                              label="#{bindings.NewsTableView12.hints.TagEng.label}"
+                              required="#{bindings.NewsTableView12.hints.TagEng.mandatory}"
+                              columns="#{bindings.NewsTableView12.hints.TagEng.displayWidth}"
+                              maximumLength="#{bindings.NewsTableView12.hints.TagEng.precision}"
+                              shortDesc="#{bindings.NewsTableView12.hints.TagEng.tooltip}" id="it10">
+                    <f:validator binding="#{row.bindings.TagEng.validator}"/>
+                </af:inputText>
+            </af:column>
+        </af:table>-->
+        <af:table value="#{bindings.NewsTableView12.collectionModel}" var="row" rows="#{bindings.NewsTableView12.rangeSize}"
+              emptyText="#{bindings.NewsTableView12.viewable ? 'No data to display.' : 'Access Denied.'}"
+              rowBandingInterval="0" selectedRowKeys="#{bindings.NewsTableView12.collectionModel.selectedRow}"
+              selectionListener="#{bindings.NewsTableView12.collectionModel.makeCurrent}" rowSelection="single"
+              fetchSize="#{bindings.NewsTableView12.rangeSize}" id="t1" styleClass="AFStretchWidth newsManagementBG"
+              binding="#{pageFlowScope.UpdateAndDeleteNewsBean.bindNewsTable}"  columnStretching="column:c2" scrollPolicy="scroll"
+              autoHeightRows="5">
+        <af:column id="c1" visible="false">
+            <af:inputText value="#{row.bindings.Serialnumber.inputValue}"
+                          required="#{bindings.NewsTableView12.hints.Serialnumber.mandatory}"
+                          columns="#{bindings.NewsTableView12.hints.Serialnumber.displayWidth}"
+                          maximumLength="#{bindings.NewsTableView12.hints.Serialnumber.precision}"
+                          shortDesc="#{bindings.NewsTableView12.hints.Serialnumber.tooltip}" id="it1">
+                <f:validator binding="#{row.bindings.Serialnumber.validator}"/>
+                <af:convertNumber groupingUsed="false" pattern="#{bindings.NewsTableView12.hints.Serialnumber.format}"/>
+            </af:inputText>
+        </af:column>
+        <af:column id="c2">
+            <af:panelGroupLayout id="pgl0"  halign="start" styleClass="NewsSectionArea">
+                    <af:spacer id="s2" height="1" width="1"/>
+                        <af:panelGroupLayout id="pgl5" layout="vertical" valign="top" styleClass="newsTextContainer">
+                          <af:spacer id="s1"/>
+                                    <af:panelGroupLayout id="pgl4" layout="vertical" halign="start" valign="top">
+                                        <af:panelGroupLayout id="pgl8" layout="horizontal" valign="top" styleClass="my-2">
+                                            <af:spacer id="s9"/>
+                                            <af:outputFormatted value="#{row.bindings.TagAr.inputValue}" id="of1"
+                                                                styleClass="badge bg-info"/>
+                                        </af:panelGroupLayout>
+                                    </af:panelGroupLayout>
+                                    <af:panelGroupLayout id="pgl7" layout="vertical" styleClass="AFStretchWidth" valign="top">
+                                        <af:spacer id="s8"/>
+                                            <af:panelGroupLayout id="pgl2" layout="vertical" valign="top" halign="start" styleClass="my-2" >
+                                                <!--<af:outputFormatted value="#{row.bindings.NewsTitle.inputValue}" id="of2"
+                                                                    styleClass="NewsTitle"/>-->
+                                                    <af:inputText value="#{row.bindings.HeadlineAr.inputValue}"  readOnly="true" styleClass="PublicNewsheading"
+                                                                  required="#{bindings.NewsTableView12.hints.HeadlineAr.mandatory}"  simple="true"  disabled="true"
+                                                                  columns="#{bindings.NewsTableView12.hints.HeadlineAr.displayWidth}"                                                                   maximumLength="#{bindings.NewsTableView12.hints.HeadlineAr.precision}"
+                                                                  shortDesc="#{bindings.NewsTableView12.hints.HeadlineAr.tooltip}" id="it2">
+                                                        <f:validator binding="#{row.bindings.HeadlineAr.validator}"/>
+                                                    </af:inputText>
+                                            </af:panelGroupLayout>
+                                          
+                                            <af:panelGroupLayout id="pgl3" layout="vertical" valign="top" halign="start">
+                                                <!--<af:outputFormatted value="#{row.bindings.NewsSummary.inputValue}" id="of3"
+                                                                    styleClass="NewsSummary"/>-->
+                                                  <af:inputText value="#{row.bindings.SummaryAr.inputValue}" readOnly="true" styleClass="PublicNewSummary"
+                                                                 required="#{bindings.NewsTableView12.hints.SummaryAr.mandatory}" disabled="true"
+                                                                  columns="#{bindings.NewsTableView12.hints.SummaryAr.displayWidth}"  simple="true"
+                                                                  maximumLength="#{bindings.NewsTableView12.hints.SummaryAr.precision}" rows="4"
+                                                                  shortDesc="#{bindings.NewsTableView12.hints.SummaryAr.tooltip}" id="it3" >
+                                                        <f:validator binding="#{row.bindings.SummaryAr.validator}"/>
+                                                    </af:inputText>
+                                            </af:panelGroupLayout>
+                                        </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+             <af:panelGroupLayout id="pgl6" layout="vertical" halign="left" valign="top" styleClass="mr-3 newsImageContainer">
+                            <af:image source="#{pageFlowScope.imageURl}#{row.bindings.Serialnumber.inputValue}.png" altSource=""
+                                      shortDesc="" id="i9" inlineStyle="width:300px;"/>
+                        </af:panelGroupLayout>
+            </af:panelGroupLayout>
+        
+        </af:column>
+    </af:table>
+  </af:panelGroupLayout>
+</jsp:root>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="uploadNewsPageDef"
+                Package="fagments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="NewsTableView1" RangeSize="25" DataControl="AppModuleDataControl" id="NewsTableView1Iterator"/>
+    <iterator Binds="NewCategoryVO1" RangeSize="25" DataControl="AppModuleDataControl" id="NewCategoryVO1Iterator"/>
+    <iterator Binds="NewsView1" RangeSize="25" DataControl="AppModuleDataControl" id="NewsView1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="NewsTableView1Iterator" id="NewsTableView1">
+      <nodeDefinition DefName="model.VO.NewsTableView" Name="NewsTableView10">
+        <AttrNames>
+          <Item Value="Serialnumber"/>
+          <Item Value="NewsTitle"/>
+          <Item Value="NewsImage"/>
+          <Item Value="CrerationDate"/>
+          <Item Value="ExpiryDate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Commit" DataControl="AppModuleDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
+    <action IterBinding="NewsTableView1Iterator" id="CreateInsert" InstanceName="AppModuleDataControl.NewsTableView1"
+            DataControl="AppModuleDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <methodAction id="getLatestNewsSerialNumber" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="getLatestNewsSerialNumber" IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="bindings.getLatestNewsSerialNumber.dataControl.dataProvider"
+                  ReturnName="data.AppModuleDataControl.methodResults.getLatestNewsSerialNumber_getLatestNewsSerialNumber_dataControl_dataProvider_getLatestNewsSerialNumber_result"/>
+    <methodAction id="addNews" RequiresUpdateModel="true" Action="invokeMethod" MethodName="addNews"
+                  IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="bindings.addNews.dataControl.dataProvider"
+                  ReturnName="data.AppModuleDataControl.methodResults.addNews_addNews_dataControl_dataProvider_addNews_result">
+      <NamedData NDName="news" NDType="java.util.ArrayList"/>
+    </methodAction>
+    <attributeValues IterBinding="NewsTableView1Iterator" id="SummaryAr1">
+      <AttrNames>
+        <Item Value="SummaryAr"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="NewsTableView1Iterator" id="SummaryEng1">
+      <AttrNames>
+        <Item Value="SummaryEng"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="NewsTableView1Iterator" id="TagAr1">
+      <AttrNames>
+        <Item Value="TagAr"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="NewsTableView1Iterator" id="TagEng1">
+      <AttrNames>
+        <Item Value="TagEng"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="NewsTableView1Iterator" id="HeadlineEng1">
+      <AttrNames>
+        <Item Value="HeadlineEng"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="NewsTableView1Iterator" id="HeadlineAr1">
+      <AttrNames>
+        <Item Value="HeadlineAr"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="NewsTableView1Iterator" id="TagEng" DTSupportsMRU="true" SelectItemValueMode="ListObject"
+          StaticList="true">
+      <AttrNames>
+        <Item Value="TagEng"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="News"/>
+        <Item Value="Announcement"/>
+      </ValueList>
+    </list>
+    <list IterBinding="NewsTableView1Iterator" id="TagAr" DTSupportsMRU="true" SelectItemValueMode="ListObject"
+          StaticList="true">
+      <AttrNames>
+        <Item Value="TagAr"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="اخبار"/>
+        <Item Value="إعلان"/>
+      </ValueList>
+    </list>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="TimeLineAdminPagePageDef"
+                Package="fagments.NewDesignFragments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ProjectTimelineNewView1" RangeSize="10" DataControl="AppModuleDataControl"
+              id="ProjectTimelineNewView1Iterator"/>
+  </executables>
+  <bindings>
+    <action id="Commit" DataControl="AppModuleDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
+    <action IterBinding="ProjectTimelineNewView1Iterator" id="CreateInsert"
+            InstanceName="AppModuleDataControl.ProjectTimelineNewView1" DataControl="AppModuleDataControl"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <action IterBinding="ProjectTimelineNewView1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <tree IterBinding="ProjectTimelineNewView1Iterator" id="ProjectTimelineNewView11">
+      <nodeDefinition DefName="model.VO.ProjectTimelineNewView" Name="ProjectTimelineNewView110">
+        <AttrNames>
+          <Item Value="ArabicPhaseno"/>
+          <Item Value="ArabicPhaseName"/>
+          <Item Value="ArabicPhaseDetails"/>
+          <Item Value="ArabicPhaseEndDate"/>
+          <Item Value="ArabicPhaseStartDate"/>
+          <Item Value="EnglishPhaseno"/>
+          <Item Value="EnglishPhaseName"/>
+          <Item Value="EnglishPhaseDetails"/>
+          <Item Value="EnglishPhaseEndDate"/>
+          <Item Value="EnglishPhaseStartDate"/>
+          <Item Value="CurrentPhase"/>
+          <Item Value="ArabicCurrentPhase"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="ProjectTimelineNewView1Iterator" id="EnglishPhaseno">
+      <AttrNames>
+        <Item Value="EnglishPhaseno"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProjectTimelineNewView1Iterator" id="EnglishPhaseName">
+      <AttrNames>
+        <Item Value="EnglishPhaseName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProjectTimelineNewView1Iterator" id="EnglishPhaseDetails">
+      <AttrNames>
+        <Item Value="EnglishPhaseDetails"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProjectTimelineNewView1Iterator" id="EnglishPhaseEndDate">
+      <AttrNames>
+        <Item Value="EnglishPhaseEndDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProjectTimelineNewView1Iterator" id="EnglishPhaseStartDate">
+      <AttrNames>
+        <Item Value="EnglishPhaseStartDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProjectTimelineNewView1Iterator" id="ArabicPhaseno">
+      <AttrNames>
+        <Item Value="ArabicPhaseno"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProjectTimelineNewView1Iterator" id="ArabicPhaseName">
+      <AttrNames>
+        <Item Value="ArabicPhaseName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProjectTimelineNewView1Iterator" id="ArabicPhaseDetails">
+      <AttrNames>
+        <Item Value="ArabicPhaseDetails"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProjectTimelineNewView1Iterator" id="ArabicPhaseEndDate">
+      <AttrNames>
+        <Item Value="ArabicPhaseEndDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProjectTimelineNewView1Iterator" id="ArabicPhaseStartDate">
+      <AttrNames>
+        <Item Value="ArabicPhaseStartDate"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="ProjectTimelineNewView1Iterator" id="CurrentPhase" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject" StaticList="true">
+      <AttrNames>
+        <Item Value="CurrentPhase"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="Yes"/>
+        <Item Value="No"/>
+      </ValueList>
+    </list>
+    <list IterBinding="ProjectTimelineNewView1Iterator" id="ArabicCurrentPhase" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject" StaticList="true">
+      <AttrNames>
+        <Item Value="ArabicCurrentPhase"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="نعم"/>
+        <Item Value="لا"/>
+      </ValueList>
+    </list>
+  </bindings>
+</pageDefinition>

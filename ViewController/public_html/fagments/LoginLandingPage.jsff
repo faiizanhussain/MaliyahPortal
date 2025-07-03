@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelGroupLayout id="pgl1" styleClass="LoginPg AFStretchWidth" layout="vertical">
+        <af:panelGroupLayout id="pgl2" valign="top" layout="vertical">
+            <af:image source="/images/1683179539068Logo.svg" styleClass="" id="dd"/>
+        </af:panelGroupLayout>
+        <af:panelGroupLayout id="pgl3" layout="vertical" styleClass="my-3 AFStretchWidth">
+            <af:outputText value="Sign up Application for portal" styleClass="Login_heading" id="ot1"/>
+        </af:panelGroupLayout>
+        <af:panelFormLayout id="pfl1" styleClass="LoginFrom" labelAlignment="top" fieldWidth="100%">
+            <af:inputText label="User Name" id="it1" styleClass="userNameText" placeholder="User name"
+                          value="#{pageFlowScope.userName}"/>
+            <af:inputText label="Password" id="it2" secret="true" styleClass="userNameText" placeholder="Password"/>
+            <af:panelGroupLayout id="pgl36" layout="horizontal" halign="center" styleClass="ButtonPG">
+                <af:button text="Login" id="b1" destination="/portal/NewMOFPortalSecondDraft/pages_home"
+                           styleClass="searchBT">
+                    <af:setPropertyListener from="#{pageFlowScope.userName}" to="#{applicationScope.userName}"
+                                            type="action"/>
+                    <af:setPropertyListener from="Ministry Of Finance" to="#{applicationScope.nameOfMinistry}"
+                                            type="action"/>
+                </af:button>
+            </af:panelGroupLayout>
+        </af:panelFormLayout>
+    </af:panelGroupLayout>
+</jsp:root>

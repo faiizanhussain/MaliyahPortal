@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+    <af:panelGroupLayout id="pgl1" halign="center" layout="horizontal" valign="top">
+        <af:panelGroupLayout id="pgl0" styleClass="AFStretchWidth" layout="vertical" valign="top">
+            <af:panelGroupLayout id="pgl2" halign="left" styleClass="pageHeading mb-3" layout="vertical">
+                <af:panelLabelAndMessage label="Contact Us" id="plam1" styleClass="pageHeadingText"/>
+            </af:panelGroupLayout>
+            <af:panelGroupLayout id="pgl4" halign="left" valign="top" layout="vertical">
+                <af:outputFormatted value="+968 123-4507-8" id="of1"/>
+                <af:outputFormatted value="support@om.com" id="of4"/>
+                <af:outputFormatted value="+968 123-4597-9" id="plam4" styleClass="text_Normal my-2"/>
+                <af:outputFormatted value="support@om.com" id="plam5" styleClass="text_Normal my-2"/>
+            </af:panelGroupLayout>
+            <af:panelGroupLayout id="pgl3" layout="vertical" styleClass="my-3">
+                <af:outputFormatted value="Support is provided Mon - Fri, we aim to reply within 1 business day, but occasionally it may take longer."
+                                    id="plam2"/>
+            </af:panelGroupLayout>
+            <af:panelGroupLayout id="pgl14" layout="vertical" halign="right" styleClass="my-2">
+                <af:link text="Back" id="l4" action="back"/>
+            </af:panelGroupLayout>
+        </af:panelGroupLayout>
+        <!--<af:panelFormLayout id="pfl1" labelAlignment="top" fieldWidth="100%" rows="5">
+            <af:inputText label="Name" id="it1"/>
+            <af:inputText label="Email" id="it2"/>
+            <af:panelGroupLayout id="pgl5" layout="vertical">
+                <af:panelLabelAndMessage label="Query" id="plam6"/>
+                <h:inputTextarea label="Query" id="it4" cols="40" rows="5"/>
+            </af:panelGroupLayout>
+            <af:button text="Submit" id="b1"/>
+        </af:panelFormLayout>-->
+    </af:panelGroupLayout>
+</jsp:root>

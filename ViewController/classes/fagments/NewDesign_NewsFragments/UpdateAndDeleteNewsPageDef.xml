@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="UpdateAndDeleteNewsPageDef"
+                Package="fagments.NewDesign_NewsFragments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="NewsTableView1" RangeSize="5" DataControl="AppModuleDataControl" id="NewsTableView1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="NewsTableView1Iterator" id="NewsTableView1">
+      <nodeDefinition DefName="model.VO.NewsTableView" Name="NewsTableView10">
+        <AttrNames>
+          <Item Value="Serialnumber"/>
+          <Item Value="NewsTitle"/>
+          <Item Value="NewsImage"/>
+          <Item Value="CrerationDate"/>
+          <Item Value="ExpiryDate"/>
+          <Item Value="Newscategory"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="NewsTableView1Iterator" id="Delete" InstanceName="AppModuleDataControl.NewsTableView1"
+            DataControl="AppModuleDataControl" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <attributeValues IterBinding="NewsTableView1Iterator" id="Serialnumber">
+      <AttrNames>
+        <Item Value="Serialnumber"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" DataControl="AppModuleDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
+    <methodAction id="updateNews" RequiresUpdateModel="true" Action="invokeMethod" MethodName="updateNews"
+                  IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="bindings.updateNews.dataControl.dataProvider"
+                  ReturnName="data.AppModuleDataControl.methodResults.updateNews_updateNews_dataControl_dataProvider_updateNews_result">
+      <NamedData NDName="news" NDType="java.util.ArrayList"/>
+    </methodAction>
+    <methodAction id="getLatestNewsSerialNumber" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="getLatestNewsSerialNumber" IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="bindings.getLatestNewsSerialNumber.dataControl.dataProvider"
+                  ReturnName="data.AppModuleDataControl.methodResults.getLatestNewsSerialNumber_getLatestNewsSerialNumber_dataControl_dataProvider_getLatestNewsSerialNumber_result"/>
+    <tree IterBinding="NewsTableView1Iterator" id="NewsTableView12">
+      <nodeDefinition DefName="model.VO.NewsTableView" Name="NewsTableView120">
+        <AttrNames>
+          <Item Value="HeadlineAr"/>
+          <Item Value="TagAr"/>
+          <Item Value="SummaryAr"/>
+          <Item Value="HeadlineEng"/>
+          <Item Value="SummaryEng"/>
+          <Item Value="TagEng"/>
+          <Item Value="Serialnumber"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="NewsTableView1Iterator" id="HeadlineAr">
+      <AttrNames>
+        <Item Value="HeadlineAr"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="NewsTableView1Iterator" id="HeadlineEng">
+      <AttrNames>
+        <Item Value="HeadlineEng"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="NewsTableView1Iterator" id="SummaryAr">
+      <AttrNames>
+        <Item Value="SummaryAr"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="NewsTableView1Iterator" id="SummaryEng">
+      <AttrNames>
+        <Item Value="SummaryEng"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="NewsTableView1Iterator" id="TagAr">
+      <AttrNames>
+        <Item Value="TagAr"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="NewsTableView1Iterator" id="TagEng">
+      <AttrNames>
+        <Item Value="TagEng"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+   <af:panelGroupLayout id="pgl9" styleClass="tiles_Box" layout="horizontal" valign="top" halign="center">
+                        <af:panelGroupLayout layout="vertical"  id="pgl11" halign="center" styleClass="py-2">
+                            <af:link icon="/oracle/webcenter/siteresources/scopedMD/shared/imgResouce/homLogin/LMSLOGINWINDOW.png" styleClass="link_icon" id="l3"/>
+                        </af:panelGroupLayout>
+                    </af:panelGroupLayout>
+  <!--<af:panelGroupLayout id="pgl1" layout="vertical">
+  <af:panelGroupLayout id="pgl7" layout="horizontal">
+          <p><b>What are learning management systems</b></p>
+         <p>Learning management systems examples (LMS) help create better online learning experiences for your learners. They allow you to develop, design, and deliver your training programs faster and more effectively. Most LMS do this by offering a course library, content management system, user management, and authoring tools. They also automate most of the manual work that’s normally done when planning and executing training programs, such as user enrollment and training trackers. That’s why, with learning management system examples, you’ll be able to better focus on what really matters: optimizing training for your learners.</p>
+  </af:panelGroupLayout>
+  <af:panelAccordion discloseMany="false" id="pa1" styleClass="accordianClass">
+      <af:showDetailItem id="id1" text=" SC Training (formerly EdApp)" styleClass="showDetailsItemClass">
+        <af:panelGroupLayout id="pgl2">
+        <p> SC Training (formerly EdApp) has raised the bar for training and development, thanks to its advanced mobile learning solutions. Features like SCORM, authoring tools, intuitive lesson templates, built-in AI translation, and microlearning all contribute to this LMS’ massive success.</p>
+        <p>You can even import and edit courses directly from their editable course library, which touches on topics from different industries, such as retail training, construction training, food and hospitality training, and so much more. </p>
+        <p>If you want a more customized experience, SC Training (formerly EdApp)'s course creation services is a great add-on feature that you can use. All you have to do is send over your training requirements, and their expert instructional designers will do the rest for you. They’ll even let you take all the credit for it.</p>
+        <p>You can also take advantage of SC Training (formerly EdApp)’s very own Rapid Refresh quiz maker to reinforce concepts and increase knowledge retention among your learners. They can benefit from a classroom experience with features like group training, discussions, and assignments.</p>
+        </af:panelGroupLayout>
+      </af:showDetailItem>
+      <af:showDetailItem id="id2" text="Schoology Education Platform"  styleClass="showDetailsItemClass">
+       <af:panelGroupLayout id="pgl3">
+        <p> SC Training (formerly EdApp) has raised the bar for training and development, thanks to its advanced mobile learning solutions. Features like SCORM, authoring tools, intuitive lesson templates, built-in AI translation, and microlearning all contribute to this LMS’ massive success.</p>
+        <p>You can even import and edit courses directly from their editable course library, which touches on topics from different industries, such as retail training, construction training, food and hospitality training, and so much more. </p>
+        <p>If you want a more customized experience, SC Training (formerly EdApp)'s course creation services is a great add-on feature that you can use. All you have to do is send over your training requirements, and their expert instructional designers will do the rest for you. They’ll even let you take all the credit for it.</p>
+        <p>You can also take advantage of SC Training (formerly EdApp)’s very own Rapid Refresh quiz maker to reinforce concepts and increase knowledge retention among your learners. They can benefit from a classroom experience with features like group training, discussions, and assignments.</p>
+        </af:panelGroupLayout>
+        </af:showDetailItem>
+      <af:showDetailItem id="id3" text="Its Learning LMS Example"  styleClass="showDetailsItemClass">
+       <af:panelGroupLayout id="pgl4">
+        <p> SC Training (formerly EdApp) has raised the bar for training and development, thanks to its advanced mobile learning solutions. Features like SCORM, authoring tools, intuitive lesson templates, built-in AI translation, and microlearning all contribute to this LMS’ massive success.</p>
+        <p>You can even import and edit courses directly from their editable course library, which touches on topics from different industries, such as retail training, construction training, food and hospitality training, and so much more. </p>
+        <p>If you want a more customized experience, SC Training (formerly EdApp)'s course creation services is a great add-on feature that you can use. All you have to do is send over your training requirements, and their expert instructional designers will do the rest for you. They’ll even let you take all the credit for it.</p>
+        <p>You can also take advantage of SC Training (formerly EdApp)’s very own Rapid Refresh quiz maker to reinforce concepts and increase knowledge retention among your learners. They can benefit from a classroom experience with features like group training, discussions, and assignments.</p>
+        </af:panelGroupLayout>
+      </af:showDetailItem>
+      <af:showDetailItem id="id4" text="Kadenze"  styleClass="showDetailsItemClass">
+       <af:panelGroupLayout id="pgl5">
+        <p> SC Training (formerly EdApp) has raised the bar for training and development, thanks to its advanced mobile learning solutions. Features like SCORM, authoring tools, intuitive lesson templates, built-in AI translation, and microlearning all contribute to this LMS’ massive success.</p>
+        <p>You can even import and edit courses directly from their editable course library, which touches on topics from different industries, such as retail training, construction training, food and hospitality training, and so much more. </p>
+        <p>If you want a more customized experience, SC Training (formerly EdApp)'s course creation services is a great add-on feature that you can use. All you have to do is send over your training requirements, and their expert instructional designers will do the rest for you. They’ll even let you take all the credit for it.</p>
+        <p>You can also take advantage of SC Training (formerly EdApp)’s very own Rapid Refresh quiz maker to reinforce concepts and increase knowledge retention among your learners. They can benefit from a classroom experience with features like group training, discussions, and assignments.</p>
+        </af:panelGroupLayout>
+      </af:showDetailItem>
+      <af:showDetailItem id="id5" text="ATutor"  styleClass="showDetailsItemClass">
+       <af:panelGroupLayout id="pgl6">
+        <p> SC Training (formerly EdApp) has raised the bar for training and development, thanks to its advanced mobile learning solutions. Features like SCORM, authoring tools, intuitive lesson templates, built-in AI translation, and microlearning all contribute to this LMS’ massive success.</p>
+        <p>You can even import and edit courses directly from their editable course library, which touches on topics from different industries, such as retail training, construction training, food and hospitality training, and so much more. </p>
+        <p>If you want a more customized experience, SC Training (formerly EdApp)'s course creation services is a great add-on feature that you can use. All you have to do is send over your training requirements, and their expert instructional designers will do the rest for you. They’ll even let you take all the credit for it.</p>
+        <p>You can also take advantage of SC Training (formerly EdApp)’s very own Rapid Refresh quiz maker to reinforce concepts and increase knowledge retention among your learners. They can benefit from a classroom experience with features like group training, discussions, and assignments.</p>
+        </af:panelGroupLayout>
+      </af:showDetailItem>
+    </af:panelAccordion>
+  </af:panelGroupLayout>-->
+</jsp:root>

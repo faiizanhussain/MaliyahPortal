@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="NewsPageDef" Package="fagments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="NewsTableView1" RangeSize="25" DataControl="AppModuleDataControl" id="NewsTableView1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="NewsTableView1Iterator" id="Serialnumber">
+      <AttrNames>
+        <Item Value="Serialnumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="NewsTableView1Iterator" id="NewsTitle">
+      <AttrNames>
+        <Item Value="NewsTitle"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="NewsTableView1Iterator" id="NewsSummary">
+      <AttrNames>
+        <Item Value="NewsSummary"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="NewsTableView1Iterator" id="NewsImage">
+      <AttrNames>
+        <Item Value="NewsImage"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="NewsTableView1Iterator" id="CrerationDate">
+      <AttrNames>
+        <Item Value="CrerationDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="NewsTableView1Iterator" id="ExpiryDate">
+      <AttrNames>
+        <Item Value="ExpiryDate"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

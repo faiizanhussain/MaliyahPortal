@@ -1,0 +1,61 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">HelpDeskHome</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">411.0</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>HelpDeskHome&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">228.89648</property>
+      <property
+         name="page">/fagments/HelpDeskHome.jsff</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">HelpDesks</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">687.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>HelpDesks&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">233.59766</property>
+      <property
+         name="page">/fagments/HelpDesks.jsff</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View2"
+      to="View3">
+      <property
+         name="fromOutcome">*gotohelpdesk</property>
+      <property
+         name="sdm:polyPoints">R46,452.0848,225.0459,646.0,229.74707,L46</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase5"
+      from="View3"
+      to="View2">
+      <property
+         name="fromOutcome">back</property>
+      <property
+         name="sdm:polyPoints">L54,645.91516,236.74707,452.0,232.0459,R54</property>
+   </ControlFlowCase>
+</SDM>

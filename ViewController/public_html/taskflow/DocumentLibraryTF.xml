@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="DocumentLibraryTF">
+    <default-activity>methodCall1</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <managed-bean id="__3">
+      <managed-bean-name>DocumentLibrary</managed-bean-name>
+      <managed-bean-class>view.managedBean.DocumentLib</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <view id="LibraryDocuments">
+      <page>/fagments/LibraryDocuments.jsff</page>
+    </view>
+    <method-call id="methodCall1">
+      <method>#{pageFlowScope.DocumentLibrary.getDocumentFromContent}</method>
+      <outcome>
+        <fixed-outcome>goTolibrary</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__1">
+      <from-activity-id>methodCall1</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>goTolibrary</from-outcome>
+        <to-activity-id>LibraryDocuments</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

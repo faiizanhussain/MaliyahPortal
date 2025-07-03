@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="UserFeedback"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="USER_FEEDBACK"
+  AliasName="UserFeedback"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="Serialnumber"
+    IsNotNull="true"
+    ColumnName="SERIALNUMBER"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="USER_FEEDBACK"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Userid"
+    Precision="250"
+    ColumnName="USERID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="USER_FEEDBACK">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Usernme"
+    Precision="250"
+    ColumnName="USERNME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="USER_FEEDBACK">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Glad"
+    Precision="25"
+    ColumnName="GLAD"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="USER_FEEDBACK">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Happy"
+    Precision="25"
+    ColumnName="HAPPY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="USER_FEEDBACK">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Neutral"
+    Precision="25"
+    ColumnName="NEUTRAL"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="USER_FEEDBACK">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Dissatisfied"
+    Precision="25"
+    ColumnName="DISSATISFIED"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="USER_FEEDBACK">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ExtremelyDissatified"
+    Precision="25"
+    ColumnName="EXTREMELY_DISSATIFIED"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="USER_FEEDBACK">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="FeedbackSubmitted"
+    Precision="25"
+    ColumnName="FEEDBACK_SUBMITTED"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="USER_FEEDBACK">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="UserComments"
+    Precision="1000"
+    ColumnName="USER_COMMENTS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="USER_FEEDBACK">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1000"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="SysC0025902"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0025902"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.UserFeedback.Serialnumber"/>
+    </AttrArray>
+  </Key>
+</Entity>

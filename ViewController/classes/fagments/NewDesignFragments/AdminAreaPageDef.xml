@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="AdminAreaPageDef"
+                Package="fagments.NewDesignFragments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="UserFeedbackView1" RangeSize="3" DataControl="AppModuleDataControl"
+              id="UserFeedbackView1Iterator"/>
+    <taskFlow id="TimeLine_AdminTF1" taskFlowId="/taskflow/NewDesignTaskflow/TimeLine_AdminTF.xml#TimeLine_AdminTF"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="UserFeedbackView1Iterator" id="UserFeedbackView1">
+      <nodeDefinition DefName="model.VO.UserFeedbackView" Name="UserFeedbackView10">
+        <AttrNames>
+          <Item Value="Glad"/>
+          <Item Value="Happy"/>
+          <Item Value="Neutral"/>
+          <Item Value="Dissatisfied"/>
+          <Item Value="ExtremelyDissatified"/>
+          <Item Value="Userid"/>
+          <Item Value="Usernme"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="UserFeedbackView1Iterator" id="UserFeedbackView11">
+      <nodeDefinition DefName="model.VO.UserFeedbackView" Name="UserFeedbackView110">
+        <AttrNames>
+          <Item Value="Glad"/>
+          <Item Value="Happy"/>
+          <Item Value="Neutral"/>
+          <Item Value="Dissatisfied"/>
+          <Item Value="ExtremelyDissatified"/>
+          <Item Value="Userid"/>
+          <Item Value="Usernme"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="UserFeedbackView1Iterator" id="UserFeedbackView12" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="model.VO.UserFeedbackView" Name="UserFeedbackView12">
+        <AttrNames>
+          <Item Value="Serialnumber"/>
+          <Item Value="Glad"/>
+          <Item Value="Happy"/>
+          <Item Value="Neutral"/>
+          <Item Value="Dissatisfied"/>
+          <Item Value="ExtremelyDissatified"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DocumentDetails"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="DOCUMENT_DETAILS"
+  AliasName="DocumentDetails"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="Doccontentid"
+    Precision="250"
+    ColumnName="DOCCONTENTID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DOCUMENT_DETAILS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Doccreatedby"
+    Precision="250"
+    ColumnName="DOCCREATEDBY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DOCUMENT_DETAILS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Doccreateddate"
+    Precision="250"
+    ColumnName="DOCCREATEDDATE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DOCUMENT_DETAILS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Docdid"
+    IsNotNull="true"
+    Precision="250"
+    ColumnName="DOCDID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DOCUMENT_DETAILS"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Docoriginalname"
+    Precision="250"
+    ColumnName="DOCORIGINALNAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DOCUMENT_DETAILS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Docsize"
+    Precision="250"
+    ColumnName="DOCSIZE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DOCUMENT_DETAILS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Docformat"
+    Precision="250"
+    ColumnName="DOCFORMAT"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DOCUMENT_DETAILS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Doctitle"
+    Precision="250"
+    ColumnName="DOCTITLE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DOCUMENT_DETAILS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Doccontenttype"
+    Precision="250"
+    ColumnName="DOCCONTENTTYPE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DOCUMENT_DETAILS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Docmodifiedby"
+    Precision="250"
+    ColumnName="DOCMODIFIEDBY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DOCUMENT_DETAILS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Docmodifieddate"
+    Precision="250"
+    ColumnName="DOCMODIFIEDDATE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DOCUMENT_DETAILS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Docsecuritygroup"
+    Precision="250"
+    ColumnName="DOCSECURITYGROUP"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DOCUMENT_DETAILS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Docsourceaccount"
+    Precision="250"
+    ColumnName="DOCSOURCEACCOUNT"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DOCUMENT_DETAILS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Documenturl"
+    Precision="1500"
+    ColumnName="DOCUMENTURL"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DOCUMENT_DETAILS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1500"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="SysC0018836"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0018836"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.DocumentDetails.Docdid"/>
+    </AttrArray>
+  </Key>
+</Entity>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.22.48" id="DataBindings"
+             SeparateXMLFiles="false" Package="view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+    <factory nameSpace="http://xmlns.oracle.com/adfm/dvt"
+             className="oracle.adfinternal.view.faces.dvt.model.binding.FacesBindingFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/fagments/displayDocuments.jsff" usageId="view_displayDocumentsPageDef"/>
+    <page path="/taskflow/DisplayDocumentTF.xml#DisplayDocumentTF@setDocumentDetailsData"
+          usageId="view_DisplayDocumentTF_DisplayDocumentTF_setDocumentDetailsDataPageDef"/>
+    <page path="/test.jspx" usageId="view_testPageDef"/>
+    <page path="/fagments/uploadNews.jsff" usageId="view_uploadNewsPageDef"/>
+    <page path="/taskflow/NewDesign_NewsDisplay/NewsDisplay.xml#News_1@getNewsInformation"
+          usageId="view_News_1_News_1_getNewsInformationPageDef"/>
+    <page path="/fagments/NewDesign_NewsFragments/NewsDisplay.jsff" usageId="view_NewsDisplayPageDef"/>
+    <page path="/taskflow/NewDesign_NewsDisplay/UpdateAndDeleteNewsTF.xml#UpdateAndDeleteNewsTF@methodCall1"
+          usageId="view_UpdateAndDeleteNewsTF_UpdateAndDeleteNewsTF_methodCall1PageDef"/>
+    <page path="/fagments/NewDesign_NewsFragments/UpdateAndDeleteNews.jsff" usageId="view_UpdateAndDeleteNewsPageDef"/>
+    <page path="/fagments/NewDesignFragments/NewMessageSystemDisplays.jsff"
+          usageId="view_NewMessageSystemDisplaysPageDef"/>
+    <page path="/fagments/NewDesignFragments/NewsManagement.jsff" usageId="view_NewsManagementPageDef"/>
+    <page path="/fagments/NewDesignFragments/ManageDocument.jsff" usageId="view_ManageDocumentPageDef"/>
+    <page path="/fagments/NewDesignFragments/AdminArea.jsff" usageId="view_AdminAreaPageDef"/>
+    <page path="/fagments/NewDesign_NewsFragments/NewsPublic.jsff" usageId="view_NewsPublicPageDef"/>
+    <page path="/fagments/NewDesignFragments/TimeLineAdminPage.jsff" usageId="view_TimeLineAdminPagePageDef"/>
+    <page path="/taskflow/NewDesignTaskflow/TimeLine_AdminTF.xml#TimeLine_AdminTF@Commit"
+          usageId="view_TimeLine_AdminTF_TimeLine_AdminTF_CommitPageDef"/>
+    <page path="/taskflow/NewDesignTaskflow/ProjectTimeLineNew.xml#ProjectTimeLineNew@methodCall1"
+          usageId="view_ProjectTimeLineNew_ProjectTimeLineNew_methodCall1PageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="view_displayDocumentsPageDef" path="fagments.displayDocumentsPageDef"/>
+    <page id="view_DisplayDocumentTF_DisplayDocumentTF_setDocumentDetailsDataPageDef"
+          path="taskflow.DisplayDocumentTF_DisplayDocumentTF_setDocumentDetailsDataPageDef"/>
+    <page id="view_testPageDef" path="view.pageDefs.testPageDef"/>
+    <page id="view_MaliyahTimeLineNewPageDef" path="fagments.MaliyahTimeLineNewPageDef"/>
+    <page id="view_uploadNewsPageDef" path="fagments.uploadNewsPageDef"/>
+    <page id="view_News_1_News_1_getNewsInformationPageDef"
+          path="taskflow.NewDesign_NewsDisplay.News_1_News_1_getNewsInformationPageDef"/>
+    <page id="view_NewsDisplayPageDef" path="fagments.NewDesign_NewsFragments.NewsDisplayPageDef"/>
+    <page id="view_UpdateAndDeleteNewsTF_UpdateAndDeleteNewsTF_methodCall1PageDef"
+          path="taskflow.NewDesign_NewsDisplay.UpdateAndDeleteNewsTF_UpdateAndDeleteNewsTF_methodCall1PageDef"/>
+    <page id="view_UpdateAndDeleteNewsPageDef" path="fagments.NewDesign_NewsFragments.UpdateAndDeleteNewsPageDef"/>
+    <page id="view_NewMessageSystemDisplaysPageDef" path="fagments.NewDesignFragments.NewMessageSystemDisplaysPageDef"/>
+    <page id="view_NewsManagementPageDef" path="fagments.NewDesignFragments.NewsManagementPageDef"/>
+    <page id="view_ManageDocumentPageDef" path="fagments.NewDesignFragments.ManageDocumentPageDef"/>
+    <page id="view_AdminAreaPageDef" path="fagments.NewDesignFragments.AdminAreaPageDef"/>
+    <page id="view_NewsPublicPageDef" path="fagments.NewDesign_NewsFragments.NewsPublicPageDef"/>
+    <page id="view_TimeLineAdminPagePageDef" path="fagments.NewDesignFragments.TimeLineAdminPagePageDef"/>
+    <page id="view_TimeLine_AdminTF_TimeLine_AdminTF_CommitPageDef"
+          path="taskflow.NewDesignTaskflow.TimeLine_AdminTF_TimeLine_AdminTF_CommitPageDef"/>
+    <page id="view_ProjectTimeLineNew_ProjectTimeLineNew_methodCall1PageDef"
+          path="taskflow.NewDesignTaskflow.ProjectTimeLineNew_ProjectTimeLineNew_methodCall1PageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModuleDataControl" Package="model.EO"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:panelGroupLayout id="pgl1" layout="horizontal" styleClass="AFStretchWidth">
+    <af:panelGroupLayout id="pgl2" layout="vertical" styleClass="AFStretchWidth">
+      <af:panelAccordion discloseMany="false" id="pa1" dimensionsFrom="parent">
+        <af:showDetailItem id="pane1" text="#{res.FAQ_QUESTION_1}" styleClass="accordion-heading">
+          <af:outputFormatted value="#{res.FAQ_QUESTION_1_ANSWER}" id="of1" styleClass="accordion-content"/>
+        </af:showDetailItem>
+        <af:showDetailItem id="pane2" text="#{res.FAQ_QUESTION_2} " styleClass="accordion-heading">
+          <af:outputFormatted value="#{res.FAQ_QUESTION_2_ANSWER}" id="of2"  styleClass="accordion-content"/>
+        </af:showDetailItem>
+        <af:showDetailItem id="pane3" text="#{res.FAQ_QUESTION_3}" styleClass="accordion-heading">
+          <af:outputFormatted value="#{res.FAQ_QUESTION_3_ANSWER}" id="of3"  styleClass="accordion-content"/>
+        </af:showDetailItem>
+        <af:showDetailItem id="pane4" text="#{res.FAQ_QUESTION_4}" styleClass="accordion-heading">
+          <af:outputFormatted value="#{res.FAQ_QUESTION_4_ANSWER}" id="of4"  styleClass="accordion-content"/>
+        </af:showDetailItem>
+        <af:showDetailItem id="pane5" text="#{res.FAQ_QUESTION_5}" styleClass="accordion-heading">
+          <af:outputFormatted value="#{res.FAQ_QUESTION_5_ANSWER}" id="of5"  styleClass="accordion-content"/>
+        </af:showDetailItem>
+        <af:showDetailItem id="pane6" text="#{res.FAQ_QUESTION_6}" styleClass="accordion-heading">
+          <af:outputFormatted value="#{res.FAQ_QUESTION_6_ANSWER}" id="of6"  styleClass="accordion-content"/>
+        </af:showDetailItem>
+      </af:panelAccordion>
+    </af:panelGroupLayout>
+    <af:spacer id="s1" width="20px"/>
+    <af:panelGroupLayout id="pgl3" layout="vertical" styleClass="AFStretchWidth">
+      <af:panelAccordion discloseMany="false" id="pa2" dimensionsFrom="parent">
+        <af:showDetailItem id="pane7" text="#{res.FAQ_QUESTION_7}" styleClass="accordion-heading">
+          <af:outputFormatted value="#{res.FAQ_QUESTION_7_ANSWER}" id="of7"  styleClass="accordion-content"/>
+        </af:showDetailItem>
+        <af:showDetailItem id="pane8" text="#{res.FAQ_QUESTION_8}" styleClass="accordion-heading">
+          <af:outputFormatted value="#{res.FAQ_QUESTION_8_ANSWER}" id="of8"  styleClass="accordion-content"/>
+        </af:showDetailItem>
+        <af:showDetailItem id="pane9" text="#{res.FAQ_QUESTION_9}" styleClass="accordion-heading">
+          <af:outputFormatted value="#{res.FAQ_QUESTION_9_ANSWER}" id="of9"  styleClass="accordion-content"/>
+        </af:showDetailItem>
+        <af:showDetailItem id="pane10" text="#{res.FAQ_QUESTION_10}" styleClass="accordion-heading">
+          <af:outputFormatted value="#{res.FAQ_QUESTION_10_ANSWER}" id="of10" styleClass="accordion-content"/>
+        </af:showDetailItem>
+        <af:showDetailItem id="pane11" text="#{res.FAQ_QUESTION_11}" styleClass="accordion-heading">
+          <af:outputFormatted value="#{res.FAQ_QUESTION_11_ANSWER}" id="of11"  styleClass="accordion-content"/>
+        </af:showDetailItem>
+        <af:showDetailItem id="pane12" text="#{res.FAQ_QUESTION_12}" styleClass="accordion-heading">
+          <af:outputFormatted value="#{res.FAQ_QUESTION_12_ANSWER}" id="of12" styleClass="accordion-content"/>
+        </af:showDetailItem>
+      </af:panelAccordion>
+    </af:panelGroupLayout>
+  </af:panelGroupLayout>
+</jsp:root>

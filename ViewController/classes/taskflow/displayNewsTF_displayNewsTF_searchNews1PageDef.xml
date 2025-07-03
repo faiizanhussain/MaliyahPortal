@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48"
+                id="displayNewsTF_displayNewsTF_searchNews1PageDef" Package="taskflow" SkipValidation="true">
+  <parameters/>
+  <executables/>
+  <bindings>
+    <methodAction id="searchNews" RequiresUpdateModel="true" Action="invokeMethod" MethodName="searchNews"
+                  IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="bindings.searchNews.dataControl.dataProvider">
+      <NamedData NDName="serialId" NDValue="#{pageFlowScope.serialNumber}" NDType="java.math.BigDecimal"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

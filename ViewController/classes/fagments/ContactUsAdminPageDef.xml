@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="ContactUsAdminPageDef"
+                Package="fagments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ContactusView1" RangeSize="25" DataControl="AppModuleDataControl" id="ContactusView1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="ContactusView1Iterator" id="ContactusView1">
+      <nodeDefinition DefName="model.VO.ContactusView" Name="ContactusView10">
+        <AttrNames>
+          <Item Value="Serialno"/>
+          <Item Value="Firstname"/>
+          <Item Value="Lastname"/>
+          <Item Value="Emailid"/>
+          <Item Value="Phonenumber"/>
+          <Item Value="Query"/>
+          <Item Value="NameOfMinistry"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

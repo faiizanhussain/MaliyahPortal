@@ -1,0 +1,196 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+    <!--<af:panelGroupLayout id="pgl0" layout="horizontal" styleClass="AFStretchWidth">
+    -->
+    <!--<af:panelGroupLayout id="pgl8" layout="horizontal" halign="left" styleClass="mt-2">
+            <af:link icon="/images/trending_up.JPG" id="l3" styleClass="newProgress_icon" disabled="true"/>
+            <af:outputText value="Trending News" id="plam1" styleClass="projecttimelineMainheading"/>
+        </af:panelGroupLayout>-->
+    <!--
+    -->
+    <!--    <af:panelGroupLayout id="pgl25" valign="top" layout="horizontal" halign="right" styleClass="buttonSection">
+            <af:button text="" icon="/images/arrow_backward.svg" id="b1"
+                       actionListener="#{pageFlowScope.NewProjectTimeLineBean.displayPreviousNews}" styleClass="backarrowBT"
+                       binding="#{pageFlowScope.NewProjectTimeLineBean.bindPreviousButton}" disabled="true"/>
+            <af:button text="" icon="/images/arrow_forward.svg" id="b2"
+                       actionListener="#{pageFlowScope.NewProjectTimeLineBean.displayNextNews}" styleClass="backarrowBT"
+                        binding="#{pageFlowScope.NewProjectTimeLineBean.bindNextButton}"/>
+        </af:panelGroupLayout>-->
+    <!--
+    </af:panelGroupLayout>-->
+   
+    <div class="news-section-header">
+        <div class="news-section-title">
+            <af:link icon="/images/trending_up.JPG" id="l1" styleClass="newProgress_icon" disabled="true"/>
+            <af:outputText value="#{res.PROJECT_TIMELINE}" id="ot4" styleClass="projecttimelineMainheading"/>
+        </div>
+        <af:spacer id="s1" width="30px"/>
+        <af:button text="EN" id="b3" action="#{pageFlowScope.NewProjectTimeLineBean.updateEnglish}" visible="true"
+                   binding="#{pageFlowScope.NewProjectTimeLineBean.bindEnglishLangBtn}" styleClass="link-underline-primary"/>
+        <af:button text="AR" id="b4" action="#{pageFlowScope.NewProjectTimeLineBean.updateArabic}" visible="false"
+                   binding="#{pageFlowScope.NewProjectTimeLineBean.bindArabicLangBtn}" styleClass="link-underline-primary"/>
+        <div style="flex: 1; height: 1px; background-color: #E2E8F0; margin: 0 24px;">
+        </div>
+        <div class="news-carousel-controls">
+            <af:panelGroupLayout id="pgl25" valign="top" halign="end" styleClass="buttonSection">
+                <af:button text="" icon="/images/arrow_backward.svg" id="b1"
+                           actionListener="#{pageFlowScope.NewProjectTimeLineBean.displayPreviousNews}"
+                           styleClass="backarrowBT" binding="#{pageFlowScope.NewProjectTimeLineBean.bindPreviousButton}"
+                           disabled="true"/>
+                <af:button text="" icon="/images/arrow_forward.svg" id="b2"
+                           actionListener="#{pageFlowScope.NewProjectTimeLineBean.displayNextNews}" styleClass="backarrowBT"
+                           binding="#{pageFlowScope.NewProjectTimeLineBean.bindNextButton}"/>
+            </af:panelGroupLayout>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-12 mt-4 pt-2">
+            <af:panelGroupLayout id="pgl1" layout="vertical" valign="top" styleClass="#{pageFlowScope.arabicCurrentPhase1_1 eq 'نعم'  ?'TimelineBoxSelected': 'TimelineBox'}">
+                <af:panelGroupLayout id="pgl2" layout="vertical" valign="top">
+                    <af:panelGroupLayout id="pgl6" layout="vertical" valign="top">
+                         <af:panelGroupLayout id="pgl15" layout="vertical" valign="top" styleClass="my-2">
+                            <af:outputText value="#{pageFlowScope.NewProjectTimeLineBean.languageFlag eq 'ar' ? pageFlowScope.arabicPhaseName1_1:pageFlowScope.englishPhaseName1_1}" id="ot2" styleClass="projecttimelineHeading"
+                                           partialTriggers="b2 b1"
+                                           binding="#{pageFlowScope.NewProjectTimeLineBean.header1}"/>
+                        </af:panelGroupLayout>
+                                 </af:panelGroupLayout>
+                        <af:panelGroupLayout id="pgl51" layout="vertical" valign="top" styleClass="mt-4">
+                           <!--<af:panelGroupLayout id="pgl29" layout="horizontal" halign="start" valign="top" styleClass="mb-3">
+                                <af:link text="" id="l8" styleClass="checklist_icon" visible="true"/>
+                            <af:outputText value="#{pageFlowScope.NewProjectTimeLineBean.languageFlag eq 'ar' ? pageFlowScope.arabicStartDate1_1:pageFlowScope.englishStartDate1_1}" id="ot1" styleClass="projecttimelineText"
+                           binding="#{pageFlowScope.NewProjectTimeLineBean.bindText1_1}" rendered="#{pageFlowScope.arabicStartDate1_1 ne null}"
+                            partialTriggers="b2 b1"/>
+                            </af:panelGroupLayout>-->
+                               <!--<af:panelGroupLayout id="pgl31" layout="horizontal" halign="start" valign="top" styleClass="mb-3">
+                                <af:link text="" id="l11" styleClass="checklist_icon" visible="true"/>
+                            <af:outputText value="#{pageFlowScope.NewProjectTimeLineBean.languageFlag eq 'ar' ? pageFlowScope.arabicEndDate1_1:pageFlowScope.englishEndDate1_1}" id="ot6" styleClass="projecttimelineText"
+                             binding="#{pageFlowScope.NewProjectTimeLineBean.bindText1_2}" rendered="#{pageFlowScope.arabicEndDate1_1 ne null}"
+                            partialTriggers="b2 b1"/>
+                            </af:panelGroupLayout>-->
+                               <af:panelGroupLayout id="pgl32" layout="horizontal" halign="start" valign="top" styleClass="mb-3">
+                                <af:link text="" id="l12" styleClass="checklist_icon" visible="true"/>
+                            <af:outputText value="#{pageFlowScope.NewProjectTimeLineBean.languageFlag eq 'ar' ? pageFlowScope.arabicPhaseDetails1_1:pageFlowScope.englishPhaseDetails1_1}" id="ot8" styleClass="projecttimelineText"
+                            binding="#{pageFlowScope.NewProjectTimeLineBean.bindText1_3}" rendered="#{pageFlowScope.arabicPhaseDetails1_1 ne null}"
+                            partialTriggers="b2 b1"/>
+                            </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+                </af:panelGroupLayout>
+            </af:panelGroupLayout>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 mt-4 pt-2">
+            <af:panelGroupLayout id="pgl3" layout="vertical" valign="top" styleClass="#{pageFlowScope.arabicCurrentPhase2_1 eq 'نعم'  ?'TimelineBoxSelected': 'TimelineBox'}">
+                <af:panelGroupLayout id="pgl4" layout="vertical" valign="top">
+                    <af:panelGroupLayout id="pgl5" layout="vertical" valign="top">
+                         <af:panelGroupLayout id="pgl8" layout="vertical" valign="top" styleClass="my-2">
+                            <af:outputText value="#{pageFlowScope.NewProjectTimeLineBean.languageFlag eq 'ar' ? pageFlowScope.arabicPhaseName2_1:pageFlowScope.englishPhaseName2_1}"
+                                           id="ot3" styleClass="projecttimelineHeading"
+                                           partialTriggers="b2 b1"
+                                           binding="#{pageFlowScope.NewProjectTimeLineBean.header2}"/>
+                        </af:panelGroupLayout>
+                         </af:panelGroupLayout>
+                        <af:panelGroupLayout id="pgl9" layout="vertical" valign="top" halign="start" styleClass="mt-4">
+                              <!--<af:panelGroupLayout id="pgl28" layout="horizontal" halign="start" valign="top" styleClass="mb-3">
+                                <af:link text="" id="l6" styleClass="checklist_icon" visible="true"/>
+                            <af:outputText value="#{pageFlowScope.NewProjectTimeLineBean.languageFlag eq 'ar' ? pageFlowScope.arabicStartDate2_1:pageFlowScope.englishStartDate2_1}"
+                                           id="ot5" styleClass="projecttimelineText" rendered="#{pageFlowScope.arabicStartDate2_1 ne null}"
+                           binding="#{pageFlowScope.NewProjectTimeLineBean.bindText2_1}"
+                            partialTriggers="b2 b1"/>
+                            </af:panelGroupLayout>-->
+                                  <!--<af:panelGroupLayout id="pgl7" layout="horizontal" halign="start" valign="top" styleClass="mb-3">
+                                <af:link text="" id="l7" styleClass="checklist_icon" visible="true"/>
+                            <af:outputText value="#{pageFlowScope.NewProjectTimeLineBean.languageFlag eq 'ar' ? pageFlowScope.arabicEndDate2_1:pageFlowScope.englishEndDate2_1}"
+                                           id="ot7" styleClass="projecttimelineText" rendered="#{pageFlowScope.arabicEndDate2_1 ne null}"
+                             binding="#{pageFlowScope.NewProjectTimeLineBean.bindText2_2}"
+                            partialTriggers="b2 b1"/>
+                            </af:panelGroupLayout>-->
+                                  <af:panelGroupLayout id="pgl33" layout="horizontal" halign="start" valign="top" styleClass="mb-3">
+                                <af:link text="" id="l13" styleClass="checklist_icon" visible="true"/>
+                            <af:outputText value="#{pageFlowScope.NewProjectTimeLineBean.languageFlag eq 'ar' ? pageFlowScope.arabicPhaseDetails2_1:pageFlowScope.englishPhaseDetails2_1}"
+                                           id="ot9" styleClass="projecttimelineText" rendered="#{pageFlowScope.arabicPhaseDetails2_1 ne null}"
+                            binding="#{pageFlowScope.NewProjectTimeLineBean.bindText2_3}"
+                            partialTriggers="b2 b1"/>
+                            </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+                </af:panelGroupLayout>
+            </af:panelGroupLayout>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 mt-4 pt-2">
+            <af:panelGroupLayout id="pgl10" layout="vertical" valign="top" styleClass="#{pageFlowScope.arabicCurrentPhase3_1 eq 'نعم'  ?'TimelineBoxSelected': 'TimelineBox'}">
+                <af:panelGroupLayout id="pgl11" layout="vertical" valign="top">
+                    <af:panelGroupLayout id="pgl12" layout="vertical" valign="top">
+                                       <af:panelGroupLayout id="pgl14" layout="vertical" valign="top" styleClass="my-3">
+                            <af:outputText value="#{pageFlowScope.NewProjectTimeLineBean.languageFlag eq 'ar' ? pageFlowScope.arabicPhaseName3_1:pageFlowScope.englishPhaseName3_1}"
+                                           id="ot10" styleClass="projecttimelineHeading"
+                                           partialTriggers="b2 b1"
+                                           binding="#{pageFlowScope.NewProjectTimeLineBean.header3}"/>
+                        </af:panelGroupLayout>
+                            </af:panelGroupLayout>
+                        <af:panelGroupLayout id="pgl16" layout="vertical" valign="top" halign="start" styleClass="mt-4">
+                          <!--<af:panelGroupLayout id="pgl27" layout="horizontal" halign="start" valign="top" styleClass="mb-3">
+                                <af:link text="" id="l3" styleClass="checklist_icon" visible="true"/>
+                            <af:outputText value="#{pageFlowScope.NewProjectTimeLineBean.languageFlag eq 'ar' ? pageFlowScope.arabicStartDate3_1:pageFlowScope.englishStartDate3_1}"
+                                           id="ot11" styleClass="projecttimelineText" rendered="#{pageFlowScope.arabicStartDate3_1 ne null}"
+                           binding="#{pageFlowScope.NewProjectTimeLineBean.bindText3_1}"
+                            partialTriggers="b2 b1"/>
+                            </af:panelGroupLayout>-->
+                              <!--<af:panelGroupLayout id="pgl21" layout="horizontal" halign="start" valign="top" styleClass="mb-3">
+                                <af:link text="" id="l5" styleClass="checklist_icon" visible="true"/>
+                            <af:outputText value="#{pageFlowScope.NewProjectTimeLineBean.languageFlag eq 'ar' ? pageFlowScope.arabicEndDate3_1:pageFlowScope.englishEndDate3_1}"
+                                           id="ot12" styleClass="projecttimelineText" rendered="#{pageFlowScope.arabicEndDate3_1 ne null}"
+                             binding="#{pageFlowScope.NewProjectTimeLineBean.bindText3_2}"
+                            partialTriggers="b2 b1"/>
+                            </af:panelGroupLayout>-->
+                              <af:panelGroupLayout id="pgl30" layout="horizontal" halign="start" valign="top" styleClass="mb-3">
+                                <af:link text="" id="l9" styleClass="checklist_icon" visible="true"/>
+                            <af:outputText value="#{pageFlowScope.NewProjectTimeLineBean.languageFlag eq 'ar' ? pageFlowScope.arabicPhaseDetails3_1:pageFlowScope.englishPhaseDetails3_1}"
+                                           id="ot13" styleClass="projecttimelineText" rendered="#{pageFlowScope.arabicPhaseDetails3_1 ne null}"
+                            binding="#{pageFlowScope.NewProjectTimeLineBean.bindText3_3}"
+                            partialTriggers="b2 b1"/>
+                            </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+             
+                </af:panelGroupLayout>
+            </af:panelGroupLayout>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 mt-4 pt-2">
+           <af:panelGroupLayout id="pgl17" layout="vertical" valign="top" styleClass="#{pageFlowScope.arabicCurrentPhase4_1 eq 'نعم'  ?'TimelineBoxSelected': 'TimelineBox'}">
+                <af:panelGroupLayout id="pgl18" layout="vertical" valign="top">
+                    <af:panelGroupLayout id="pgl20" layout="vertical" valign="top"
+                                         styleClass="py-3 mx-3 ">
+                        <af:panelGroupLayout id="pgl22" layout="vertical" valign="top" styleClass="my-2">
+                            <af:outputText value="#{pageFlowScope.NewProjectTimeLineBean.languageFlag eq 'ar' ? pageFlowScope.arabicPhaseName4_1:pageFlowScope.englishPhaseName4_1}"
+                                           id="ot14" styleClass="projecttimelineHeading"
+                                           partialTriggers="b2 b1"
+                                           binding="#{pageFlowScope.NewProjectTimeLineBean.header4}"/>
+                        </af:panelGroupLayout>
+                        <af:panelGroupLayout id="pgl23" layout="vertical" valign="top" halign="start" styleClass="mt-4">
+                            <!--<af:panelGroupLayout id="pgl24" layout="horizontal" halign="start" valign="top" styleClass="mb-3">
+                                <af:link text="" id="l10" styleClass="checklist_icon"  visible="true"/>
+                                <af:outputText value="#{pageFlowScope.NewProjectTimeLineBean.languageFlag eq 'ar' ? pageFlowScope.arabicStartDate4_1:pageFlowScope.englishStartDate4_1}"
+                                               id="ot15" styleClass="projecttimelineText" rendered="#{pageFlowScope.arabicStartDate4_1 ne null}"
+                                               binding="#{pageFlowScope.NewProjectTimeLineBean.bindText4_1}"
+                                               partialTriggers="b2 b1"/>
+                            </af:panelGroupLayout>-->
+                            <!--<af:panelGroupLayout id="pgl26" layout="horizontal" halign="start" valign="top" styleClass="mb-3">
+                                <af:link text="" id="l2" styleClass="checklist_icon" visible="true"/>
+                                <af:outputText value="#{pageFlowScope.NewProjectTimeLineBean.languageFlag eq 'ar' ? pageFlowScope.arabicEndDate4_1:pageFlowScope.englishEndDate4_1}"
+                                               id="ot16" styleClass="projecttimelineText" rendered="#{pageFlowScope.arabicEndDate4_1 ne null}"
+                                               binding="#{pageFlowScope.NewProjectTimeLineBean.bindText4_2}"
+                                               partialTriggers="b2 b1"/>
+                            </af:panelGroupLayout>-->
+                            <af:panelGroupLayout id="pgl13" layout="horizontal" halign="start" valign="top" styleClass="mb-3">
+                                <af:link text="" id="l4" styleClass="checklist_icon" visible="true"/>
+                                <af:outputText value="#{pageFlowScope.NewProjectTimeLineBean.languageFlag eq 'ar' ? pageFlowScope.arabicPhaseDetails4_1:pageFlowScope.englishPhaseDetails4_1}"
+                                               id="ot17" styleClass="projecttimelineText" rendered="#{pageFlowScope.arabicPhaseDetails4_1 ne null}"
+                                               binding="#{pageFlowScope.NewProjectTimeLineBean.bindText4_3}"
+                                               partialTriggers="b2 b1"/>
+                            </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+                    </af:panelGroupLayout>
+                </af:panelGroupLayout>
+            </af:panelGroupLayout>
+        </div>
+    </div>
+
+</jsp:root>

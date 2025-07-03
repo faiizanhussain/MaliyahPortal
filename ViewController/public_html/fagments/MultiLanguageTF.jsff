@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+<af:panelGroupLayout id="pgl1">
+   <af:link text="English" id="l1" action="#{MultiLanguageBean.changeLocation_action}">
+    <af:setPropertyListener from="en" type="action" to="#{sessionScope.lang}"/>
+    </af:link>
+     <af:link text="Arabic" id="l2" action="#{MultiLanguageBean.changeLocation_action}">
+    <af:setPropertyListener from="ar" to="#{sessionScope.lang}" type="action"/>
+    </af:link>
+     <!--<af:inputText label="#{res.LOGIN}" id="it1"/>-->
+          <af:outputText value="#{res.SMART_ID_CARD}" id="ot1"/>
+           <af:outputText value="#{res.SMART_PHONE}" id="ot2"/>
+     </af:panelGroupLayout>
+    
+</jsp:root>

@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelGroupLayout id="pgl0" layout="vertical">
+        <af:panelGroupLayout id="pgl2">
+          <af:panelLabelAndMessage label="Search Book by Name or Author" id="plam1"/>
+            <af:panelFormLayout id="pfl2" labelAlignment="top" fieldWidth="100%">
+                <af:inputText value="#{bindings.bookname.inputValue}" label="Enter book name"
+                              required="#{bindings.bookname.hints.mandatory}"
+                              columns="#{bindings.bookname.hints.displayWidth}"
+                              maximumLength="#{bindings.bookname.hints.precision}"
+                              shortDesc="#{bindings.bookname.hints.tooltip}" id="it3">
+                    <f:validator binding="#{bindings.bookname.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.bookTitle.inputValue}" label="Enter Author name"
+                              required="#{bindings.bookTitle.hints.mandatory}"
+                              columns="#{bindings.bookTitle.hints.displayWidth}"
+                              maximumLength="#{bindings.bookTitle.hints.precision}"
+                              shortDesc="#{bindings.bookTitle.hints.tooltip}" id="it4">
+                    <f:validator binding="#{bindings.bookTitle.validator}"/>
+                </af:inputText>
+                <!--<af:button actionListener="#{bindings.searchbook.execute}" text="Search"
+                           disabled="#{!bindings.searchbook.enabled}" id="b2"/>-->
+                <!--<af:spacer id="s1" width="20px"/>-->
+                <!--<af:button actionListener="#{bindings.resetSearchbook.execute}" text="Reset"
+                           disabled="#{!bindings.resetSearchbook.enabled}" id="b3"/>-->
+            </af:panelFormLayout>
+            <af:panelGroupLayout id="pgl3" layout="horizontal" halign="center" styleClass="MY-3">
+            <af:button actionListener="#{bindings.searchbook.execute}" text="Search"
+                           disabled="#{!bindings.searchbook.enabled}" id="b2" styleClass="searchBT mr-2"/>
+                <af:button actionListener="#{bindings.resetSearchbook.execute}" text="Reset"
+                           disabled="#{!bindings.resetSearchbook.enabled}" id="b3" styleClass="cencledBT"/>
+            </af:panelGroupLayout>
+            <!--<af:panelLabelAndMessage label="Search Book by Name or Author" id="plam1"/>-->
+            <!--<af:panelFormLayout id="pfl1" labelAlignment="top">
+                <af:inputText label="Enter book name" id="it1"/>
+                <af:inputText label="Enter Author name" id="it2"/>
+            </af:panelFormLayout>-->
+            <!--<af:panelGroupLayout id="pgl12" layout="horizontal" styleClass="my-3">
+                <af:button text="Search" id="b1"/>
+            </af:panelGroupLayout>-->
+    </af:panelGroupLayout>
+        <af:panelGroupLayout id="pgl4" layout="vertical" styleClass="table-responsive my-3">
+        <af:panelGroupLayout id="pgl1" layout="horizontal" styleClass="StaticTable AFStretchWidth">
+        <af:table value="#{bindings.DocumentDetailsView1.collectionModel}" var="row"
+                  rows="#{bindings.DocumentDetailsView1.rangeSize}"
+                  emptyText="#{bindings.DocumentDetailsView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                  rowBandingInterval="0" fetchSize="#{bindings.DocumentDetailsView1.rangeSize}" id="t1"
+                  styleClass="AFStretchWidth" partialTriggers="::b2 ::b3" filterVisible="true">
+            <!--<af:column headerText="#{bindings.DocumentDetailsView1.hints.Doccontentid.label}" id="c1">
+                  <af:outputText value="#{row.Doccontentid}" shortDesc="#{bindings.DocumentDetailsView1.hints.Doccontentid.tooltip}"
+                                 id="ot1"/>
+                </af:column>-->
+            <!--<af:column headerText="#{bindings.DocumentDetailsView1.hints.Doccreatedby.label}" id="c2">
+                  <af:outputText value="#{row.Doccreatedby}" shortDesc="#{bindings.DocumentDetailsView1.hints.Doccreatedby.tooltip}"
+                                 id="ot2"/>
+                </af:column>-->
+            <!--<af:column headerText="#{bindings.DocumentDetailsView1.hints.Doccreateddate.label}" id="c3">
+                  <af:outputText value="#{row.Doccreateddate}"
+                                 shortDesc="#{bindings.DocumentDetailsView1.hints.Doccreateddate.tooltip}" id="ot3"/>
+                </af:column>-->
+            <!--<af:column headerText="#{bindings.DocumentDetailsView1.hints.Docdid.label}" id="c4">
+                  <af:outputText value="#{row.Docdid}" shortDesc="#{bindings.DocumentDetailsView1.hints.Docdid.tooltip}" id="ot4"/>
+                </af:column>-->
+            <af:column headerText="Book Name" id="c5">
+                <af:outputText value="#{row.Docoriginalname}"
+                               shortDesc="#{bindings.DocumentDetailsView1.hints.Docoriginalname.tooltip}" id="ot5"/>
+            </af:column>
+            <af:column headerText="Book Size" id="c6">
+                <af:outputText value="#{row.Docsize} KB"
+                               shortDesc="#{bindings.DocumentDetailsView1.hints.Docsize.tooltip}" id="ot6"/>
+            </af:column>
+            <!--<af:column headerText="#{bindings.DocumentDetailsView1.hints.Docformat.label}" id="c7">
+                  <af:outputText value="#{row.Docformat}" shortDesc="#{bindings.DocumentDetailsView1.hints.Docformat.tooltip}"
+                                 id="ot7"/>
+                </af:column>-->
+            <af:column headerText="Author Name" id="c8">
+                <af:outputText value="#{row.Doctitle}"
+                               shortDesc="#{bindings.DocumentDetailsView1.hints.Doctitle.tooltip}" id="ot8"/>
+            </af:column>
+            <!--<af:column headerText="#{bindings.DocumentDetailsView1.hints.Doccontenttype.label}" id="c9">
+                  <af:outputText value="#{row.Doccontenttype}"
+                                 shortDesc="#{bindings.DocumentDetailsView1.hints.Doccontenttype.tooltip}" id="ot9"/>
+                </af:column>-->
+            <!--<af:column headerText="#{bindings.DocumentDetailsView1.hints.Docmodifiedby.label}" id="c10">
+                  <af:outputText value="#{row.Docmodifiedby}"
+                                 shortDesc="#{bindings.DocumentDetailsView1.hints.Docmodifiedby.tooltip}" id="ot10"/>
+                </af:column>-->
+            <!--<af:column headerText="#{bindings.DocumentDetailsView1.hints.Docmodifieddate.label}" id="c11">
+                  <af:outputText value="#{row.Docmodifieddate}"
+                                 shortDesc="#{bindings.DocumentDetailsView1.hints.Docmodifieddate.tooltip}" id="ot11"/>
+                </af:column>-->
+            <!--<af:column headerText="#{bindings.DocumentDetailsView1.hints.Docsecuritygroup.label}" id="c12">
+                  <af:outputText value="#{row.Docsecuritygroup}"
+                                 shortDesc="#{bindings.DocumentDetailsView1.hints.Docsecuritygroup.tooltip}" id="ot12"/>
+                </af:column>-->
+            <!--<af:column headerText="#{bindings.DocumentDetailsView1.hints.Docsourceaccount.label}" id="c13">
+                  <af:outputText value="#{row.Docsourceaccount}"
+                                 shortDesc="#{bindings.DocumentDetailsView1.hints.Docsourceaccount.tooltip}" id="ot13"/>
+                </af:column>-->
+            <af:column headerText="View/Downlod" id="c14">
+                <!--<af:outputText value="#{row.Documenturl}" shortDesc="#{bindings.DocumentDetailsView1.hints.Documenturl.tooltip}"
+                                 id="ot14"/>-->
+                <af:panelGroupLayout id="pgln8" layout="horizontal">
+                    <af:link destination="#{row.Documenturl}" icon="/images/download.png" targetFrame="_blank" id="ln4"
+                             partialSubmit="true" shortDesc="View" immediate="true" iconPosition="top"
+                             styleClass="view_icon"></af:link>
+                </af:panelGroupLayout>
+            </af:column>
+        </af:table>
+    </af:panelGroupLayout>
+    </af:panelGroupLayout>
+</af:panelGroupLayout>
+</jsp:root>

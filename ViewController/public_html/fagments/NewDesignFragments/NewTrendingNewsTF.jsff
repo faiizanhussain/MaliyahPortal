@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:panelGroupLayout id="pgl26" layout="horizontal" styleClass="AFStretchWidth">
+    <af:panelGroupLayout id="pgl8" layout="horizontal" halign="left" styleClass="mt-2">
+            <af:link  icon="/images/trending_up.JPG" id="l3" styleClass="newProgress_icon" disabled="true"/>
+            <af:outputText value="Trending News" id="plam1" styleClass="projecttimelineMainheading"/>
+    </af:panelGroupLayout>
+    <af:panelGroupLayout id="pgl25" valign="top"  layout="horizontal" halign="right">
+        <af:link icon="/images/arrow_backward.svg"  id="l1" action="#{pageFlowScope.NewsBean.backToPreviousImage}" disabled="true"/>
+        <af:link icon="/images/arrow_forward.svg" id="l2" action="#{pageFlowScope.NewsBean.ForwardToNextImage}" disabled="true"/>
+    </af:panelGroupLayout>
+    </af:panelGroupLayout>
+    <div class="row">
+        <div class="col-lg-3 col-sm-6">
+            <af:panelGroupLayout id="pgl1" styleClass="TimelineBox" layout="vertical" valign="top"
+                                 binding="#{pageFlowScope.NewsBean.bindNews1}">
+                <af:panelGroupLayout id="pgl2" layout="vertical" styleClass="AFStretchWidth" valign="top">
+                    <af:spacer id="s1"/>
+                    <af:panelGroupLayout id="pgl3" layout="vertical" halign="left" valign="top" styleClass="mb-3">
+                        <af:image source="../images/news-1.JPG" id="i1" styleClass="img-fluid w-100"/>
+                    </af:panelGroupLayout>
+                    <af:panelGroupLayout id="pgl0" layout="vertical"  styleClass="col p-0 d-flex flex-column position-static" halign="left" valign="top">
+                        <af:panelGroupLayout id="pgl4" layout="vertical" halign="left" valign="top">
+                            <af:outputText value="Meeting of the Minister of Finance with his counterpart." id="plam4"
+                                           styleClass="NewHeading"/>
+                        </af:panelGroupLayout>
+                        <af:panelGroupLayout id="pgl5" layout="vertical" halign="left" valign="bottom">
+                            <af:outputText value="His Excellency Sultan bin Salem Al Habsi, Minister of Finance, met with His Excellency Mehmet Simsek."
+                                           id="plam2" styleClass="NewSummary"/>
+                        </af:panelGroupLayout>
+                    </af:panelGroupLayout>
+                </af:panelGroupLayout>
+            </af:panelGroupLayout>
+        </div>
+         <div class="col-lg-3 col-sm-6">
+            <af:panelGroupLayout id="pgl9" styleClass="TimelineBox" layout="vertical" valign="top">
+                <af:panelGroupLayout id="pgl10" layout="vertical" styleClass="AFStretchWidth" valign="top">
+                    <af:spacer id="s2"/>
+                    <af:panelGroupLayout id="pgl14" layout="vertical" halign="left" valign="top" styleClass="mb-3">
+                        <af:image source="../images/news-2.JPG" id="i2" styleClass="img-fluid w-100"/>
+                    </af:panelGroupLayout>
+                    <af:panelGroupLayout id="pgl11" layout="vertical"  styleClass="col p-0 d-flex flex-column position-static" halign="left" valign="top">
+                        <af:panelGroupLayout id="pgl12" layout="vertical" halign="left" valign="top">
+                            <af:outputText value="Meeting of the Minister of Finance with his counterpart." id="ot1"
+                                           styleClass="NewHeading"/>
+                        </af:panelGroupLayout>
+                        <af:panelGroupLayout id="pgl13" layout="vertical" halign="left" valign="bottom">
+                            <af:outputText value="His Excellency Sultan bin Salem Al Habsi, Minister of Finance, met with His Excellency Mehmet Simsek."
+                                           id="ot2" styleClass="NewSummary"/>
+                        </af:panelGroupLayout>
+                    </af:panelGroupLayout>
+                </af:panelGroupLayout>
+            </af:panelGroupLayout>
+        </div> 
+         <div class="col-lg-3 col-sm-6">
+            <af:panelGroupLayout id="pgl15" styleClass="TimelineBox" layout="vertical" valign="top">
+                <af:panelGroupLayout id="pgl16" layout="vertical" styleClass="AFStretchWidth" valign="top">
+                    <af:panelGroupLayout id="pgl20" layout="vertical" halign="left" valign="top" styleClass="mb-3">
+                        <af:image source="/images/news-3.JPG" id="i3" styleClass="img-fluid w-100"/>
+                    </af:panelGroupLayout>
+                    <af:panelGroupLayout id="pgl17" layout="vertical"  styleClass="col p-0 d-flex flex-column position-static" halign="left" valign="top">
+                        <af:panelGroupLayout id="pgl18" layout="vertical" halign="left" valign="top">
+                            <af:outputText value="Meeting of the Minister of Finance with his counterpart." id="ot3"
+                                           styleClass="NewHeading"/>
+                        </af:panelGroupLayout>
+                        <af:panelGroupLayout id="pgl19" layout="vertical" halign="left" valign="bottom">
+                            <af:outputText value="His Excellency Sultan bin Salem Al Habsi, Minister of Finance, met with His Excellency Mehmet Simsek."
+                                           id="ot4" styleClass="NewSummary"/>
+                        </af:panelGroupLayout>
+                    </af:panelGroupLayout>
+                </af:panelGroupLayout>
+            </af:panelGroupLayout>
+        </div> 
+         <div class="col-lg-3 col-sm-6">
+            <af:panelGroupLayout id="pgl6" styleClass="TimelineBox" layout="vertical" valign="top">
+                <af:panelGroupLayout id="pgl7" layout="vertical" styleClass="AFStretchWidth" valign="top">
+                    <af:panelGroupLayout id="pgl22" layout="vertical" halign="left" valign="top" styleClass="mb-3">
+                        <af:image source="/images/news-4.JPG" id="i4" styleClass="img-fluid w-100"/>
+                    </af:panelGroupLayout>
+                    <af:panelGroupLayout id="pgl21" layout="vertical"  styleClass="col p-0 d-flex flex-column position-static" halign="left" valign="top">
+                        <af:panelGroupLayout id="pgl23" layout="vertical" halign="left" valign="top">
+                            <af:outputText value="Meeting of the Minister of Finance with his counterpart." id="ot5"
+                                           styleClass="NewHeading"/>
+                        </af:panelGroupLayout>
+                        <af:panelGroupLayout id="pgl24" layout="vertical" halign="left" valign="bottom">
+                            <af:outputText value="His Excellency Sultan bin Salem Al Habsi, Minister of Finance, met with His Excellency Mehmet Simsek."
+                                           id="ot6" styleClass="NewSummary"/>
+                        </af:panelGroupLayout>
+                    </af:panelGroupLayout>
+                </af:panelGroupLayout>
+            </af:panelGroupLayout>
+        </div> 
+         <!--<div class="col-lg-3 col-sm-6">
+            <af:panelGroupLayout id="pgl27" styleClass="TimelineBox" layout="vertical" valign="top"
+                                 binding="#{pageFlowScope.NewsBean.bindNews5}">
+                <af:panelGroupLayout id="pgl28" layout="vertical" styleClass="AFStretchWidth" valign="top">
+                    <af:panelGroupLayout id="pgl29" layout="vertical" halign="left" valign="top" styleClass="mb-3">
+                        <af:image source="../images/news-1.JPG" id="i5" styleClass="img-fluid w-100"/>
+                    </af:panelGroupLayout>
+                    <af:panelGroupLayout id="pgl30" layout="vertical"  styleClass="col p-0 d-flex flex-column position-static" halign="left" valign="top">
+                        <af:panelGroupLayout id="pgl31" layout="vertical" halign="left" valign="top">
+                            <af:outputText value="Meeting of the Minister of Finance with his counterpart." id="ot7"
+                                           styleClass="NewHeading"/>
+                        </af:panelGroupLayout>
+                        <af:panelGroupLayout id="pgl32" layout="vertical" halign="left" valign="bottom">
+                            <af:outputText value="His Excellency Sultan bin Salem Al Habsi, Minister of Finance, met with His Excellency Mehmet Simsek."
+                                           id="ot8" styleClass="NewSummary"/>
+                        </af:panelGroupLayout>
+                    </af:panelGroupLayout>
+                </af:panelGroupLayout>
+            </af:panelGroupLayout>
+        </div>-->
+    </div>
+</jsp:root>

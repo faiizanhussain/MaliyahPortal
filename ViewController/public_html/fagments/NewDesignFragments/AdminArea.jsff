@@ -1,0 +1,229 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core" xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+    <div class="row">
+        <div class="col-lg-4 col-md-12 col-sm-12 mt-4 pt-2">
+            <af:panelGroupLayout id="pgl12" layout="vertical" valign="top" halign="start" styleClass="ml-3">
+                <af:outputText value="Good Morning" id="ot4" styleClass="messageTest"/>
+                <af:outputText value="Kamla S." id="ot5" styleClass="messageUserName"/>
+            </af:panelGroupLayout>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 mt-4 pt-2">
+            <af:panelGroupLayout id="pgl4" layout="vertical" halign="start">
+                <af:button text="#{res.EDIT_DOCUMENT}" icon="/images/editDocument.svg" id="b1" action="docsManagement"
+                           styleClass="editIconBT"/>
+            </af:panelGroupLayout>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 mt-4 pt-2">
+            <af:panelGroupLayout id="pgl5" layout="vertical" halign="start">
+                <af:button text="#{res.EDIT_NEWS}" id="b2" icon="/images/editNews.svg" action="NewsManagement"
+                           styleClass="editIconBT"/>
+            </af:panelGroupLayout>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-md-5 col-sm-12 mt-4 pt-2">
+            <af:panelGroupLayout id="pgl1" layout="vertical" valign="top" halign="left" styleClass="ml-1">
+                <af:panelGroupLayout id="pgl2" layout="vertical" valign="top" halign="left">
+                    <af:outputFormatted value="#{res.USER_FEEDBACK}" id="of1" styleClass="UserFeedbackHeading"/>
+                </af:panelGroupLayout>
+                <af:panelGroupLayout id="pgl6" layout="vertical" styleClass="table-responsive my-3">
+                    <af:panelGroupLayout id="pgl7" layout="horizontal" styleClass="StaticTable AFStretchWidth">
+                        <af:table value="#{bindings.UserFeedbackView11.collectionModel}" var="row"
+                                  rows="#{bindings.UserFeedbackView11.rangeSize}"
+                                  emptyText="#{bindings.UserFeedbackView11.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                  rowBandingInterval="0" styleClass="AFStretchWidth tablewidth"
+                                  selectedRowKeys="#{bindings.UserFeedbackView11.collectionModel.selectedRow}"
+                                  selectionListener="#{bindings.UserFeedbackView11.collectionModel.makeCurrent}"
+                                  rowSelection="single" fetchSize="#{bindings.UserFeedbackView11.rangeSize}" id="t1"
+                                  scrollPolicy="auto" autoHeightRows="6">
+                            <af:column headerText="" id="c1" width="100%">
+                                <af:panelGroupLayout id="pgl8" layout="horizontal" rendered="#{row.Glad ne null}">
+                                    <af:link id="l1" styleClass="glad_icon" disabled="true"/>
+                                    <af:outputText value="#{row.Glad}" styleClass="FeedbackUserexpress"
+                                                   shortDesc="#{bindings.UserFeedbackView11.hints.Glad.tooltip}"
+                                                   id="ot1"/>
+                                </af:panelGroupLayout>
+                                <af:panelGroupLayout id="pgl9" layout="horizontal" rendered="#{row.Happy ne null}">
+                                    <af:link id="l2" styleClass="Happy_icon" disabled="true"/>
+                                    <af:outputText value="#{row.Happy}" styleClass="FeedbackUserexpress"
+                                                   shortDesc="#{bindings.UserFeedbackView11.hints.Happy.tooltip}"
+                                                   id="ot2"/>
+                                </af:panelGroupLayout>
+                                <af:panelGroupLayout id="pgl10" layout="horizontal" rendered="#{row.Neutral ne null}">
+                                    <af:link id="l3" styleClass="Neutral_icon" disabled="true"/>
+                                    <af:outputText value="#{row.Neutral}" styleClass="FeedbackUserexpress"
+                                                   shortDesc="#{bindings.UserFeedbackView11.hints.Neutral.tooltip}"
+                                                   id="ot3"/>
+                                </af:panelGroupLayout>
+                                <af:panelGroupLayout id="pgl11" layout="horizontal"
+                                                     rendered="#{row.Dissatisfied ne null}">
+                                    <af:link id="l4" styleClass="dissatisfied_icon" disabled="true"/>
+                                    <af:outputText value="#{row.Dissatisfied}" styleClass="FeedbackUserexpress"
+                                                   shortDesc="#{bindings.UserFeedbackView11.hints.Dissatisfied.tooltip}"
+                                                   id="ot6"/>
+                                </af:panelGroupLayout>
+                                <af:panelGroupLayout id="pgl13" layout="horizontal"
+                                                     rendered="#{row.ExtremelyDissatified ne null}">
+                                    <af:link id="l5" styleClass="extremelyDissatisfied_icon" disabled="true"/>
+                                    <af:outputText value="#{row.ExtremelyDissatified}" styleClass="FeedbackUserexpress"
+                                                   shortDesc="#{bindings.UserFeedbackView11.hints.ExtremelyDissatified.tooltip}"
+                                                   id="ot7"/>
+                                </af:panelGroupLayout>
+                                <af:panelGroupLayout id="pgl14" layout="horizontal" rendered="#{row.Userid ne null}">
+                                    <!--<af:outputText value="#{row.Userid}"
+                                               shortDesc="#{bindings.UserFeedbackView11.hints.Userid.tooltip}"
+                                               id="ot8"/>-->
+                                    <af:outputText value="#{row.Usernme}" styleClass="Feedbackname"
+                                                   shortDesc="#{bindings.UserFeedbackView11.hints.Usernme.tooltip}"
+                                                   id="ot9"/>
+                                </af:panelGroupLayout>
+                            </af:column>
+                            <!--<af:column headerText="#{bindings.UserFeedbackView11.hints.Happy.label}" id="c2">
+                                <af:outputText value="#{row.Happy}"
+                                               shortDesc="#{bindings.UserFeedbackView11.hints.Happy.tooltip}" id="ot2"/>
+                            </af:column>-->
+                            <!--<af:column headerText="#{bindings.UserFeedbackView11.hints.Neutral.label}" id="c3">
+                                <af:outputText value="#{row.Neutral}"
+                                               shortDesc="#{bindings.UserFeedbackView11.hints.Neutral.tooltip}"
+                                               id="ot3"/>
+                            </af:column>-->
+                            <!--<af:column headerText="#{bindings.UserFeedbackView11.hints.Dissatisfied.label}" id="c4">
+                                <af:outputText value="#{row.Dissatisfied}"
+                                               shortDesc="#{bindings.UserFeedbackView11.hints.Dissatisfied.tooltip}"
+                                               id="ot6"/>
+                            </af:column>-->
+                            <!--<af:column headerText="#{bindings.UserFeedbackView11.hints.ExtremelyDissatified.label}"
+                                       id="c5">
+                                <af:outputText value="#{row.ExtremelyDissatified}"
+                                               shortDesc="#{bindings.UserFeedbackView11.hints.ExtremelyDissatified.tooltip}"
+                                               id="ot7"/>
+                            </af:column>-->
+                            <!--<af:column headerText="#{bindings.UserFeedbackView11.hints.Userid.label}" id="c6">
+                                <af:outputText value="#{row.Userid}"
+                                               shortDesc="#{bindings.UserFeedbackView11.hints.Userid.tooltip}"
+                                               id="ot8"/>
+                            </af:column>-->
+                            <!--<af:column headerText="#{bindings.UserFeedbackView11.hints.Usernme.label}" id="c7">
+                                <af:outputText value="#{row.Usernme}"
+                                               shortDesc="#{bindings.UserFeedbackView11.hints.Usernme.tooltip}"
+                                               id="ot9"/>
+                            </af:column>-->
+                        </af:table>
+                    </af:panelGroupLayout>
+                    <af:panelGroupLayout id="pgl22">
+                        <dvt:pieChart id="pieChart1" var="row" value="#{bindings.UserFeedbackView12.collectionModel}" threeDEffect="on">
+                            <dvt:chartLegend id="cl1"/>
+                            <dvt:pieDataItem id="di1"
+                                             label="#{row.Glad} #{row.Happy} #{row.Neutral} #{row.Dissatisfied} #{row.ExtremelyDissatified}"
+                                             value="#{row.Serialnumber}"/>
+                        </dvt:pieChart>
+                    </af:panelGroupLayout>
+                </af:panelGroupLayout>
+            </af:panelGroupLayout>
+        </div>
+        <div class="col-lg-8 col-md-7 col-sm-12 mt-4 pt-2">
+            <af:panelGroupLayout id="pgl3" layout="vertical" valign="top" halign="start">
+                <af:panelGroupLayout id="pgl19" valign="top" halign="left"
+                                     styleClass="AFStretchWidth news-section-header1">
+                    <af:panelGroupLayout id="pgl21" layout="vertical" halign="start" valign="top">
+                        <af:outputFormatted value="#{res.CHANGE_TIMELINE}" id="of3" styleClass="UserFeedbackHeading"/>
+                    </af:panelGroupLayout>
+                    <!--<af:panelGroupLayout id="pgl22" layout="vertical" halign="end" valign="top">
+                                <af:button text="#{res.UPLOAD_IMAGE_TIMELINE}" id="b6" styleClass="SubmitBT">
+                                    <af:showPopupBehavior popupId="p1"/>
+                                </af:button>
+                            </af:panelGroupLayout>-->
+                </af:panelGroupLayout>
+                <af:panelGroupLayout id="pgl18" layout="vertical" styleClass="my-3 AFStretchWidth max-height-300">
+                    <af:region value="#{bindings.TimeLine_AdminTF1.regionModel}" id="r1"/>
+                    <!--<af:image source="/content/conn/wccConnection/path/Enterprise%20Libraries/Maliyah_Portal/MaliyahDocuments/ProjectTimeLine/ProjectTimeLine.png"
+                                          altSource="" id="i4" styleClass="img-fluid AFStretchWidth"/>-->
+                          </af:panelGroupLayout>
+            </af:panelGroupLayout>
+        </div>
+    </div>
+    <af:popup childCreation="deferred" autoCancel="disabled" id="p1" contentDelivery="lazyUncached"
+              binding="#{pageFlowScope.ProjectTimeLineImageBean.bindUploadDocumentPopup}">
+        <af:dialog id="d1" title="#{res.UPLOAD_PROJECT_TIMELINE_IMAGE}" cancelVisible="false" okVisible="false"
+                   styleClass="dialogBoxSize">
+            <af:panelGroupLayout id="pgl0" layout="vertical" valign="top" halign="start" styleClass="dialogBoxSize">
+                <af:spacer id="s7"/>
+                <af:panelFormLayout id="pfl1" labelAlignment="top" rows="1" fieldWidth="100%">
+                    <af:inputFile id="if2" label="#{res.UPLOAD_PROJECT_TIMELINE_IMAGE}" styleClass="NewsImageUpload"
+                                  autoSubmit="true" required="true"
+                                  binding="#{pageFlowScope.ProjectTimeLineImageBean.bindUploadDocuments}"
+                                  valueChangeListener="#{pageFlowScope.ProjectTimeLineImageBean.documentChangeListener}"/>
+                </af:panelFormLayout>
+                <af:panelGroupLayout id="pgl20" layout="horizontal" halign="center" styleClass="my-3">
+                    <af:button text="#{res.UPLOAD_DOCUMENTS}" id="b3"
+                               actionListener="#{pageFlowScope.ProjectTimeLineImageBean.uploadDocumentListener}"
+                               styleClass="AddNewsBT"/>
+                </af:panelGroupLayout>
+            </af:panelGroupLayout>
+        </af:dialog>
+    </af:popup>
+    <af:popup childCreation="deferred" autoCancel="disabled" id="p4" contentDelivery="lazyUncached"
+              binding="#{pageFlowScope.ProjectTimeLineImageBean.successPopup}">
+        <?audit suppress oracle.adf.faces.bindingWithoutRequestOrBackingBeanScope?>
+        <af:dialog id="d4" title="#{res.DOCUMENT_UPLAOD_CONFIRMATION}" closeIconVisible="false" okVisible="false"
+                   cancelVisible="false" styleClass="popup-upload-doc">
+            <af:spacer id="s1" height="15px"/>
+            <af:icon name="Check" id="i2" styleClass="fa-4x fa-solid fa-circle-check icon_success"></af:icon>
+            <af:spacer id="s2" height="15px"/>
+            <af:panelLabelAndMessage styleClass="success-popup-text" label="#{res.DOCUMENT_ADDED_SUCCESSFUL}"
+                                     id="plam3"/>
+            <af:panelGroupLayout id="pgl16" layout="horizontal" halign="center" styleClass="ButtonPG">
+                <af:button text="#{res.CLOSE_BUTTON}" id="b15" styleClass="RegistrationSubmit"
+                           actionListener="#{pageFlowScope.ProjectTimeLineImageBean.closeSuccessPopup}"/>
+            </af:panelGroupLayout>
+        </af:dialog>
+    </af:popup>
+    <af:popup childCreation="deferred" autoCancel="disabled" id="p2" contentDelivery="lazyUncached"
+              binding="#{pageFlowScope.ProjectTimeLineImageBean.bindErrorsPopup}">
+        <af:dialog id="d2" title="#{res.ERROR_POPUP}" closeIconVisible="false" okVisible="false" cancelVisible="false"
+                   styleClass="popup-upload-doc">
+            <af:spacer id="s3" height="15px"/>
+            <af:icon name="Check" id="i1" styleClass="fa-4x fa-solid fa-circle-check icon_success"></af:icon>
+            <af:spacer id="s4" height="15px"/>
+            <af:panelLabelAndMessage label="#{res.ERROR_MESSAGE}" id="plam2"/>
+            <af:panelGroupLayout id="pgl15" layout="horizontal" halign="center" styleClass="ButtonPG">
+                <af:button text="#{res.CLOSE_BUTTON}" id="b4" styleClass="RegistrationSubmit"
+                           actionListener="#{pageFlowScope.ProjectTimeLineImageBean.closeErrorPopup}"/>
+            </af:panelGroupLayout>
+        </af:dialog>
+    </af:popup>
+    <af:popup childCreation="deferred" autoCancel="disabled" id="p3" contentDelivery="lazyUncached"
+              binding="#{pageFlowScope.ProjectTimeLineImageBean.bindDocTypePopup}">
+        <af:dialog id="d3" title="#{res.DOCUMENT_FORMAT}" closeIconVisible="false" okVisible="false"
+                   cancelVisible="false" styleClass="popup-upload-doc">
+            <af:spacer id="s5" height="15px"/>
+            <af:icon name="Check" id="i3" styleClass="fa-4x fa-solid fa-circle-check icon_success"></af:icon>
+            <af:spacer id="s6" height="15px"/>
+            <af:panelLabelAndMessage label="#{res.VALID_DOCUMENT_TYPE}" id="plam4"/>
+            <af:panelFormLayout id="pfl4" rows="4">
+                <af:outputText value=".JPG" id="ot8"/>
+                <af:outputText value=".PNG" id="ot10"/>
+            </af:panelFormLayout>
+            <af:panelGroupLayout id="pgl17" layout="horizontal" halign="center" styleClass="ButtonPG">
+                <af:button text="#{res.CLOSE_BUTTON}" id="b5" styleClass="RegistrationSubmit"
+                           actionListener="#{pageFlowScope.ProjectTimeLineImageBean.closeDocTypePopup}"/>
+            </af:panelGroupLayout>
+        </af:dialog>
+    </af:popup>
+    <!--<af:panelGroupLayout id="pgl1" layout="vertical">
+    <af:panelGroupLayout id="pgl2" layout="horizontal">
+    <af:panelGroupLayout id="pgl3" layout="vertical">
+        <af:outputText value="Good Morning" id="ot1"/>
+          <af:outputText value="Kamla Suleman" id="ot2"/>
+      </af:panelGroupLayout>
+    
+      <af:panelGroupLayout id="pgl4">
+         <af:button text="Edit Document" id="b1" action="docsManagement"/>
+      </af:panelGroupLayout>
+     <af:panelGroupLayout id="pgl5">
+      <af:button text="Edit News" id="b2" action="NewsManagement"/>
+     </af:panelGroupLayout>
+    </af:panelGroupLayout>
+  </af:panelGroupLayout>-->
+</jsp:root>
